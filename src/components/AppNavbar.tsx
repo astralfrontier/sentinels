@@ -31,7 +31,7 @@ function AppNavbar() {
       <div className={isActive ? "navbar-menu is-active" : "navbar-menu"} id="appNavbarItems">
         <div className="navbar-start">
           <NavLink className={activeNavbarItem} to={"/"} onClick={() => setIsActive(false)}>
-            Home
+            Search
           </NavLink>
         </div>
       </div>

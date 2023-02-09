@@ -1,6 +1,6 @@
+import { Handler } from "@netlify/functions";
 import { Client } from "@notionhq/client";
 
-import { Handler } from "@netlify/functions";
 import type { PageObjectResponse, PartialPageObjectResponse, PartialDatabaseObjectResponse, DatabaseObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { find, propEq, values } from "ramda";
 
@@ -31,25 +31,34 @@ function notionResultToSearchResult(notionResult: PageObjectResponse | PartialPa
 const notionSearchHandler: Handler = async (event, _context) => {
   const body: SearchHandlerRequest = JSON.parse(event.body || '')
 
-  const response = await notion.search({
-    query: body.query,
-    filter: {
-      value: 'page',
-      property: 'object'
-    },
-    sort: {
-      direction: 'descending',
-      timestamp: 'last_edited_time'
-    }
-  })
+  let has_more: boolean = true
+  let start_cursor: string | undefined = undefined
+  let data: any = []
 
-  const one = response.results[0]
+  while (has_more) {
+    const response = await await notion.search({
+      query: body.query,
+      filter: {
+        value: 'page',
+        property: 'object'
+      },
+      sort: {
+        direction: 'descending',
+        timestamp: 'last_edited_time'
+      },
+      start_cursor,
+      page_size: 25
+    })
+    data = data.concat(response.results)
+    start_cursor = response.next_cursor || undefined
+    has_more = response.has_more
+  }
 
-  const data: SearchResult[] = response.results.map(notionResultToSearchResult)
+  const final: SearchResult[] = data.map(notionResultToSearchResult)
 
   return {
     statusCode: 200,
-    body: JSON.stringify(data),
+    body: JSON.stringify(final),
   };
 };
 

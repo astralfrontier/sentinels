@@ -1,7 +1,8 @@
 import { ResultType } from "@remix-run/router/dist/utils";
 import { map } from "ramda";
 import React, { useState } from "react";
-import { notionSearch, SearchResult } from "../notion";
+import { Link } from "react-router-dom";
+import { notionFetchPage, notionSearch, SearchResult } from "../notion";
 import InputWrapper from "./InputWrapper";
 
 interface PageSearchProps {
@@ -24,7 +25,7 @@ function SearchResultView(props: SearchResultViewProps) {
                 <footer className="card-footer">
                     <p className="card-footer-item">
                         <span>
-                            TODO fetch
+                          <Link to={`/${props.result.id}`}>Load data</Link>
                         </span>
                     </p>
                     <p className="card-footer-item">

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import './App.css'
+import HomePage from './pages/HomePage';
+import SentinelsPage from './pages/SentinelsPage';
 
-import HomePage from './pages/Home';
+import './App.css'
 
 function ErrorPage(_props: any) {
   return (
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <Routes>
         <Route path={"/"} element={<HomePage />} />
+        <Route path={"/:id"} element={<SentinelsPage />} />
         <Route path={"/oauth2/callback"} element={<h1>OAuth Callback</h1>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

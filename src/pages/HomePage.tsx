@@ -1,11 +1,11 @@
 import PageSearch from "../components/PageSearch";
 import DefaultLayout from "../layouts/Default";
 
-interface DefaultLayoutProps {
+interface HomePageProps {
   children?: React.ReactNode;
 }
 
-export default function HomePage(props: DefaultLayoutProps) {
+export default function HomePage(props: HomePageProps) {
   return (
     <>
       <DefaultLayout>
