@@ -1,10 +1,26 @@
 import React from 'react'
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from './pages/HomePage';
 import SentinelsPage from './pages/SentinelsPage';
 
 import './App.css'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />
+  },
+  {
+    path: "/:id",
+    element: <SentinelsPage />
+  },
+  {
+    path: "*",
+    element: <ErrorPage />
+  },
+]);
+
 
 function ErrorPage(_props: any) {
   return (
@@ -16,14 +32,7 @@ function ErrorPage(_props: any) {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/:id"} element={<SentinelsPage />} />
-        <Route path={"/oauth2/callback"} element={<h1>OAuth Callback</h1>} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </Router>
+    <RouterProvider router={router} />
   )
 }
 
