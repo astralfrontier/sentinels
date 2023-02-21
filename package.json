@@ -13,7 +13,7 @@
     "@netlify/functions": "^1.4.0",
     "@notionhq/client": "^2.2.3",
     "bulma": "^0.9.4",
-    "camelcase": "^7.0.1",
+    "pascalcase": "^2.0.0",
     "ramda": "^0.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
+    "@types/pascalcase": "^1.0.1",
     "@types/ramda": "^0.28.22",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",

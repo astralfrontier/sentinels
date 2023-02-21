@@ -1,11 +1,11 @@
-import camelCase from 'camelcase';
+import pascalcase from 'pascalcase';
 import { find, join, map, partition, split, startsWith } from "ramda";
 
 import { Card, DeckData, Setup } from "../../netlify/functions/notion-retrieve";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 function identifier(input: string): string {
-  return camelCase(input.replace(/[^a-zA-Z0-9]+/g, ''), {pascalCase: true})
+  return pascalcase(input)
 }
 
 function findPrimarySetupCard(setup: Setup[]): Setup {
