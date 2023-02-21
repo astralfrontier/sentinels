@@ -1,0 +1,135 @@
+##version 107
+
+##environment
+[[name]] CP
+[[title]] Community Service
+[[quantity]] 2
+[[hp]] 0
+[[keywords]] challenge
+[[text]] At the end of the environment turn, one player may destroy one of their ongoing cards. If they do, destroy this card.\nAt the start of the environment turn, each villain target regains 3 HP, then destroy this card.
+[[quote]]
+Park clean-up sucked, but Becky still took any opportunity to get out of her cell she could. And if she got time off for good behavior, all the better.
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Corner Store Snack Run
+[[quantity]] 1
+[[hp]] 0
+[[keywords]] 
+[[text]] At the end of the environment turn, one player may destroy this card and put a card from their trash into their hand.\nAt the start of the environment turn, each player either has each of their targets regain 1 hp or puts a card from their trash on top of their deck. Then destroy this card.
+[[quote]]
+"Hey Harry," the shop owner called to the speedster, "I got in a box of those Norwegian fish-flavored chips you wanted." "You're the best, mister fleuter\!"
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Falling Debris
+[[quantity]] 1
+[[hp]] 5
+[[keywords]] challenge
+[[text]] Reduce damage dealt to this card by 1.\nAt the end of the environment turn, this card deals the five targets other than itself with the lowest HP 2 projectile damage each.
+[[quote]]
+Lucius' fight with his spectral foe had gotten out of hand. The creature thrashed about, tearing debris loose from any buildings it touched.
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] In the Shadow of Justice
+[[quantity]] 2
+[[hp]] 0
+[[keywords]] 
+[[text]] At the end of the environment turn, if there are no challenges in play, play the top card of the environment deck.\nWhen a challenge card is destroyed during the environment turn, one player may play a card. If they do, destroy this card.
+[[quote]]
+Justice was Halcyon's first hero and a symbol of what could be accomplished to all future generations. Today, many aspiring heroes flock to her statue for inspiration.
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Interview with Tasha Starr
+[[quantity]] 2
+[[hp]] 0
+[[keywords]] challenge
+[[text]] At the end of the environment turn, one player may discard all but one card from their hand. If they do, destroy this card.\nAt the start of the environment turn, each player discards two cards. Then destroy this card.
+[[quote]]
+With a studio overlooking Challenger Park, Tasha Starr is always on the hunt for new supers. Most think it's for her tv show, but they don't know her corporate sponsors.
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Jaycee
+[[quantity]] 1
+[[hp]] 4
+[[keywords]] mentor, barista
+[[text]] At the start of the environment turn, one hero may deal themselves 3 melee damage. If they take damage this way, they play an ongoing card.
+[[quote]]
+Named Halcyon's Best Barista by the Halcyon Herald, Jaycee spends her evenings improving her pastry cooking, researching history, and training the Grail Knight, Will Eddison.
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Lucius
+[[quantity]] 1
+[[hp]] 4
+[[keywords]] mentor, grail knight
+[[text]] The first time a villain target or a challenge target is destroyed each turn, one player may draw a card or discard a card. If that player discards a card, they may use a power.
+[[quote]]
+The retired Knight only takes up the sword in times of need, but is always around for the next generation of heroes to consult in matters both mystic and supernatural.
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Power Pony
+[[quantity]] 1
+[[hp]] 4
+[[keywords]] mentor, superfan
+[[text]] At the end of the environment turn, the hero with the lowest HP may deal a villain target 1 melee damage. If a target is destroyed this way, that hero regains 1 HP.
+[[quote]]
+"Thanks for the tips on handling Ego Trip, I'll relay them to link," Jason Quill said with a smile. "Can you also tell him to follow my twitter? And the rest of your team too\!"
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Public Nuisance
+[[quantity]] 2
+[[hp]] 0
+[[keywords]] challenge
+[[text]] At the end of the environment turn, a hero may have the villain target with the lowest HP deal them 4 projectile damage. If they take damage this way, destroy this card.\nAt the start of the environment turn, play the top card of the villain deck and then destroy this card.
+[[quote]]
+"How does he keep getting stronger?" Jason wondered aloud. "That's Ego Trip\!" a girl behind him shouted. "He gets more powerful the more people are paying attention to him."
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Small-time Thief
+[[quantity]] 1
+[[hp]] 6
+[[keywords]] challenge
+[[text]] At the end of the environment turn, this card deals the hero with the most cards in play 4 toxic damage. That hero may destroy one of their ongoing or equipment cards to prevent this damage.
+[[quote]]
+Kevin knew his fatigue-inducing powers wouldn't do squat against an actual superhero, so he took to robbing coffee shops and corner stores.
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Weekend Training
+[[quantity]] 1
+[[hp]] 0
+[[keywords]] 
+[[text]] At the end of environment turn, one player may search their deck for an ongoing card and put it into their hand. If they do, shuffle their deck and destroy this card.\nAt the start of the environment turn, each player draws a card or plays an ongoing card. Then destroy this card.
+[[quote]]
+As Armiger turned the corner, Jaycee checked the stopwatch. "3:40 isn't bad, but the rest of your team-" "Can you at least compare me to Alloy? She doesn't fly."
+[[artpos]] centered
+[[art]] images\h5-1.png
+[[footer]] Art by Mike Williams
+[[save]]

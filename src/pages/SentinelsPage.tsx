@@ -4,19 +4,14 @@ import { useParams } from "react-router-dom";
 import DefaultLayout from "../layouts/Default";
 import { notionRetrieve } from "../notion";
 
-import type { Setup, Card, Relationship } from "../../netlify/functions/notion-retrieve"
+import type { DeckData } from "../../netlify/functions/notion-retrieve"
+import SentinelsData from "../components/SentinelsData";
 
-interface NotionPageProps {
+interface SentinelsPageProps {
   children?: React.ReactNode;
 }
 
-interface DeckData {
-  setup: Setup[];
-  cards: Card[];
-  relationships: Relationship[];
-}
-
-export default function SentinelsPage(_props: NotionPageProps) {
+export default function SentinelsPage(_props: SentinelsPageProps) {
   const { id } = useParams();
   const [deckData, setDeckData] = useState<DeckData | null>(null)
 
@@ -29,9 +24,7 @@ export default function SentinelsPage(_props: NotionPageProps) {
   return (
     <>
       <DefaultLayout>
-        <h1 className="title">Page dump: {id}</h1>
-
-        <pre>{JSON.stringify(deckData, null, 2)}</pre>
+        {deckData ? <SentinelsData deckData={deckData} /> : <></>}
       </DefaultLayout>
     </>
   );

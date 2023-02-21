@@ -1,0 +1,424 @@
+﻿{
+    "name": "Charade",
+    "kind": "Hero",
+    "expansionIdentifier": "Menagerie",
+    "initialCardIdentifiers": [
+        "CharadeCharacter"
+    ],
+    "cards": [
+      {
+        "identifier": "CharadeCharacter",
+        "count": 1,
+        "title": "Charade",
+        "body": "Plans Within Plans",
+        "backgroundColor": "bd3a3d",
+        "foilBackgroundColor": "bd3a3d",
+        "hitpointsColor": "bd3a3d",
+        "character": true,
+        "powers": [
+          "Either put a card from your hand under this card or put a card from under this card into play."
+        ],
+        "icons": [
+          "HasPower",
+          "Manipulate",
+          "PlayCardNow"
+        ],
+        "hitpoints": 25,
+        "nemesisIdentifiers": [
+          "Menagerie.Charade"
+        ],
+        "incapacitatedAbilities": [
+          "One player draws a card.",
+          "Destroy an ongoing card.",
+          "Select an environment card. It deals one target 2 fire damage."
+        ],
+        "flippedIcons": [
+          "DrawCardNow",
+          "DestroyOngoing",
+          "DealDamageFire"
+        ],
+        "openingLines": {
+          "default": "Approaching target now, authorizing switch to live fire."
+        },
+        "complexity": 3
+      },
+      {
+        "identifier": "Betsy",
+        "count": 1,
+        "title": "Betsy",
+        "keywords": [
+          "equipment"
+        ],
+        "icons": [
+          "DealDamagePsychic",
+          "HasPower",
+          "DealDamageProjectile"
+        ],
+        "body": [
+          "When this card enters play, if it was not played from your hand, {Charade} deals one target 2 irreducible psychic damage."
+        ],
+        "powers": [
+          "{Charade} deals one target 3 projectile damage."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Alycia",
+            "text": "Betsy and I are going to introduce ourselves to our unwanted guests."
+          }
+        ],
+        "flavorReference": "Halcyon Nights One-shot"
+      },
+      {
+        "identifier": "DV64Scion",
+        "count": 3,
+        "title": "DV-64 Scion",
+        "keywords": [
+          "equipment"
+        ],
+        "icons": [
+          "DealDamageProjectile",
+          "HasPower"
+        ],
+        "body": [
+          "When this card enters play, if it was not played from your hand, {Charade} deals each non-hero target 1 projectile damage."
+        ],
+        "powers": [
+          "{Charade} deals up to two targets 2 projectile damage each."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Agent Parker",
+            "text": "The DV-64: our standard firearm.{BR}I'm sure you're familiar with it and will{BR}want to make your own modifications."
+          }
+        ],
+        "flavorReference": "Agent Parker, Menagerie Secret Origins #13"
+      },
+      {
+        "identifier": "EmptyTheMagazine",
+        "count": 2,
+        "title": "Empty the Magazine",
+        "keywords": [
+          "one-shot"
+        ],
+        "icons": [
+          "Discard",
+          "DealDamageProjectile",
+          "DrawCardNow"
+        ],
+        "body": [
+          "Discard any number of cards from under your character card.",
+          "{Charade} deals one target X projectile damage, where X is 3 plus the number of cards discarded this way.",
+          "Draw a card."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Agent Parker",
+            "text": "You [b]shot[/b] at me?!"
+          },
+          {
+            "identifier": "Charade",
+            "text": "I shouted 'down range' first."
+          }
+        ],
+        "flavorReference": "The Menagerie Annual #2"
+      },
+      {
+        "identifier": "ExplosiveSabotage",
+        "count": 3,
+        "title": "Explosive Sabotage",
+        "keywords": [
+          "one-shot"
+        ],
+        "icons": [
+          "DealDamageFire",
+          "DestroyEnvironment",
+          "DestroyOngoing"
+        ],
+        "body": [
+          "When this card enters play, if it was not played from your hand, the environment deals up to two targets 2 fire damage each.",
+          "Destroy an ongoing or environment card."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Clockwork Recon Drone",
+            "text": "Error -- unexpected explosive{BR}ordnance detected."
+          }
+        ],
+        "flavorReference": "Clockwork Recon Drone, The Menagerie #45"
+      },
+      {
+        "identifier": "GatherIntel",
+        "count": 3,
+        "title": "Gather Intel",
+        "keywords": [
+          "one-shot"
+        ],
+        "icons": [
+          "Manipulate",
+          "DrawCardNow"
+        ],
+        "body": [
+          "Put up to two cards from your hand under your character card.",
+          "Draw until you have three cards in hand."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Rex Tyran",
+            "text": "Alycia Chin? In [b]my[/b] building?!{BR}Wearing [b]my[/b] courier company's uniform?{BR}What do I pay you people for?!"
+          }
+        ],
+        "flavorReference": "Rex Tyran, Tyran: Corporate Ladder Limited Series"
+      },
+      {
+        "identifier": "GloriousBattle",
+        "count": 3,
+        "title": "Glorious Battle",
+        "keywords": [
+          "ongoing",
+          "limited"
+        ],
+        "icons": [
+          "UsePowerExtra"
+        ],
+        "body": [
+          "You may use an additional power during your power phase."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Grasscutter One",
+            "text": "You never knew when to quit,{BR}Alycia. Still trying to live up to the Master's ideals of glorious battle?"
+          }
+        ],
+        "flavorReference": "Grasscutter One, Halcyon Nights One-shot"
+      },
+      {
+        "identifier": "HelloHero",
+        "count": 3,
+        "title": "\"Hello, Hero\"",
+        "keywords": [
+          "one-shot"
+        ],
+        "icons": [
+          "DealDamagePsychic",
+          "DrawCardNow",
+          "PlayCardNow",
+          "UsePowerNow"
+        ],
+        "body": [
+          "Select another hero.",
+          "If you played this card from your hand, {Charade} deals that hero 2 irreducible psychic damage.",
+          "That hero's player draws a card then plays a card or uses a power."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Jason Quill",
+            "text": "Alycia suddenly appearing and{BR}harshly critiquing you before disappearing{BR}again just means she's warming up to you."
+          }
+        ],
+        "flavorReference": "Jason Quill, Menagerie Secret Origins #16"
+      },
+      {
+        "identifier": "HiddenCache",
+        "count": 3,
+        "title": "Hidden Cache",
+        "keywords": [
+          "one-shot"
+        ],
+        "icons": [
+          "PlayCardNow"
+        ],
+        "body": [
+          "Reveal cards from the top of your deck until two equipment cards are revealed.",
+          "Put one revealed equipment card either into play or under your character card, then discard the other revealed cards."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Recording",
+            "text": "Daughter, if you--"
+          },
+          {
+            "identifier": "Alycia",
+            "text": "How many more times must I hear{BR}this speech, father?"
+          }
+        ],
+        "flavorReference": "Heir of Chin One-shot"
+      },
+      {
+        "identifier": "Hovercycle",
+        "count": 2,
+        "title": "Hovercycle",
+        "keywords": [
+          "equipment",
+          "limited"
+        ],
+        "icons": [
+          "PlayCardNow",
+          "HasPower",
+          "DrawCardNow",
+          "DestroySelf"
+        ],
+        "body": [
+          "When this card is destroyed, put a card other than Hovercycle from under your character card into play."
+        ],
+        "powers": [
+          "{Charade} deals one target 2 melee damage. Draw a card.",
+          "{Charade} deals up to two targets 2 fire damage each. Destroy this card."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Agent Parker",
+            "text": "The tech teams recovered one of the{BR}Azure Empire forces' personal aircraft.{BR}Care to take it for a spin?"
+          }
+        ],
+        "flavorReference": "Agent Parker, Menagerie Secret Origins #12"
+      },
+      {
+        "identifier": "LegacyOfTerror",
+        "count": 4,
+        "title": "Legacy of Terror",
+        "keywords": [
+          "one-shot"
+        ],
+        "icons": [
+          "Manipulate",
+          "PlayCardNow",
+          "UsePowerNow"
+        ],
+        "body": [
+          "Put a card from your hand under your character card.",
+          "Play a card or use a power."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Summer Newman",
+            "text": "I'm worried about her. She{BR}made excuses, but I think all this stuff with her father has her on edge."
+          }
+        ],
+        "flavorReference": "Summer Newman, Heir of Chin One-shot"
+      },
+      {
+        "identifier": "RecklessEscalation",
+        "count": 3,
+        "title": "Reckless Escalation",
+        "keywords": [
+          "one-shot"
+        ],
+        "icons": [
+          "Discard",
+          "PlayCardNow",
+          "Manipulate"
+        ],
+        "body": [
+          "Discard a card from under your character card.",
+          "Put up to two card from under your character card into play or put up to two cards from your trash under your character card."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Agent Parker",
+            "text": "The [b]window[/b]?! I swear{BR}you've been pulling these stunts on{BR}purpose since you found out about my heart medication."
+          }
+        ],
+        "flavorReference": "Agent Parker, Halcyon Spotlight #3"
+      },
+      {
+        "identifier": "ShockAndAwe",
+        "count": 3,
+        "title": "Shock and Awe",
+        "keywords": [
+          "one-shot"
+        ],
+        "icons": [
+          "IncreaseDamageDealt",
+          "DealDamageLightning"
+        ],
+        "body": [
+          "Increase damage dealt by {Charade} by 1 until the end of the turn.",
+          "{Charade} deals one target 1 lightning damage."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Ego Trip",
+            "text": "Ha, another Division twerp?{BR}Think [b]you[/b] can stop me?!"
+          }
+        ],
+        "flavorReference": "Ego Trip, The Menagerie Annual #2"
+      },
+      {
+        "identifier": "StunBaton",
+        "count": 2,
+        "title": "Stun Baton",
+        "keywords": [
+          "equipment"
+        ],
+        "icons": [
+          "ReduceDamageTaken",
+          "HasPower",
+          "DealDamageLightning",
+          "ReduceDamageDealt"
+        ],
+        "body": [
+          "When this card enters play, if it was not played from your hand, reduce the next damage dealt to {Charade} by 2."
+        ],
+        "powers": [
+          "{Charade} deals one target 1 lightning damage. Reduce the next damage dealt by that target by 2."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Agent Parker",
+            "text": "Choosing non-lethal options? I'm surprised, Ms. Chin."
+          }
+        ],
+        "flavorReference": "Agent Parker, The Menagerie Secret Origins #13"
+      },
+      {
+        "identifier": "TargetingVisor",
+        "count": 2,
+        "title": "Targeting Visor",
+        "keywords": [
+          "equipment"
+        ],
+        "icons": [
+          "Manipulate",
+          "MakeDamageIrreducible"
+        ],
+        "body": [
+          "Play this card next to a non-hero target. Then if this card was not played from your hand, reveal the top card of that target's deck and replace or discard it.",
+          "Damage dealt by {Charade} to that target is irreducible."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Tango One",
+            "text": "Okay, let's try that again{BR}without your toys."
+          }
+        ],
+        "flavorReference": "Tango One, Gun Club Limited Series"
+      },
+      {
+        "identifier": "ThreeStepsAhead",
+        "count": 3,
+        "title": "Three Steps Ahead",
+        "keywords": [
+          "ongoing",
+          "limited"
+        ],
+        "icons": [
+          "GainHP",
+          "EndOfTurnAction",
+          "DrawCardNow"
+        ],
+        "body": [
+          "Whenever you put a card into play from anywhere other than your hand, {Charade} regains 1 hp.",
+          "At the end of your turn, if you put a card under your character card this turn, draw a card."
+        ],
+        "flavorQuotes": [
+          {
+            "identifier": "Agent Parker",
+            "text": "Alycia Chin, designation scion,{BR}daughter of terrorist Achilles chin.{BR}Turned herself in to Division 3, which I must assume is part of some scheme."
+          }
+        ],
+        "flavorReference": "Agent Parker, The Menagerie Secret Origins #12"
+      }
+    ],
+    "promoCards": [
+    ]
+}

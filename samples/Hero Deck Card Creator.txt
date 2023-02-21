@@ -1,0 +1,191 @@
+##version 107
+##suppress-narrator
+
+##hero
+[[name]] Charade
+[[hp]] 25
+[[powername]] Plans within plans
+[[power]] Either put a card from your hand under this card or put a card from under this card into play.
+[[art]] blank.png
+[[nemesis]] icons/charade_icon.png
+[[artscale]] centered
+[[topcolor]] ffffff
+[[btmcolor]] bd3a3d
+[[boxcolor]] bd3a3d
+[[footer]] Art by Mike Williams
+[[save]]
+
+##hero-incap
+[[art]] blank.png
+{ One player draws a card.
+{ Destroy an ongoing card.
+{ Select an environment card. It deals one target 2 fire damage.
+[[boxcolor]] bd3a3d
+[[footer]] Art by Mike Williams
+[[save]]
+
+
+##hero-deck
+[[name]] charade
+[[art]] images\h2-1.png
+[[footer]] Art by Mike Williams
+
+[[title]] Betsy
+[[quantity]] 1
+[[keywords]] equipment
+[[text]] When this card enters play, if it was not played from your hand, /Charade/ deals one target 2 irreducible psychic damage.\n!Power: !>/Charade/ deals one target 3 projectile damage.<
+[[quote]]
+Jason|"'Lycia, What are you doing\rwith Rusty's shotgun?"
+Alycia|"Betsy and I going to go introduce ourselves to our unwanted guests."
+@Halcyon Nights One-shot
+[[save]]
+
+[[title]] Gather Intel
+[[quantity]] 3
+[[keywords]] one-shot
+[[text]] Put up to two cards from your hand under your character card.\nDraw until you have three cards in hand.
+[[quote]]
+Rex Tyran|"Alycia Chin? In !my! building?\rWearing !my! courier company's uniform?\rWhat do I pay you people for?\!"
+@Tyran: Corporate Ladder Limited Series
+[[save]]
+
+[[title]] DV-64 Scion
+[[quantity]] 3
+[[keywords]] equipment
+[[text]] When this card enters play, if it was not played from your hand, /Charade/ deals each non-hero target 1 projectile damage.\n!Power: !>/Charade/ deals up to two targets 2 projectile damage each.<
+[[quote]]
+Agent Parker|"The DV-64: our standard sidearm. I'm sure you're familiar with it and will want to make your own modifications."
+@Menagerie Secret Origins #13
+[[save]]
+
+[[title]] Empty the Magazine
+[[quantity]] 2
+[[keywords]] one-shot
+[[text]] Discard any number of cards from under your character card.\n/Charade/ deals one target X projectile damage, where X is 3 plus the number of cards discarded this way.\nDraw a card.
+[[quote]]
+Agent Parker|"You !shot! at me?\!"
+Charade|"I shouted 'down range' first."
+@The Menagerie Annual #2
+[[artpos]] centered
+[[art]] images\h1-7.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Explosive Sabotage
+[[quantity]] 3
+[[keywords]] one-shot
+[[text]] When this card enters play, if it was not played from your hand, /Charade/ deals up to two targets 2 fire damage each.\nDestroy an ongoing or environment card.
+[[quote]]
+Clockwork Recon Drone|"Error -- unexpected explosive ordnance detected."
+@The Menagerie #45
+[[artpos]] centered
+[[art]] images\h1-7.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Glorious Battle
+[[quantity]] 3
+[[keywords]] ongoing, limited
+[[text]] You may use an additional power during your power phase.
+[[quote]]
+Grasscutter One|"You^cannot^win."
+Charade|"I don't !have! to win, I just have to keep !you! from winning for few more moments."
+@Halcyon Nights One-shot
+[[save]]
+
+[[title]] "Hello, hero"
+[[quantity]] 3
+[[keywords]] one-shot
+[[text]] Select another hero.\nIf you played this card from your hand, /Charade/ deals that hero 2 irreducible psychic damage.\nThat hero's player draws a card then plays a card or uses a power.
+[[quote]]
+Jason Quill|"Alycia suddenly appearing and harshly critiquing you before disappearing again just means she's warming up to you."
+@Menagerie Secret Origins #16
+[[artpos]] centered
+[[art]] images\h1-7.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Hidden Cache
+[[quantity]] 3
+[[keywords]] one-shot
+[[text]] Reveal cards from the top of your deck until you reveal 2 equipment cards. Put one of them either into play or under your character card.\nShuffle the rest of the revealed cards into your deck.
+[[quote]]
+Recording|"Daughter, if you are hearing this..."
+Alycia|"How many more times must I hear this speech, father?"
+@Heir of Chin One-shot
+[[save]]
+
+[[title]] Hovercycle
+[[quantity]] 2
+[[keywords]] equipment, limited
+[[text]] When this card is destroyed, put a card other than Hovercycle from under your character card into play.\n!Power: !>/Charade/ deals one target 2 melee damage. Draw a card.<\n!Power: !>/Charade/ deals up to two targets 2 fire damage each. Destroy this card.<
+[[quote]]
+Agent Parker|"The tech teams recovered one of the Azure Empire forces' personal aircraft. Care to take it for a spin?"
+@The Menagerie Secret Origins #12
+[[save]]
+
+[[title]] Legacy of Terror
+[[quantity]] 4
+[[keywords]] one-shot
+[[text]] Put a card from your hand under your character card.\nPlay a card or use a power.
+[[quote]]
+Summer Newman|"I'm worried about her. She made excuses, but she woke up in a panic last night. I think all this stuff with her father has her on edge."
+@Heir of Chin One-shot
+[[artpos]] centered
+[[art]] images\h1-12.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Reckless Escalation
+[[quantity]] 3
+[[keywords]] one-shot
+[[text]] Discard a card from under your character card.\nPut up to two cards from under your character card into play or put up to two cards from your trash under your character card.
+[[quote]]
+Agent Parker|"The !window!?\! I swear you've been pulling these stunts on purpose since you found out about my heart medication."
+@Halcyon Spotlight #3
+[[artpos]] centered
+[[art]] images\h1-12.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Shock and Awe
+[[quantity]] 3
+[[keywords]] one-shot
+[[text]] Increase damage dealt by /Charade/ by 1 until the end of the turn.\n/Charade/ deals one target 1 lightning damage.
+[[quote]]
+Ego Trip|"Ha, Another Division twerp? Think !you! can stop me?\!"
+@Menagerie Annual #2
+[[artpos]] centered
+[[art]] images\h1-12.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Stun Baton
+[[quantity]] 2
+[[keywords]] equipment
+[[text]] When this card enters play, if it was not played from your hand, reduce the next damage dealt to /Charade/ by 2.\n!Power: !>/Charade/ deals one target 1 lightning damage. Reduce the next damage dealt by that target by 2.<
+[[quote]]
+Agent Parker|"Choosing non-lethal options?\rI'm surprised, Ms. Chin."
+@The Menagerie Secret Origins #13
+[[save]]
+
+[[title]] Targeting Visor
+[[quantity]] 2
+[[keywords]] equipment
+[[text]] Play this card next to a non-hero target. Then if this card was not played from your hand, reveal the top card of that target's deck and replace or discard it.\nDamage dealt by /Charade/ to that target is irreducible.
+[[quote]]
+Tango One|"Okay, let's try that again without your toys."
+@Gun Club Limited Series
+[[artpos]] centered
+[[art]] images\h1-3.png
+[[footer]] Art by Mike Williams
+[[save]]
+
+[[title]] Three Steps Ahead
+[[quantity]] 3
+[[keywords]] ongoing, limited
+[[text]] Whenever one of your cards enters play from anywhere other than your hand, /Charade/ regains 1 hp.\nAt the end of your turn, if you put a card under your character card this turn, draw a card.
+[[quote]]
+Agent Parker|"Alycia Chin, designation scion, daughter of terrorist Achilles chin.\rTurned herself in to Division 3, which I must assume is part of some scheme."
+@The Menagerie Secret Origins #12
+[[save]]

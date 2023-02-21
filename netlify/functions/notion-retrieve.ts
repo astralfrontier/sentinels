@@ -6,29 +6,37 @@ interface RetrieveHandlerRequest {
   id: string;
 }
 
+export type RichText = string;
+
+export interface DeckData {
+  setup: Setup[];
+  cards: Card[];
+  relationships: Relationship[];
+}
+
 export interface Setup {
-  name: string;
-  hp: number;
+  name: RichText;
+  hp: number | null;
   tags: string[];
-  hero_power: string;
-  hero_incap: string;
-  villain_setup: string;
-  villain_effects: string;
+  hero_power: RichText;
+  hero_incap: RichText;
+  villain_setup: RichText;
+  villain_effects: RichText;
 }
 
 export interface Card {
-  name: string;
+  name: RichText;
   quantity: number;
   keywords: string[];
-  hp: number;
-  effects: string;
-  quote_text: string;
+  hp: number | null;
+  effects: RichText;
+  quote_text: RichText;
 }
 
 export interface Relationship {
-  name: string;
+  name: RichText;
   nemesis: boolean;
-  opening_line: string;
+  opening_line: RichText;
 }
 
 const notion = new Client({
@@ -44,7 +52,7 @@ function prop(data: any, name: string): any {
 
 // For right now, return the plain text
 // Later on we can return bold, etc. annotations
-function richtext(data: any): any {
+function richtext(data: any): RichText {
   return join("", pluck("plain_text")(data));
 }
 
@@ -111,7 +119,7 @@ async function fetchBlock(block_id: string): Promise<any> {
   let data: any = [];
 
   while (has_more) {
-    const response = await notion.blocks.children.list({
+    const response: any = await notion.blocks.children.list({
       block_id,
       start_cursor,
       page_size: 50,
@@ -130,7 +138,7 @@ async function fetchDatabase(database_id: string): Promise<any> {
   let data: any = [];
 
   while (has_more) {
-    const response = await notion.databases.query({
+    const response: any = await notion.databases.query({
       database_id,
       start_cursor,
       page_size: 50,

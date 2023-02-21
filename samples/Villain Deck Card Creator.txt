@@ -1,0 +1,206 @@
+##version 107
+##suppress-narrator
+
+##villain
+[[name]] Unmute
+[[art]] images\v2-0a.png
+[[artscale]] stretched
+[[footer]] art by mike Williams
+[[boxcolor]] 8ed5e1
+[[topcolor]] ffffff
+[[btmcolor]] 8ed5e1
+[[keywords]] villain
+[[hp]] 50
+[[nemesis]] icons\mercury_icon.png
+[[title]] Anti-Supers Iconoclast
+[[save]]
+
+##villain
+[[name]] Unmute
+[[art]] images\v2-0b.png
+[[artscale]] stretched
+[[footer]] art by mike williams
+[[boxcolor]] 8ed5e1
+[[topcolor]] ffffff
+[[btmcolor]] 8ed5e1
+[[keywords]] villain
+[[hp]] 30
+[[nemesis]] icons\mercury_icon.png
+[[title]] Amplifier Overdrive
+[[save]]
+
+##villain-setup
+[[name]] Unmute
+[[art]] blank.png
+[[artscale]] stretched
+[[footer]] art by mike williams
+[[boxcolor]] 8ed5e1
+[[topcolor]] ffffff
+[[btmcolor]] 8ed5e1
+[[title]] Anti-Supers Iconoclast
+[[setup]]  At the start of the game, put /Unmute/'s villain cards into play, "Anti-Supers Iconoclast" side up.\nReveal cards from the villain deck until Video Drone Swarm and one nemesis are revealed and put both into play. Shuffle the other revealed cards back into the villain deck.
+[[gameplay]] /Unmute/ is indestructible.\nAt the start of the villain turn, if /Unmute/ has 0 or fewer HP, destroy each other villain card then flip her. For each card destroyed this way, /Unmute/ deals the hero target with the highest HP [H] lightning damage.\nAt the end of the villain turn, /Unmute/ deals the [H] minus two hero targets with the highest HP 3 melee damage each.
+[[advanced]] At the start of the game, put both Nemesis cards into play.
+[[save]]
+
+##villain-setup
+[[name]] Unmute
+[[art]] blank.png
+[[artscale]] stretched
+[[footer]] art by mike williams
+[[boxcolor]] 8ed5e1
+[[topcolor]] ffffff
+[[btmcolor]] 8ed5e1
+[[title]] Amplifier Overdrive
+[[gameplay]] When flipped to this side, restore /Unmute/ to 30 HP then remove all non-Amp cards from the villain trash and deck from the game. Shuffle the villain trash into its deck.\nWhenever a villain card would be put into the trash, instead put it under this card.\nIncrease damage dealt by /Unmute/ by 1 for each card under this card.\nAt the start of the villain turn, play the top card of the villain deck. Then, if there are no cards in the villain deck, /Unmute/'s cybernetics have overcharged and destroyed the area. !Game over.!
+[[advanced]] When flipped to this side, search the villain deck and trash for both copies of Vicious Call Out and Shattering Cry and remove them from the game.
+[[save]]
+
+
+##villain-deck
+[[name]] Unmute
+[[artpos]] centered
+[[art]] blank.png
+[[footer]] Art by Mike Williams
+
+[[title]] Ego Trip
+[[quantity]] 1
+[[keywords]] nemesis
+[[hp]] *
+[[text]] [=*] on this card = [H] times 3.\nThe first time /Unmute/ would be dealt damage each turn, redirect it to this card.\nThe first time this card is dealt damage by each other target each turn, it deals the source of that damage 3 melee damage.
+[[quote]]
+Agent 1337|"Chuckie Lovhoug. He's got none of the usual markers for mutation or gene therapy, so we have the magic crew coming in to look at him."
+@Menagerie Annual #2
+[[save]]
+
+[[title]] Fractal
+[[quantity]] 1
+[[keywords]] nemesis
+[[hp]] *
+[[text]] [=*] on this card = [H] times 2.\nReduce damage dealt to Fractal to 1.\nAt the end of the villain turn, this card deals the [H] minus two hero targets with the lowest hp 1 irreducible radiant damage each. Until the start of the next villain turn, reduce damage dealt by targets dealt damage this way by 1.
+[[quote]]
+Agent 1337|"Roxy Barrett, Becky's BFF. Powers started out as tech, but whatever they do has started to physically change her."
+@Menagerie Annual #2
+[[save]]
+
+[[title]] Rabid Fans
+[[quantity]] 3
+[[keywords]] minion
+[[hp]] 6
+[[text]] Reduce damage dealt to other villain targets by 1.
+[[quote]]
+Bystander|"We are here because\nBecky Strong has been !wrongly! imprisioned and !denied! the medical support she needs for her disabilities."
+@Menagerie Annual #2
+[[save]]
+
+[[title]] Video Drone Swarm
+[[quantity]] 1
+[[keywords]] device
+[[hp]] 8
+[[text]] Play this card next to the hero with the highest HP.\nWhenever the hero next to this card uses a power, they deal themselves 2 irreducible psychic damage.\nAt the end of that hero's turn, move this card next to the hero with the highest HP.
+[[quote]]
+Unmute|"You thought you could sit down and give your pre-written spiel to the public? Let's see what they think after they see your actions in full HD detail."
+@The Menagerie #1
+[[save]]
+
+[[title]] Tyran Corp Upgrades
+[[quantity]] 2
+[[keywords]] device
+[[hp]] 7
+[[text]] At the end of the villain turn, if there is a card under this card, put it into play. Otherwise, put the top most Amp card in the villain trash into play.\nAfter a card has been played this way, move it under this card.
+[[quote]]
+Agent 1337|"Becky Strong. Has had a lot of cybernetic work done to her body, and not the kind someone makes in their backyard, so someone's bankrolling her."
+@Menagerie Annual #2
+[[save]]
+
+[[title]] "Don't Forget About Ego Trip\!"
+[[quantity]] 1
+[[keywords]] one-shot
+[[hp]] 0
+[[text]] If /Ego Trip/ is in play, restore him to full HP, then each hero target deals him 1 melee damage.\nOtherwise, search the villain deck and trash to /Ego Trip/ and put him into play. If you searched the villain deck, shuffle it.
+[[quote]]
+Ego Trip|"Hey losers\!\rI heard you were trying to have fun without me? !Too bad!\!"
+@The Menagerie #26
+[[save]]
+
+[[title]] Sound and Vision
+[[quantity]] 1
+[[keywords]] one-shot
+[[text]] If /Fractal/ is in play, the next time /Unmute/ deals a hero target damage, /Fractal/ deals that same target that same amount of radiant damage and each villain target regains [H] minus 2 HP.\nOtherwise, search the villain deck and trash for /Fractal/ and put her into play. If you searched the villain deck, shuffle it.
+[[quote]]
+Mercury|"Ugh, !Of course! the fanboys made up a ship name for Becky and Roxy..."
+@Menagerie Annual #2
+[[save]]
+
+[[title]] A Gift from Our Sponsors
+[[quantity]] 2
+[[keywords]] one-shot
+[[text]] /Unmute/ and each villain device regains [H] HP.\nReveal cards from the top of the villain deck until a device is revealed and put it into play, then discard the other revealed cards.
+[[quote]]
+Annika de Groot|"The latest from Tyran's\n!HTT department!. Should work wonders with your existing modifications with only !minor! side effects."
+@Menagerie Annual #2
+[[save]]
+
+[[title]] Devastating Harmonics
+[[quantity]] 2
+[[keywords]] one-shot, amp
+[[text]] /Unmute/ deals the two hero targets with the highest hp [H] sonic damage each.\nUntil the end of the next villain turn, increase damage dealt to targets dealt damage this way by 1.
+[[quote]]
+Hardboil|"Ugh, this noise is\r!scrambling! my brain."
+@Halcyon Spotlight #8
+[[save]]
+
+[[title]] "I Know Your Tricks!"
+[[quantity]] 2
+[[keywords]] ongoing
+[[text]] When a hero target would deal a villain target 3 or more damage at once, prevent that damage and /Unmute/ deals the source of that damage [H]^-^1 melee damage.\nThen destroy this card.
+[[quote]]
+Mercury|"!OOF\!!"
+@The Menagerie #1
+[[save]]
+
+[[title]] Echo Chamber
+[[quantity]] 2
+[[keywords]] one-shot, amp
+[[text]] /Unmute/ deals each other target 2 sonic damage.\nWhenever a target is destroyed this way, /Unmute/ deals the hero target with the highest hp 2 sonic damage.
+[[quote]]
+Ghost Girl|"That is a very unladylike noise."
+@The Menagerie #2
+[[save]]
+
+[[title]] Overclocked Cybernetics
+[[quantity]] 2
+[[keywords]] ongoing
+[[text]] At the start of the villain turn, /Unmute/ deals each non-villain target 4 sonic damage. Then destroy this card.\nEach hero gains the following power:\n!Power: !>/Unmute/ deals this hero [H]^+^1 lightning damage. Destroy Overclocked Cybernetics.
+[[quote]]
+Unmute|"Dangerous? As if. This is just the sort of !power! I need."
+@Menagerie Annual #2
+[[save]]
+
+[[title]] Piercing the Conspiracy
+[[quantity]] 1
+[[keywords]] ongoing
+[[text]] When this card enters play, play the top card of the villain deck.\nDamage dealt to hero targets is irreducible.
+[[quote]]
+Unmute|"Dozens of criminals die in mysterious !vampire-like! slayings and then the Granwall Guardians get a new !vampire! member? !Connect the dots!, people\!"
+@New Granwall Guardians #760
+[[save]]
+
+[[title]] Shattering Cry
+[[quantity]] 2
+[[keywords]] one-shot, amp
+[[text]] Each player destroys one of their equipment or ongoing cards.\n/Unmute/ deals each hero target from a deck that did not destroy a card this way 3 sonic damage.
+[[quote]]
+Pnuema|"What's wrong?"
+Jason Quill|"Can't... keep the\nnanites together..."
+@The Menagerie #1
+[[save]]
+
+[[title]] Vicious Call Out
+[[quantity]] 2
+[[keywords]] one-shot, amp
+[[text]] /Unmute/ deals the hero target with the highest HP [H] minus one sonic damage.\nThat target's player may discard two cards. If two cards are not discarded this way, /Unmute/ deals that same hero target [H] psychic damage.
+[[quote]]
+Unmute|"So-called superheroes who fight the downtrodden and disenfranchised. Not for justice, but fleeting fame and glory."
+@the Menagerie #1
+[[save]]

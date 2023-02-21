@@ -33,6 +33,9 @@ function AppNavbar() {
           <NavLink className={activeNavbarItem} to={"/"} onClick={() => setIsActive(false)}>
             Search
           </NavLink>
+          <NavLink className={activeNavbarItem} to={"/test"} onClick={() => setIsActive(false)}>
+            Test Data
+          </NavLink>
         </div>
       </div>
     </nav>

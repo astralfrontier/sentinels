@@ -1,0 +1,455 @@
+{
+  "name": "Unmute",
+  "kind": "Villain",
+  "expansionIdentifier": "Menagerie",
+  "initialCardIdentifiers": [
+    "UnmuteCharacter"
+  ],
+  "cards": [
+    {
+      "identifier": "UnmuteCharacter",
+      "count": 1,
+      "title": "Unmute",
+      "keywords": [
+        "villain"
+      ],
+      "body": "Anti-Supers Iconoclast",
+      "backgroundColor": "8ed5e1",
+      "foilBackgroundColor": "8ed5e1",
+      "character": true,
+      "hitpoints": 50,
+      "nemesisIdentifiers": [
+        "Menagerie.Mercury"
+      ],
+      "setup": [
+        "At the start of the game, {Unmute} enters play 'Anti-Supers Iconoclast' side up.",
+        "Reveal cards from the villain deck until Video Drone Swarm and one nemesis are revealed and put both into play. Shuffle the other revealed cards back into the villain deck."
+      ],
+      "gameplay": [
+        "{Unmute} is indestructible.",
+        "At the start of the villain turn, if {Unmute} has 0 or fewer HP, destroy each other villain card then flip her. For each card destroyed this way, {Unmute} deals the hero target with the highest HP {H} lightning damage.",
+        "At the end of the villain turn, {Unmute} deals the {H - 2} hero targets with the highest HP 3 melee damage each."
+      ],
+      "advanced": "At the start of the game, put both Nemesis cards into play.",
+      "icons": [
+        "Indestructible",
+        "StartAndEndOfTurnAction",
+        "DealDamageMelee"
+      ],
+      "flippedHitpoints": 30,
+      "flippedBody": "Amplifier Overdrive",
+      "flippedGameplay": [
+        "When flipped to this side, restore {Unmute} to 30 HP then remove all non-Amp cards from the villain trash and deck from the game. Shuffle the villain trash into its deck.",
+        "Whenever a villain card would be put into the trash, instead put it under this card.",
+        "Increase damage dealt by {Unmute} by 1 for each card under this card.",
+        "At the start of the villain turn, play the top card of the villain deck. Then, if there are no cards in the villain deck, {Unmute}'s cybernetics have overcharged and destroyed the area. [b]Game over.[/b]"
+      ],
+      "flippedAdvanced": "When flipped to this side, search the villain deck and trash for both copies of Vicious Call Out and Shattering Cry and remove them from the game.",
+      "flippedIcons": [
+        "IncreaseDamageDealt",
+        "StartOfTurnAction",
+        "PlayCardNow",
+        "LoseTheGame"
+      ],
+      "difficulty": 2,
+      "challengeTitle": "Out of Time",
+      "challengeText": "Before {Unmute} flips to her second side, search her deck and trash for all Amp cards other than Echo Chamber and put them under her character card.",
+
+      "openingLines": {
+        "default": "What do we have here? A new batch of so-called heroes ready to be exposed as frauds?",
+        "SpookyGhostwriter.SilhouetteCharacter": "Round two, vampire queen!",
+        "SilhouetteInkblotCharacter": "Internet video is going to kill this cartoon star.",
+        "SpookyGhostwriter.GoldDragonHumanCharacter": "Oh look, it's the big gold buffoon. Don't you have a book signing or something to be at?",
+        "GoldDragonInkblotHumanCharacter": "Internet video is going to kill this cartoon star.",
+        "TsukikoInkblotCharacter": "Internet video is going to kill this cartoon star.",
+        "Angille.SpeedrunnerCharacter": "Ugh, gamers. You people are the worst part of social media.",
+        "GunClubSpeedrunnerCharacter": "Ugh, gamers. You people are the worst part of social media.",
+        "JpJw.DinoFancie.BonnieCharacter": "dAww, I freaking love dinosaurs.",
+        "ChristmasBonnieCharacter": "dAww, I freaking love dinosaurs.",
+        "CaseFiles.CharlieCharacter": "Oh cool, a real alien. My views are going to go through the roof during this fight!",
+        "RooksGambitCharlieCharacter": "Oh cool, a real alien. My views are going to go through the roof during this fight!",
+        "MoondancerCharlieCharacter": "Oh cool, a real alien. My views are going to go through the roof during this fight!",
+        "BartKFSentinels.TheGoalieCharacter": "The soccer park is down the road, little girl. Get lost.",
+        "BartKFSentinels.TheGoalieOnIceCharacter": "Cute hockey pads, little girl.",
+        "TheGoalieOnIceCharacter": "Cute hockey pads, little girl."
+      }
+    },
+    {
+      "identifier": "AGiftFromOurSponsors",
+      "count": 2,
+      "title": "A Gift from Our Sponsors",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "GainHP",
+        "PlayCardNow"
+      ],
+      "body": [
+        "{Unmute} and each villain device regains {H} HP.",
+        "Reveal cards from the top of the villain deck until a device is revealed and put it into play, then discard the other revealed cards."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Annika de Groot",
+          "text": "The latest from Tyran's{BR}[b]HTT department[/b]. Should work with your existing tech with only [b]minor[/b] side effects."
+        }
+      ],
+      "flavorReference": "Annika de Groot, Menagerie Annual #2"
+    },
+    {
+      "identifier": "DevastatingHarmonics",
+      "count": 2,
+      "title": "Devastating Harmonics",
+      "keywords": [
+        "one-shot",
+        "amp"
+      ],
+      "icons": [
+        "DealDamageSonic",
+        "IncreaseDamageTaken"
+      ],
+      "body": [
+        "{Unmute} deals the two hero targets with the highest hp {H} sonic damage each.",
+        "Until the end of the next villain turn, increase damage dealt to targets dealt damage this way by 1."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Hardboil",
+          "text": "Ugh, this noise is{BR}[b]scrambling[/b] my brain."
+        }
+      ],
+      "flavorReference": "Hardboil, Halcyon Spotlight #8"
+    },
+    {
+      "identifier": "DontForgetAboutEgoTrip",
+      "count": 1,
+      "title": "'Don't Forget About Ego Trip!'",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "GainHP",
+        "DealDamageMelee",
+        "Search"
+      ],
+      "body": [
+        "If [i]Ego Trip[/i] is in play, restore him to full HP, then each hero target deals him 1 melee damage.",
+        "Otherwise, search the villain deck and trash for [i]Ego Trip[/i] and put him into play. If you searched the villain deck, shuffle it."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ego Trip",
+          "text": "Hey losers!{BR}I heard you were trying to have{BR}fun without me? [b]Too bad![/b]"
+        }
+      ],
+      "flavorReference": "Ego Trip, The Menagerie #26"
+    },
+    {
+      "identifier": "EchoChamber",
+      "count": 2,
+      "title": "Echo Chamber",
+      "keywords": [
+        "one-shot",
+        "amp"
+      ],
+      "icons": [
+        "DealDamageSonic"
+      ],
+      "body": [
+        "{Unmute} deals each other target 2 sonic damage.",
+        "Whenever a target is destroyed this way, {Unmute} deals the hero target with the highest hp 2 sonic damage."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ghost Girl",
+          "text": "That is a very unladylike noise."
+        }
+      ],
+      "flavorReference": "Ghost Girl, The Menagerie #2"
+    },
+    {
+      "identifier": "EgoTrip",
+      "count": 1,
+      "title": "Ego Trip",
+      "keywords": [
+        "nemesis"
+      ],
+      "nemesisIdentifiers": [
+        "Menagerie.Radiance"
+      ],
+      "icons": [
+        "CounterDamage",
+        "RedirectDamage",
+        "DealDamageMelee"
+      ],
+      "body": [
+        "The maximum HP of this card is {H * 3}.",
+        "The first time {Unmute} would be dealt damage each turn, redirect it to this card.",
+        "The first time this card is dealt damage by each other target each turn, it deals the source of that damage 3 melee damage."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Agent 1337",
+          "text": "Chuckie Lovhoug. He's got none{BR}of the usual markers for gene therapy, so the magic crew coming in to look at him."
+        }
+      ],
+      "flavorReference": "Agent 1337, The Menagerie Annual #2",
+      "hitpoints": 12,
+      "hitpointsText": "*"
+    },
+    {
+      "identifier": "Fractal",
+      "count": 1,
+      "title": "Fractal",
+      "keywords": [
+        "nemesis"
+      ],
+      "nemesisIdentifiers": [
+        "Menagerie.Concord"
+      ],
+      "icons": [
+        "ReduceDamageTaken",
+        "EndOfTurnAction",
+        "DealDamageRadiant",
+        "ReduceDamageDealt"
+      ],
+      "body": [
+        "The maximum HP of this card is {H * 2}.",
+        "Reduce damage dealt to {Fractal} to 1.",
+        "At the end of the villain turn, this card deals the {H - 2} hero targets with the lowest hp 1 irreducible radiant damage each. Until the start of the next villain turn, reduce damage dealt by targets dealt damage this way by 1."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Agent 1337",
+          "text": "Roxy Barrett, Becky's BFF.{BR}Powers started out as tech, but they have started to physically change her."
+        }
+      ],
+      "flavorReference": "Agent 1337, Menagerie Annual #2",
+      "hitpoints": 8,
+      "hitpointsText": "*"
+    },
+    {
+      "identifier": "IKnowYourTricks",
+      "count": 2,
+      "title": "'I Know Your Tricks!'",
+      "keywords": [
+        "ongoing"
+      ],
+      "icons": [
+        "CancelledDamageRed",
+        "DealDamageMelee",
+        "DestroySelf"
+      ],
+      "body": [
+        "When a hero target would deal a villain target 3 or more damage at once, prevent that damage and {Unmute} deals the source of that damage {H - 1} melee damage.",
+        "Then destroy this card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Mercury",
+          "text": "[b]OOF![/b]"
+        }
+      ],
+      "flavorReference": "Mercury, The Menagerie #1"
+    },
+    {
+      "identifier": "OverclockedCybernetics",
+      "count": 2,
+      "title": "Overclocked Cybernetics",
+      "keywords": [
+        "ongoing"
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "DealDamageSonic",
+        "HasPower",
+        "DealDamageLightning"
+      ],
+      "body": [
+        "At the start of the villain turn, {Unmute} deals each non-villain target 4 sonic damage. Then destroy this card.",
+        "Each hero gains the following power:",
+        "[b]Power:[/b] {Unmute} deals this hero {H + 1} lightning damage. Destroy Overclocked Cybernetics."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Unmute",
+          "text": "Dangerous? As if.{BR}This is just the sort of [b]power[/b] I need."
+        }
+      ],
+      "flavorReference": "Unmute, The Menagerie Annual #2"
+    },
+    {
+      "identifier": "PiercingTheConspiracy",
+      "count": 1,
+      "title": "Piercing the Conspiracy",
+      "keywords": [
+        "ongoing"
+      ],
+      "icons": [
+        "PlayCardNow",
+        "MakeDamageIrreducible"
+      ],
+      "body": [
+        "When this card enters play, play the top card of the villain deck.",
+        "Damage dealt to hero targets is irreducible."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Unmute",
+          "text": "First there are mysterious [b]vampire-ish[/b]{BR}slayings and then the Guardians get a new [b]vampire[/b] member? [b]Connect the dots[/b]!"
+        }
+      ],
+      "flavorReference": "Unmute, New Granwall Guardians #760"
+    },
+    {
+      "identifier": "RabidFans",
+      "count": 3,
+      "title": "Rabid Fans",
+      "keywords": [
+        "minion"
+      ],
+      "icons": [
+        "ReduceDamageTaken"
+      ],
+      "body": [
+        "Reduce damage dealt to other villain targets by 1."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Bystander",
+          "text": "We are here because Becky has{BR}been [b]wrongly[/b] imprisoned and [b]denied[/b] the support she needs for her disabilities."
+        }
+      ],
+      "flavorReference": "Bystander, The Menagerie Annual #2",
+      "hitpoints": 6
+    },
+    {
+      "identifier": "ShatteringCry",
+      "count": 2,
+      "title": "Shattering Cry",
+      "keywords": [
+        "one-shot",
+        "amp"
+      ],
+      "icons": [
+        "DestroyEquipment",
+        "DestroyOngoing",
+        "DealDamageSonic"
+      ],
+      "body": [
+        "Each player destroys one of their equipment or ongoing cards.",
+        "{Unmute} deals each hero target from a deck that did not destroy a card this way 3 sonic damage."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Pnuema",
+          "text": "What's wrong?"
+        },
+        {
+          "identifier": "Jason Quill",
+          "text": "Can't... keep the nanites together..."
+        }
+      ],
+      "flavorReference": "The Menagerie #1"
+    },
+    {
+      "identifier": "SoundAndVision",
+      "count": 1,
+      "title": "Sound and Vision",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "DealDamageRadiant",
+        "GainHP",
+        "Search"
+      ],
+      "body": [
+        "If {Fractal} is in play, the next time {Unmute} deals a hero target damage, {Fractal} deals that same target that same amount of radiant damage and each villain target regains {H - 2} HP.",
+        "Otherwise, search the villain deck and trash for {Fractal} and put her into play. If you searched the villain deck, shuffle it."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Mercury",
+          "text": "Ugh, [b]Of course[/b] the fanboys{BR}made up a ship name for Becky and Roxy..."
+        }
+      ],
+      "flavorReference": "Mercury, Menagerie Annual #2"
+    },
+    {
+      "identifier": "TyranCorpUpgrades",
+      "count": 2,
+      "title": "Tyran Corp Upgrades",
+      "keywords": [
+        "device"
+      ],
+      "icons": [
+        "EndOfTurnAction",
+        "PlayCardNow"
+      ],
+      "body": [
+        "At the end of the villain turn, if there is a card under this card, put it into play. Otherwise, put the top most Amp card in the villain trash into play.",
+        "After a card has been played this way, move it under this card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Agent 1337",
+          "text": "Becky Strong. Has had a lot of{BR}cybernetic work done to her body, and not the kind some newbie super genius makes."
+        }
+      ],
+      "flavorReference": "Agent 1337, Menagerie Annual #2",
+      "hitpoints": 7
+    },
+    {
+      "identifier": "ViciousCallOut",
+      "count": 2,
+      "title": "Vicious Call Out",
+      "keywords": [
+        "one-shot",
+        "amp"
+      ],
+      "icons": [
+        "DealDamageSonic",
+        "Discard",
+        "DealDamagePsychic"
+      ],
+      "body": [
+        "{Unmute} deals the hero target with the highest HP {H - 1} sonic damage.",
+        "That target's player may discard two cards. If two cards are not discarded this way, {Unmute} deals that same hero target {H} psychic damage."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Unmute",
+          "text": "So-called superheroes who fight{BR}the downtrodden and disenfranchised. Not for justice, but fleeting fame and glory."
+        }
+      ],
+      "flavorReference": "Unmute, The Menagerie #1"
+    },
+    {
+      "identifier": "VideoDroneSwarm",
+      "count": 1,
+      "title": "Video Drone Swarm",
+      "keywords": [
+        "device"
+      ],
+      "icons": [
+        "DealDamagePsychic",
+        "EndOfTurnAction"
+      ],
+      "body": [
+        "Play this card next to the hero with the highest HP.",
+        "Whenever the hero next to this card uses a power, they deal themselves 2 irreducible psychic damage.",
+        "At the end of that hero's turn, move this card next to the hero with the highest HP."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Unmute",
+          "text": "Let's see what the public thinks{BR}about you after they see your actions in full HD detail."
+        }
+      ],
+      "flavorReference": "Unmute, The Menagerie #1",
+      "hitpoints": 8
+    }
+  ]
+}

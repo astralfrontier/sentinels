@@ -1,0 +1,213 @@
+{
+  "name": "Challenger Park",
+  "kind": "Environment",
+  "expansionIdentifier": "Menagerie",
+  "backgroundColor": "6bbe6b",
+  "difficulty": 2,
+  "shortName": "ChallengerPark",
+
+  "cards": [
+    {
+      "identifier": "CommunityService",
+      "count": 2,
+      "title": "Community Service",
+      "keywords": [
+        "challenge"
+      ],
+      "icons": [
+        "StartAndEndOfTurnAction",
+        "GainHP",
+        "DestroyOngoing"
+      ],
+      "body": [
+        "At the end of the environment turn, one player may destroy one of their ongoing cards. If they do, destroy this card.",
+        "At the start of the environment turn, each villain target regains 3 HP, then destroy this card."
+      ],
+      "flavorText": "Park clean-up sucked, but Becky still{BR}took any opportunity to get out of her{BR}cell she could. And if she got time off{BR}for good behavior, all the better."
+
+    },
+    {
+      "identifier": "CornerStoreSnackRun",
+      "count": 1,
+      "title": "Corner Store Snack Run",
+      "icons": [
+        "StartAndEndOfTurnAction",
+        "GainHP",
+        "Manipulate"
+      ],
+      "body": [
+        "At the end of the environment turn, one player may destroy this card and put a card from their trash into their hand.",
+        "At the start of the environment turn, each player either has each of their targets regain 1 hp or puts a card from their trash on top of their deck. Then destroy this card."
+      ],
+      "flavorText": "“Hey Harry,” the shop owner called to the{BR}speedster, “I got in a box of those{BR}Norwegian fish-flavored chips you{BR}wanted.” “You're the best, Mister Fleuter!”"
+    },
+    {
+      "identifier": "FallingDebris",
+      "count": 1,
+      "title": "Falling Debris",
+      "hitpoints": 5,
+      "keywords": [
+        "challenge"
+      ],
+      "icons": [
+        "ReduceDamageTaken",
+        "EndOfTurnAction",
+        "DealDamageProjectile"
+      ],
+      "body": [
+        "Reduce damage dealt to this card by 1.",
+        "At the end of the environment turn, this card deals the five targets other than itself with the lowest HP 2 projectile damage each."
+      ],
+      "flavorText": "Lucius' fight with his spectral foe had{BR}gotten out of hand. The creature{BR}thrashed about, tearing debris loose{BR}from any buildings it touched."
+    },
+    {
+      "identifier": "InTheShadowOfJustice",
+      "count": 2,
+      "title": "In the Shadow of Justice",
+      "icons": [
+        "EndOfTurnAction",
+        "PlayCardNow",
+        "DestroySelf"
+      ],
+      "body": [
+        "At the end of the environment turn, if there are no challenges in play, play the top card of the environment deck.",
+        "When a challenge card is destroyed during the environment turn, one player may play a card. If they do, destroy this card."
+      ],
+      "flavorText": "Justice was Halcyon's first hero and a{BR}symbol of what could be accomplished to{BR}all future generations. Today, many aspiring{BR}heroes flock to her statue for inspiration."
+
+    },
+    {
+      "identifier": "InterviewWithTashaStarr",
+      "count": 2,
+      "title": "Interview with Tasha Starr",
+      "keywords": [
+        "challenge"
+      ],
+      "icons": [
+        "StartAndEndOfTurnAction",
+        "Discard",
+        "DestroySelf"
+      ],
+      "body": [
+        "At the end of the environment turn, one player may discard all but one card from their hand. If they do, destroy this card.",
+        "At the start of the environment turn, each player discards two cards. Then destroy this card."
+      ],
+      "flavorText": "With a studio overlooking Challenger Park,{BR}Tasha Starr is always on the hunt for new{BR}supers. Most think it's for her tv show, but{BR}they don't know her corporate sponsors."
+
+    },
+    {
+      "identifier": "Jaycee",
+      "count": 1,
+      "title": "Jaycee",
+      "hitpoints": 4,
+      "keywords": [
+        "mentor",
+        "barista"
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "DealDamageMelee",
+        "PlayCardNow"
+      ],
+      "body": [
+        "At the start of the environment turn, one hero may deal themselves 3 melee damage. If they take damage this way, they play an ongoing card."
+      ],
+      "flavorText": "Named Halcyon's Best Barista by the Halcyon{BR}Herald, Jaycee spends her evenings improving{BR}her pastry cooking, researching history, and{BR}training the Grail Knight, Will Eddison."
+
+    },
+    {
+      "identifier": "Lucius",
+      "count": 1,
+      "title": "Lucius",
+      "hitpoints": 4,
+      "keywords": [
+        "mentor",
+        "grail knight"
+      ],
+      "icons": [
+        "DrawCardNow",
+        "Discard",
+        "UsePowerNow"
+      ],
+      "body": [
+        "The first time a villain target or a challenge target is destroyed each turn, one player may draw a card or discard a card. If that player discards a card, they may use a power."
+      ],
+      "flavorText": "The retired Knight only takes up the sword{BR}in times of need, but is always around for{BR}the next generation of heroes to consult in{BR}matters both mystic and supernatural."
+
+    },
+    {
+      "identifier": "PowerPony",
+      "count": 1,
+      "title": "Power Pony",
+      "hitpoints": 4,
+      "keywords": [
+        "mentor",
+        "superfan"
+      ],
+      "icons": [
+        "EndOfTurnAction",
+        "DealDamageMelee",
+        "GainHP"
+      ],
+      "body": [
+        "At the end of the environment turn, the hero with the lowest HP may deal a villain target 1 melee damage. If a target is destroyed this way, that hero regains 1 HP."
+      ],
+      "flavorText": "“Thanks for the tips on handling Ego Trip, I'll{BR}relay them to Link,” Jason Quill said with a{BR}smile. “Can you also tell him to follow my{BR}twitter? And the rest of your team too!”"
+
+    },
+    {
+      "identifier": "PublicNuisance",
+      "count": 2,
+      "title": "Public Nuisance",
+      "keywords": [
+        "challenge"
+      ],
+      "icons": [
+        "StartAndEndOfTurnAction",
+        "DealDamageProjectile",
+        "PlayCardNow",
+        "DestroySelf"
+      ],
+      "body": [
+        "At the end of the environment turn, a hero may have the villain target with the lowest HP deal them 4 projectile damage. If they take damage this way, destroy this card.",
+        "At the start of the environment turn, play the top card of the villain deck and then destroy this card."
+      ],
+      "flavorText": "“How does he keep getting stronger?” Jason{BR}wondered aloud. “That's Ego Trip!” a girl{BR}behind him shouted. “He gets more powerful{BR}the more people are paying attention to him.”"
+
+    },
+    {
+      "identifier": "SmallTimeThief",
+      "count": 1,
+      "title": "Small-time Thief",
+      "hitpoints": 6,
+      "keywords": [
+        "challenge"
+      ],
+      "icons": [
+        "EndOfTurnAction",
+        "DealDamageToxic",
+        "DestroyHero"
+      ],
+      "body": [
+        "At the end of the environment turn, this card deals the hero with the most cards in play 4 toxic damage. That hero may destroy one of their ongoing or equipment cards to prevent this damage."
+      ],
+      "flavorText": "Kevin knew his fatigue-inducing powers{BR}wouldn't do squat against an actual{BR}superhero, so he took to robbing coffee{BR}shops and corner stores."
+    },
+    {
+      "identifier": "WeekendTraining",
+      "count": 1,
+      "title": "Weekend Training",
+      "icons": [
+        "StartAndEndOfTurnAction",
+        "Manipulate",
+        "DrawCardNow",
+        "PlayCardNow"
+      ],
+      "body": [
+        "At the end of environment turn, one player may search their deck for an ongoing card and put it into their hand. If they do, shuffle their deck and destroy this card.",
+        "At the start of the environment turn, each player draws a card or plays an ongoing card. Then destroy this card."
+      ],
+      "flavorText": "As Armiger turned the corner, Jaycee{BR}checked the stopwatch. “3:40 isn't bad, but{BR}the rest of your team-” “Can you at least{BR}compare me to Alloy? She doesn't fly.”"
+    }
+  ]
+}
