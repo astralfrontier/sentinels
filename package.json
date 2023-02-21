@@ -13,6 +13,7 @@
     "@netlify/functions": "^1.4.0",
     "@notionhq/client": "^2.2.3",
     "bulma": "^0.9.4",
+    "camelcase": "^7.0.1",
     "ramda": "^0.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
