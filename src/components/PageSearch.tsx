@@ -2,7 +2,7 @@ import { ResultType } from "@remix-run/router/dist/utils";
 import { map } from "ramda";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { notionFetchPage, notionSearch, SearchResult } from "../notion";
+import { notionRetrieve, notionSearch, SearchResult } from "../notion";
 import InputWrapper from "./InputWrapper";
 
 interface PageSearchProps {
