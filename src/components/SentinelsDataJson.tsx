@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { assoc, find, join, map, partition, reduce, split, startsWith } from "ramda";
+import { ascend, assoc, descend, find, join, map, partition, prop, propEq, reduce, sortBy, sortWith, split, startsWith } from "ramda";
 
 import { Card, DeckData, Relationship, Setup } from "../../netlify/functions/notion-retrieve";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
@@ -26,6 +26,9 @@ function villainCardToJson(deckData: DeckData) {
   const B = find(card => card.tags.includes("A"), deckData.setup)
 
   if (A && B) {
+    const [defaultQuote, everythingElse] = partition(propEq('name', 'default'), deckData.relationships)
+    const sortedRelationships = [...defaultQuote, ...sortBy(prop('name'), everythingElse)]
+
     return [{
       identifier: identifier(A.name),
       count: 1,
@@ -52,9 +55,9 @@ function villainCardToJson(deckData: DeckData) {
       challengeTitle: "TODO",
       challengeText: "TODO",
       openingLines: reduce(
-        (lines, line) => assoc(line.name, line.opening_line, lines),
+        (lines, line: Relationship) => assoc(line.name, line.opening_line, lines),
         {},
-        deckData.relationships)
+        sortedRelationships)
     }]
   } else {
     return []
