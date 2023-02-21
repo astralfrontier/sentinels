@@ -1,7 +1,7 @@
 import pascalcase from 'pascalcase';
-import { find, join, map, partition, split, startsWith } from "ramda";
+import { assoc, find, join, map, partition, reduce, split, startsWith } from "ramda";
 
-import { Card, DeckData, Setup } from "../../netlify/functions/notion-retrieve";
+import { Card, DeckData, Relationship, Setup } from "../../netlify/functions/notion-retrieve";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 function identifier(input: string): string {
@@ -21,6 +21,47 @@ function findPrimarySetupCard(setup: Setup[]): Setup {
   return setup[0]
 }
 
+function villainCardToJson(deckData: DeckData) {
+  const A = find(card => card.tags.includes("A"), deckData.setup)
+  const B = find(card => card.tags.includes("A"), deckData.setup)
+
+  if (A && B) {
+    return [{
+      identifier: identifier(A.name),
+      count: 1,
+      title: A.name,
+      keywords: [
+        "villain"
+      ],
+      body: "TODO", // TODO
+      backgroundColor: "8ed5e1", // TODO
+      foilBackgroundColor: "8ed5e1", // TODO
+      character: true,
+      hitpoints: A.hp,
+      nemesisIdentifiers: [], // TODO
+      setup: split('\n', A.villain_setup),
+      gameplay: split('\n', A.villain_effects),
+      advanced: "TODO", // TODO
+      icons: [], // TODO
+      flippedHitpoints: B.hp,
+      flippedBody: "TODO",
+      flippedGameplay: split('\n', B.villain_effects),
+      flippedAdvanced: "TODO",
+      flippedIcons: [], // TODO
+      difficulty: 2, // TODO
+      challengeTitle: "TODO",
+      challengeText: "TODO",
+      openingLines: reduce(
+        (lines, line) => assoc(line.name, line.opening_line, lines),
+        {},
+        deckData.relationships)
+    }]
+  } else {
+    return []
+  }
+}
+
+// TODO: parse flavor identifiers
 function flavor(quote_text: string): any {
   const [flavorReferences, flavorQuotes] = partition(startsWith("@"), split("\n", quote_text))
   return {
@@ -48,6 +89,9 @@ function cardsToJson(deckData: DeckData) {
 function deckDataToJson(deckData: DeckData): any {
   const primarySetupCard = findPrimarySetupCard(deckData.setup)
   const cardName = identifier(`${primarySetupCard.name} Character`)
+
+  const cards = cardsToJson(deckData)
+
   const output: any = {
     name: primarySetupCard.name,
     kind: find(tag => (tag == "Hero" || tag == "Villain" || tag == "Environment"), primarySetupCard.tags),
@@ -56,7 +100,7 @@ function deckDataToJson(deckData: DeckData): any {
       cardName
     ],
     // TODO: add character card
-    cards: cardsToJson(deckData),
+    cards: [...villainCardToJson(deckData), ...cards],
     promoCards: []
   }
 
