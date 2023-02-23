@@ -1,6 +1,6 @@
 import { Handler } from "@netlify/functions";
 import { Client } from "@notionhq/client";
-import { addIndex, assoc, filter, join, map, pluck, propEq } from "ramda";
+import { addIndex, assoc, filter, head, join, map, pluck, propEq } from "ramda";
 
 interface RetrieveHandlerRequest {
   id: string;
@@ -9,32 +9,53 @@ interface RetrieveHandlerRequest {
 export type RichText = string;
 
 export interface DeckData {
+  palettes: Palette[];
   setup: Setup[];
   cards: Card[];
   relationships: Relationship[];
 }
 
+export interface Palette {
+  id: string;
+  name: string;
+  scaling: string;
+  top_color: string;
+  box_color: string;
+  bottom_color: string;
+  art_credit: RichText;
+}
+
 export interface Setup {
-  name: RichText;
+  name: string;
+  palette?: string | undefined;
+  expansion: string;
+  rating: number | null;
   hp: number | null;
   tags: string[];
+  icons: string[];
+  hero_power_name: RichText;
   hero_power: RichText;
   hero_incap: RichText;
   villain_setup: RichText;
   villain_effects: RichText;
+  advanced: RichText;
+  challenge_name: RichText;
+  challenge: RichText;
 }
 
 export interface Card {
-  name: RichText;
+  name: string;
+  palette?: string | undefined;
   quantity: number;
   keywords: string[];
+  icons: string[];
   hp: number | null;
   effects: RichText;
   quote_text: RichText;
 }
 
 export interface Relationship {
-  name: RichText;
+  name: string;
   nemesis: boolean;
   opening_line: RichText;
 }
@@ -56,8 +77,38 @@ function richtext(data: any): RichText {
   return join("", pluck("plain_text")(data));
 }
 
+function plaintext(data: any): string {
+  return join("", pluck("plain_text")(data));
+}
+
+function tag(data: any): string {
+  return data.name
+}
+
 function tags(data: any): string[] {
   return pluck("name")(data);
+}
+
+function id(data: any): string {
+  return data[0]?.id
+}
+
+function parsePalette(data: any) {
+  const palettes: Palette[] = [];
+
+  for (let row of data) {
+    palettes.push({
+      id: row.id,
+      name: plaintext(prop(row, "Name")),
+      scaling: tag(prop(row, "Scaling")),
+      top_color: plaintext(prop(row, "Top Color")),
+      box_color: plaintext(prop(row, "Box Color")),
+      bottom_color: plaintext(prop(row, "Bottom Color")),
+      art_credit: richtext(prop(row, "Art Credit")),
+    })
+  }
+
+  return palettes;
 }
 
 function parseSetup(data: any) {
@@ -65,13 +116,21 @@ function parseSetup(data: any) {
 
   for (let row of data) {
     setup.push({
-      name: richtext(prop(row, "Name")),
+      name: plaintext(prop(row, "Name")),
+      palette: id(prop(row, "Palette")),
+      expansion: plaintext(prop(row, "Expansion")),
+      rating: prop(row, "Rating"),
       hp: prop(row, "HP"),
       tags: tags(prop(row, "Tags")),
+      icons: tags(prop(row, "Icons")),
+      hero_power_name: richtext(prop(row, "Hero Power Name")),
       hero_power: richtext(prop(row, "Hero Power")),
       hero_incap: richtext(prop(row, "Hero Incap")),
       villain_setup: richtext(prop(row, "Villain Setup")),
       villain_effects: richtext(prop(row, "Villain Effects")),
+      advanced: richtext(prop(row, "Advanced")),
+      challenge_name: richtext(prop(row, "Challenge Name")),
+      challenge: richtext(prop(row, "Challenge")),
     });
   }
 
@@ -83,9 +142,11 @@ function parseCards(data: any) {
 
   for (let row of data) {
     cards.push({
-      name: richtext(prop(row, "Name")),
+      name: plaintext(prop(row, "Name")),
+      palette: id(prop(row, "Palette")),
       quantity: prop(row, "Quantity") || 1,
       keywords: tags(prop(row, "Keywords")),
+      icons: tags(prop(row, "Icons")),
       hp: prop(row, "HP"),
       effects: richtext(prop(row, "Effects")),
       quote_text: richtext(prop(row, "Quote Text")),
@@ -100,7 +161,7 @@ function parseRelationships(data: any): Relationship[] {
 
   for (let row of data) {
     relationships.push({
-      name: richtext(prop(row, "Name")),
+      name: plaintext(prop(row, "Name")),
       nemesis: prop(row, "Nemesis"),
       opening_line: richtext(prop(row, "Opening Line")),
     });
@@ -172,10 +233,13 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
       childDatabases
     );
 
-    let setup, cards, relationships;
+    let palettes, setup, cards, relationships;
 
     for (let database of finalData) {
       switch (database.title) {
+        case "Palettes":
+          palettes = parsePalette(database.data);
+          break;
         case "Setup":
           setup = parseSetup(database.data);
           break;
@@ -190,9 +254,10 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({setup, cards, relationships}),
+      body: JSON.stringify({palettes, setup, cards, relationships}),
     };
   } catch (e) {
+    console.log(e.stack)
     return {
       statusCode: 500,
       body: JSON.stringify(e),

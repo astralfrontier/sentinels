@@ -1,6 +1,5 @@
 import React from "react";
 
-import { DeckData } from "../../netlify/functions/notion-retrieve";
 import * as deckData from "../../samples/netherwarden.json"
 import SentinelsData from "../components/SentinelsData";
 import DefaultLayout from "../layouts/Default";

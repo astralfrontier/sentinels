@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { ascend, assoc, descend, find, join, map, partition, prop, propEq, reduce, sortBy, sortWith, split, startsWith } from "ramda";
+import { assoc, filter, find, join, map, partition, pluck, prop, propEq, reduce, sortBy, split, startsWith } from "ramda";
 
 import { Card, DeckData, Relationship, Setup } from "../../netlify/functions/notion-retrieve";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
@@ -29,6 +29,10 @@ function villainCardToJson(deckData: DeckData) {
     const [defaultQuote, everythingElse] = partition(propEq('name', 'default'), deckData.relationships)
     const sortedRelationships = [...defaultQuote, ...sortBy(prop('name'), everythingElse)]
 
+    // TODO: the quote uses expansionIdentifier.characternameCharacter, the nemesis icon only uses expansionIdentifier.charactername.
+    // For example, Menagerie.GhostGirlCharacter for quotes, Menagerie.GhostGirl for nemesis icon.
+    const nemesisIdentifiers = pluck('name', filter(relationship => relationship.nemesis, deckData.relationships) as Relationship[])
+
     return [{
       identifier: identifier(A.name),
       count: 1,
@@ -41,7 +45,7 @@ function villainCardToJson(deckData: DeckData) {
       foilBackgroundColor: "8ed5e1", // TODO
       character: true,
       hitpoints: A.hp,
-      nemesisIdentifiers: [], // TODO
+      nemesisIdentifiers,
       setup: split('\n', A.villain_setup),
       gameplay: split('\n', A.villain_effects),
       advanced: "TODO", // TODO

@@ -3,6 +3,8 @@ import React from "react";
 import { Card, DeckData, Setup } from "../../netlify/functions/notion-retrieve";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
+// TODO: you could just code to point to images\CamelCaseCardName.png
+
 function addHeroCard(output: string[], card: Setup) {
   output.push('##hero')
   output.push(`[[name]] ${card.name}`)
