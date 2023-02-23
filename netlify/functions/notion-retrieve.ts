@@ -33,9 +33,10 @@ export interface Setup {
   hp: number | null;
   tags: string[];
   icons: string[];
-  hero_power_name: RichText;
+  hero_power_name: string;
   hero_power: RichText;
   hero_incap: RichText;
+  villain_title: string;
   villain_setup: RichText;
   villain_effects: RichText;
   advanced: RichText;
@@ -123,9 +124,10 @@ function parseSetup(data: any) {
       hp: prop(row, "HP"),
       tags: tags(prop(row, "Tags")),
       icons: tags(prop(row, "Icons")),
-      hero_power_name: richtext(prop(row, "Hero Power Name")),
+      hero_power_name: plaintext(prop(row, "Hero Power Name")),
       hero_power: richtext(prop(row, "Hero Power")),
       hero_incap: richtext(prop(row, "Hero Incap")),
+      villain_title: plaintext(prop(row, "Villain Setup")),
       villain_setup: richtext(prop(row, "Villain Setup")),
       villain_effects: richtext(prop(row, "Villain Effects")),
       advanced: richtext(prop(row, "Advanced")),
