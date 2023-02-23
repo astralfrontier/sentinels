@@ -186,9 +186,19 @@ function deckDataToJson(deckData: DeckData): any {
 }
 
 export default function SentinelsDataJson(props: SentinelsDataDisplayProps) {
+  const jsonText = JSON.stringify(deckDataToJson(props.deckData), null, 2)
+
+  function copyToClipboard() {
+    navigator.clipboard.writeText(jsonText)
+    alert("Copied")
+  }
+
   return (
     <>
-      <pre>{JSON.stringify(deckDataToJson(props.deckData), null, 2)}</pre>
+      <pre>
+        <button className='button is-primary is-pulled-right' onClick={copyToClipboard}>Copy</button>
+        {jsonText}
+      </pre>
     </>
   );
 }

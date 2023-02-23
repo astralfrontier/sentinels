@@ -102,9 +102,19 @@ function deckDataToCardBuilder(deckData: DeckData): string {
 }
 
 export default function SentinelsDataCardBuilder(props: SentinelsDataDisplayProps) {
+  const jsonText = deckDataToCardBuilder(props.deckData)
+
+  function copyToClipboard() {
+    navigator.clipboard.writeText(jsonText)
+    alert("Copied")
+  }
+
   return (
     <>
-      <pre>{deckDataToCardBuilder(props.deckData)}</pre>
+      <pre>
+        <button className='button is-primary is-pulled-right' onClick={copyToClipboard}>Copy</button>
+        {jsonText}
+      </pre>
     </>
   );
 }
