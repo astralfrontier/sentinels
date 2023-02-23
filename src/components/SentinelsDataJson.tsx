@@ -98,20 +98,57 @@ function villainCardToJson(deckData: DeckData) {
   }
 }
 
-// TODO: parse flavor identifiers
-function flavor(quote_text: string[]): any {
-  const [flavorReferences, flavorQuotes] = partition(startsWith("@"), quote_text)
+function flavor(quote_text: RichText) {
+  let identifier = {}
+  let buffer: string[] = []
+  let flavorQuotes: any[] = []
+  let flavorReference = {}
+  let i
+
+  let text = richtext(quote_text)
+  for (let line of text) {
+    if (startsWith("@", line)) {
+      flavorReference = {flavorReference: line.substring(1)}
+    } else if ((i = line.indexOf(": ")) > -1) {
+      // We found a new identifier, push any existing buffer
+      if (buffer.length > 0) {
+        flavorQuotes.push({
+          ...identifier,
+          text: join('{BR}', buffer)
+        })
+        buffer = []
+      }
+      identifier = {identifier: line.substring(0, i)}
+      buffer.push(line.substring(i + 2).replaceAll(/^\"|\"$/g, ""))
+    } else {
+      buffer.push(line.replaceAll(/^\"|\"$/g, ""))
+    }
+  }
+
+  if (buffer.length > 0) {
+    flavorQuotes.push({
+      ...identifier,
+      text: join('{BR}', buffer)
+    })
+  }
+
+  if ("flavorReference" in flavorReference && flavorQuotes.length == 1 && "identifier" in flavorQuotes[0]) {
+    flavorReference = {
+      flavorReference: `${flavorQuotes[0].identifier}, ${flavorReference.flavorReference}`
+    }
+  }
+
   return {
-    flavorQuotes: map(quote => ({identifier: "Unknown", text: quote}), flavorQuotes),
-    flavorReference: join('', flavorReferences).substring(1)
+    flavorQuotes,
+    ...flavorReference
   }
 }
 
 function cardsToJson(deckData: DeckData, defaultPalette: string | undefined) {
   return map(card => {
-    const { flavorQuotes, flavorReference } = flavor(richtext(card.quote_text))
-    const paletteId = card.palette || defaultPalette
-    const palette = find(propEq("id", paletteId), deckData.palettes)
+    const cardFlavor = flavor(card.quote_text)
+    //const paletteId = card.palette || defaultPalette
+    //const palette = find(propEq("id", paletteId), deckData.palettes)
     const hp = card.hp ? {hitpoints: card.hp} : {}
 
     return {
@@ -121,8 +158,7 @@ function cardsToJson(deckData: DeckData, defaultPalette: string | undefined) {
       keywords: card.keywords,
       icons: card.icons,
       body: richtext(card.effects),
-      flavorQuotes,
-      flavorReference,
+      ...cardFlavor,
       ...hp
     }
   }, deckData.cards)
