@@ -47,19 +47,30 @@ function findPrimarySetupCard(setup: Setup[]): Setup {
   return setup[0]
 }
 
+function relationships(deckData: DeckData) {
+  const [defaultQuote, everythingElse] = partition(propEq('name', 'default'), deckData.relationships)
+  const sortedRelationships = [...defaultQuote, ...sortBy(prop('name'), everythingElse)]
+
+  const nemesisIdentifiers = map(
+    (name: string) => name.replace(/Character$/, ''),
+    pluck('name', filter(relationship => relationship.nemesis, deckData.relationships) as Relationship[])
+  )
+
+  const openingLines = reduce(
+    (lines, line: Relationship) => assoc(line.name, richtextOneline(line.opening_line), lines),
+    {},
+    sortedRelationships)
+
+  return {openingLines, nemesisIdentifiers}
+}
+
 function heroCardToJson(deckData: DeckData) {
   const hero = find(card => card.tags.includes("Hero"), deckData.setup)
 
   if (hero) {
-    const [defaultQuote, everythingElse] = partition(propEq('name', 'default'), deckData.relationships)
-    const sortedRelationships = [...defaultQuote, ...sortBy(prop('name'), everythingElse)]
+    const {openingLines, nemesisIdentifiers} = relationships(deckData)
 
     const palette = find(propEq("id", hero.palette), deckData.palettes)
-
-    const nemesisIdentifiers = map(
-      (name: string) => name.replace(/Character$/, ''),
-      pluck('name', filter(relationship => relationship.nemesis, deckData.relationships) as Relationship[])
-    )
 
     return [{
       identifier: identifier(`${hero.name} Character`),
@@ -76,10 +87,7 @@ function heroCardToJson(deckData: DeckData) {
       nemesisIdentifiers,
       incapacitatedAbilities: richtext(hero.hero_incap),
       flippedIcons: hero.hero_incap_icons,
-      openingLines: reduce(
-        (lines, line: Relationship) => assoc(line.name, richtextOneline(line.opening_line), lines),
-        {},
-        sortedRelationships),
+      openingLines,
       complexity: hero.rating
     }]
   } else {
@@ -92,16 +100,10 @@ function villainCardToJson(deckData: DeckData) {
   const B = find(card => card.tags.includes("B"), deckData.setup)
 
   if (A && B) {
-    const [defaultQuote, everythingElse] = partition(propEq('name', 'default'), deckData.relationships)
-    const sortedRelationships = [...defaultQuote, ...sortBy(prop('name'), everythingElse)]
+    const {openingLines, nemesisIdentifiers} = relationships(deckData)
 
     const A_palette = find(propEq("id", A.palette), deckData.palettes)
     //const B_palette = find(propEq("id", B.palette || A.palette), deckData.palettes)
-
-    const nemesisIdentifiers = map(
-      (name: string) => name.replace(/Character$/, ''),
-      pluck('name', filter(relationship => relationship.nemesis, deckData.relationships) as Relationship[])
-    )
 
     return [{
       identifier: identifier(`${A.name} Character`),
@@ -128,10 +130,7 @@ function villainCardToJson(deckData: DeckData) {
       difficulty: A.rating,
       challengeTitle: richtextOneline(A.challenge_name),
       challengeText: richtextOneline(A.challenge),
-      openingLines: reduce(
-        (lines, line: Relationship) => assoc(line.name, richtextOneline(line.opening_line), lines),
-        {},
-        sortedRelationships)
+      openingLines
     }]
   } else {
     return []
