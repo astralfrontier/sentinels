@@ -2,6 +2,7 @@ import { ResultType } from "@remix-run/router/dist/utils";
 import { map } from "ramda";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 import { notionRetrieve, notionSearch, SearchResult } from "../notion";
 import InputWrapper from "./InputWrapper";
 
@@ -30,7 +31,7 @@ function SearchResultView(props: SearchResultViewProps) {
                     </p>
                     <p className="card-footer-item">
                         <span>
-                            View on <a href={props.result.url}>Notion</a>
+                            View on <a href={props.result.url} target="_blank">Notion</a>
                         </span>
                     </p>
                 </footer>
@@ -72,6 +73,7 @@ function PageSearch(_props: PageSearchProps) {
         </div>
       </div>
       {map(result => <SearchResultView key={result.id} result={result} />, results)}
+      {results.length ? <></> : <h3>No Results</h3>}
     </>
   );
 }

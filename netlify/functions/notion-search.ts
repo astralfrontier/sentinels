@@ -2,7 +2,7 @@ import { Handler } from "@netlify/functions";
 import { Client } from "@notionhq/client";
 
 import type { PageObjectResponse, PartialPageObjectResponse, PartialDatabaseObjectResponse, DatabaseObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { find, propEq, values } from "ramda";
+import { find, map, path, pathEq, propEq, reject, values } from "ramda";
 
 interface SearchHandlerRequest {
   query: string;
@@ -23,7 +23,7 @@ function notionResultToSearchResult(notionResult: PageObjectResponse | PartialPa
   const titleProperty = find(propEq("type", "title"), values(result.properties))
   return {
     id: result.id,
-    title: titleProperty?.title[0].plain_text || "No Title",
+    title: path(['title', 0, 'plain_text'], titleProperty) || "No Title",
     url: result.url
   }
 }
@@ -36,7 +36,7 @@ const notionSearchHandler: Handler = async (event, _context) => {
   let data: any = []
 
   while (has_more) {
-    const response = await await notion.search({
+    const response = await notion.search({
       query: body.query,
       filter: {
         value: 'page',
@@ -54,7 +54,8 @@ const notionSearchHandler: Handler = async (event, _context) => {
     has_more = response.has_more
   }
 
-  const final: SearchResult[] = data.map(notionResultToSearchResult)
+  const nonDatabasePages = reject(pathEq(['parent', 'type'], 'database_id'), data)
+  const final: SearchResult[] = map(notionResultToSearchResult, nonDatabasePages)
 
   return {
     statusCode: 200,
