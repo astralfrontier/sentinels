@@ -257,7 +257,6 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
       body: JSON.stringify({palettes, setup, cards, relationships}),
     };
   } catch (e) {
-    console.log(e.stack)
     return {
       statusCode: 500,
       body: JSON.stringify(e),
