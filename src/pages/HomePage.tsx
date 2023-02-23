@@ -1,4 +1,3 @@
-import PageSearch from "../components/PageSearch";
 import DefaultLayout from "../layouts/Default";
 
 interface HomePageProps {
