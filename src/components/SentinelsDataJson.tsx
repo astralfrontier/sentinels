@@ -47,6 +47,46 @@ function findPrimarySetupCard(setup: Setup[]): Setup {
   return setup[0]
 }
 
+function heroCardToJson(deckData: DeckData) {
+  const hero = find(card => card.tags.includes("Hero"), deckData.setup)
+
+  if (hero) {
+    const [defaultQuote, everythingElse] = partition(propEq('name', 'default'), deckData.relationships)
+    const sortedRelationships = [...defaultQuote, ...sortBy(prop('name'), everythingElse)]
+
+    const palette = find(propEq("id", hero.palette), deckData.palettes)
+
+    const nemesisIdentifiers = map(
+      (name: string) => name.replace(/Character$/, ''),
+      pluck('name', filter(relationship => relationship.nemesis, deckData.relationships) as Relationship[])
+    )
+
+    return [{
+      identifier: identifier(`${hero.name} Character`),
+      count: 1,
+      title: hero.name,
+      body: hero.hero_power_name,
+      backgroundColor: palette?.box_color  || "ffffff",
+      foilBackgroundColor: palette?.box_color || "ffffff",
+      hitpointsColor: palette?.bottom_color || "ffffff",
+      character: true,
+      powers: richtext(hero.hero_power),
+      icons: hero.icons,
+      hitpoints: hero.hp,
+      nemesisIdentifiers,
+      incapacitatedAbilities: richtext(hero.hero_incap),
+      flippedIcons: hero.hero_incap_icons,
+      openingLines: reduce(
+        (lines, line: Relationship) => assoc(line.name, richtextOneline(line.opening_line), lines),
+        {},
+        sortedRelationships),
+      complexity: hero.rating
+    }]
+  } else {
+    return []
+  }
+}
+
 function villainCardToJson(deckData: DeckData) {
   const A = find(card => card.tags.includes("A"), deckData.setup)
   const B = find(card => card.tags.includes("B"), deckData.setup)
@@ -178,7 +218,11 @@ function deckDataToJson(deckData: DeckData): any {
     initialCardIdentifiers: [
       cardName
     ],
-    cards: [...villainCardToJson(deckData), ...cards],
+    cards: [
+      ...heroCardToJson(deckData),
+      ...villainCardToJson(deckData),
+      ...cards
+    ],
     promoCards: []
   }
 
