@@ -86,6 +86,7 @@ function cardsToJson(deckData: DeckData, defaultPalette: string | undefined) {
     const { flavorQuotes, flavorReference } = flavor(card.quote_text)
     const paletteId = card.palette || defaultPalette
     const palette = find(propEq("id", paletteId), deckData.palettes)
+    const hp = card.hp ? {hitpoints: card.hp} : {}
 
     return {
       identifier: identifier(card.name),
@@ -96,8 +97,7 @@ function cardsToJson(deckData: DeckData, defaultPalette: string | undefined) {
       body: split("\n", card.effects),
       flavorQuotes,
       flavorReference,
-      hitpoints: card.hp,
-      hitpointsText: "*"
+      ...hp
     }
   }, deckData.cards)
 }
