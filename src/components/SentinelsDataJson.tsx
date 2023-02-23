@@ -5,7 +5,7 @@ import { Card, DeckData, Relationship, Setup } from "../../netlify/functions/not
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 function identifier(input: string): string {
-  return pascalcase(input)
+  return pascalcase(input.replace(/[’'"-]+/g, ''))
 }
 
 function findPrimarySetupCard(setup: Setup[]): Setup {
@@ -23,14 +23,14 @@ function findPrimarySetupCard(setup: Setup[]): Setup {
 
 function villainCardToJson(deckData: DeckData) {
   const A = find(card => card.tags.includes("A"), deckData.setup)
-  const B = find(card => card.tags.includes("A"), deckData.setup)
+  const B = find(card => card.tags.includes("B"), deckData.setup)
 
   if (A && B) {
     const [defaultQuote, everythingElse] = partition(propEq('name', 'default'), deckData.relationships)
     const sortedRelationships = [...defaultQuote, ...sortBy(prop('name'), everythingElse)]
 
     const A_palette = find(propEq("id", A.palette), deckData.palettes)
-    const B_palette = find(propEq("id", B.palette || A.palette), deckData.palettes)
+    //const B_palette = find(propEq("id", B.palette || A.palette), deckData.palettes)
 
     const nemesisIdentifiers = map(
       (name: string) => name.replace(/Character$/, ''),
@@ -38,7 +38,7 @@ function villainCardToJson(deckData: DeckData) {
     )
 
     return [{
-      identifier: identifier(A.name),
+      identifier: identifier(`${A.name} Character`),
       count: 1,
       title: A.name,
       keywords: [
@@ -95,7 +95,9 @@ function cardsToJson(deckData: DeckData, defaultPalette: string | undefined) {
       icons: card.icons,
       body: split("\n", card.effects),
       flavorQuotes,
-      flavorReference
+      flavorReference,
+      hitpoints: card.hp,
+      hitpointsText: "*"
     }
   }, deckData.cards)
 }
