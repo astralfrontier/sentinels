@@ -1,12 +1,22 @@
 import { Handler } from "@netlify/functions";
 import { Client } from "@notionhq/client";
-import { addIndex, assoc, filter, head, join, map, pluck, propEq } from "ramda";
+import { addIndex, assoc, filter, join, map, pluck, propEq } from "ramda";
 
 interface RetrieveHandlerRequest {
   id: string;
 }
 
-export type RichText = string;
+export interface RichTextBlock {
+  text: string;
+  bold: boolean;
+  italic: boolean;
+  strikethrough: boolean;
+  underline: boolean;
+  code: boolean;
+  color: string;
+}
+
+export type RichText = RichTextBlock[]
 
 export interface DeckData {
   palettes: Palette[];
@@ -72,10 +82,37 @@ function prop(data: any, name: string): any {
   }
 }
 
-// For right now, return the plain text
-// Later on we can return bold, etc. annotations
+
+/*
+  {
+    type: 'text',
+    text: {
+      content: 'I can recognize the dread emanations of the Shadow Veil from here. Back, damned soul.',
+      link: null
+    },
+    annotations: {
+      bold: false,
+      italic: false,
+      strikethrough: false,
+      underline: false,
+      code: false,
+      color: 'default'
+    },
+    plain_text: 'I can recognize the dread emanations of the Shadow Veil from here. Back, damned soul.',
+    href: null
+  }
+ */
 function richtext(data: any): RichText {
-  return join("", pluck("plain_text")(data));
+  return map(
+    (block: any) => ({
+      text: block.plain_text,
+      bold: block.annotations.bold,
+      italic: block.annotations.italic,
+      strikethrough: block.annotations.strikethrough,
+      underline: block.annotations.underline,
+      code: block.annotations.code,
+      color: block.annotations.color
+    }), data)
 }
 
 function plaintext(data: any): string {
@@ -127,7 +164,7 @@ function parseSetup(data: any) {
       hero_power_name: plaintext(prop(row, "Hero Power Name")),
       hero_power: richtext(prop(row, "Hero Power")),
       hero_incap: richtext(prop(row, "Hero Incap")),
-      villain_title: plaintext(prop(row, "Villain Setup")),
+      villain_title: plaintext(prop(row, "Villain Title")),
       villain_setup: richtext(prop(row, "Villain Setup")),
       villain_effects: richtext(prop(row, "Villain Effects")),
       advanced: richtext(prop(row, "Advanced")),
@@ -258,7 +295,8 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
       statusCode: 200,
       body: JSON.stringify({palettes, setup, cards, relationships}),
     };
-  } catch (e) {
+  } catch (e: any) {
+    console.log(e["trace"])
     return {
       statusCode: 500,
       body: JSON.stringify(e),

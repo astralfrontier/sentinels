@@ -7,7 +7,17 @@
       "top_color": "ffffff",
       "box_color": "a561ad",
       "bottom_color": "a561ad",
-      "art_credit": "Art by Michael Williams"
+      "art_credit": [
+        {
+          "text": "Art by Michael Williams",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "id": "6b204cfc-44f2-4937-b15b-194e3b2081cb",
@@ -16,7 +26,17 @@
       "top_color": "ffffff",
       "box_color": "bd3a3d",
       "bottom_color": "bd3a3d",
-      "art_credit": "Art by Michael Williams"
+      "art_credit": [
+        {
+          "text": "Art by Michael Williams",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     }
   ],
   "setup": [
@@ -34,14 +54,90 @@
         "DealDamageInfernal"
       ],
       "hero_power_name": "",
-      "hero_power": "Leave this blank",
-      "hero_incap": "Leave this blank",
-      "villain_title": "Unstable Necromancer",
-      "villain_setup": "",
-      "villain_effects": "When flipped to this side, restore Netherwarden to 40 HP. Put Perdition's Gate from under this card into play, then shuffle the three Goetic cards from under this card into the environment deck.\nEach hero next to a specter is HAUNTED.\nReduce damage dealt to Netherwarden by 1 for each Haunted hero.\nAt the end of the villain turn, each specter deals the hero next to them 3 infernal damage.",
-      "advanced": "At the start of the villain turn, reveal cards from the top of the villain deck until a target is revealed and play it. Discard the other revealed cards.",
-      "challenge_name": "",
-      "challenge": ""
+      "hero_power": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "hero_incap": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_title": "Blah",
+      "villain_setup": [],
+      "villain_effects": [
+        {
+          "text": "When flipped to this side, restore Netherwarden to 40 HP. Put Perdition's Gate from under this card into play, then shuffle the three Goetic cards from under this card into the environment deck.\nEach hero next to a specter is ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "HAUNTED",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ".\nReduce damage dealt to Netherwarden by 1 for each ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " hero.\nAt the end of the villain turn, each specter deals the hero next to them 3 infernal damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "advanced": [
+        {
+          "text": "At the start of the villain turn, reveal cards from the top of the villain deck until a target is revealed and play it. Discard the other revealed cards.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "challenge_name": [],
+      "challenge": []
     },
     {
       "name": "Netherwarden",
@@ -58,14 +154,120 @@
         "DealDamageInfernal"
       ],
       "hero_power_name": "Leave this blank",
-      "hero_power": "Leave this blank",
-      "hero_incap": "Leave this blank",
-      "villain_title": "Defender of Two Worlds",
-      "villain_setup": "At the start of the game, Netherwarden enters play \"Defender of Two Worlds\" side up.\nSearch the villain deck for the Perdition's Gate and the three Goetic cards and put them under this card. Search the villain deck for the five wisp cards, put [H] of them into play and the rest in the environment trash. Then shuffle the villain deck.",
-      "villain_effects": "Each hero next to a specter is HAUNTED.\nAt the end of the villain turn, if there are fewer than [H] Haunted heroes, play the top card of the villain deck.\nThen, each Specter deals the hero target next to them 2 infernal damage.",
-      "advanced": "Increase damage dealt to hero targets by 1.",
-      "challenge_name": "Ever-growing Terror",
-      "challenge": "Whenever a wisp haunting a hero is destroyed, reveal cards from the top of the villain deck until a specter is revealed and put it into play haunting that hero. Whenever a non-wisp specter is destroyed, put a wisp from the environment trash into play."
+      "hero_power": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "hero_incap": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_title": "Woof",
+      "villain_setup": [
+        {
+          "text": "At the start of the game, Netherwarden enters play \"Defender of Two Worlds\" side up.\nSearch the villain deck for the Perdition's Gate and the three Goetic cards and put them under this card. Search the villain deck for the five wisp cards, put [H] of them into play and the rest in the environment trash. Then shuffle the villain deck.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_effects": [
+        {
+          "text": "Each hero next to a specter is ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "HAUNTED",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ".\nAt the end of the villain turn, if there are fewer than [H] ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " heroes, play the top card of the villain deck.\nThen, each Specter deals the hero target next to them 2 infernal damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "advanced": [
+        {
+          "text": "Increase damage dealt to hero targets by 1.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "challenge_name": [
+        {
+          "text": "Ever-growing Terror",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "challenge": [
+        {
+          "text": "Whenever a wisp haunting a hero is destroyed, reveal cards from the top of the villain deck until a specter is revealed and put it into play haunting that hero. Whenever a non-wisp specter is destroyed, put a wisp from the environment trash into play.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     }
   ],
   "cards": [
@@ -79,8 +281,100 @@
         "DestroyHero"
       ],
       "hp": null,
-      "effects": "Each player destroys one of their ongoing or equipment cards.\nThen, each player without a Haunted hero destroys one of their ongoing or equipment cards.",
-      "quote_text": "Netherwarden: \"The Staff of the Magus...The source of your APOTHEOSIS. Let us see what other horrors it can unleash.\"\n@The Menagerie Annual #4"
+      "effects": [
+        {
+          "text": "Each player destroys one of their ongoing or equipment cards.\nThen, each player without a ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " hero destroys one of their ongoing or equipment cards.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Netherwarden: \"The ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Staff of the Magus",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "...The source of your ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "APOTHEOSIS",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ". Let us see what other ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "horrors",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " it can unleash.\"\n@The Menagerie Annual #4",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Grave Peril",
@@ -94,8 +388,82 @@
         "MakeDamageIrreducible"
       ],
       "hp": null,
-      "effects": "Netherwarden is immune to damage dealt by environment cards.\nWhenever a card from the environment deck is played, the hero with the highest HP deals themselves 1 infernal damage. If that hero is Haunted, this damage is irreducible.",
-      "quote_text": "Netherwarden: \"Sullied Dead, your mistress has abandoned you! Your new master has need of you...\"\n@The Menagerie Annual #4"
+      "effects": [
+        {
+          "text": "Netherwarden is immune to damage dealt by environment cards.\nWhenever a card from the environment deck is played, the hero with the highest HP deals themselves 1 infernal damage. If that hero is ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", this damage is irreducible.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Netherwarden: \"",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Sullied Dead",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", your mistress has abandoned you! Your ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "new ",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "master has need of you...\"\n@The Menagerie Annual #4",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Eligos, The Goetic",
@@ -110,8 +478,37 @@
         "DealDamageMelee"
       ],
       "hp": 7,
-      "effects": "Haunted heroes cannot regain HP.\nAt the end of the villain turn, the other villain target with the lowest HP deals the hero target with the highest HP [H] irreducible melee damage.",
-      "quote_text": "\"Eligos. A great demon, said to know the future of all wars, great and small. It is able to suss out any deception, and takes a form able to cut to the heart of any matter.\"\n@Book of the Damned"
+      "effects": [
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " heroes cannot regain HP.\nAt the end of the villain turn, the other villain target with the lowest HP deals the hero target with the highest HP [H] irreducible melee damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "\"Eligos. A great demon, said to know the future of all wars, great and small. It is able to suss out any deception, and takes a form able to cut to the heart of any matter.\"\n@Book of the Damned",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Call of the Necromancer",
@@ -125,8 +522,28 @@
         "PlayCardNow"
       ],
       "hp": null,
-      "effects": "Shuffle each demon and specter in the environment trash into the environment deck.\nPlay the top card of the environment deck. If it was a target, it deals the hero with the highest HP [H] infernal damage.\nOtherwise, play the top card of the villain deck.",
-      "quote_text": "Netherwarden: \"I am the warden of the veil. The line between life and death ought not be crossed. I see to that, by any means necessary.\"\n@Tales of Mystery #12"
+      "effects": [
+        {
+          "text": "Shuffle each demon and specter in the environment trash into the environment deck.\nPlay the top card of the environment deck. If it was a target, it deals the hero with the highest HP [H] infernal damage.\nOtherwise, play the top card of the villain deck.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Netherwarden: \"I am the warden of the veil. The line between life and death ought not be crossed. I see to that, by any means necessary.\"\n@Tales of Mystery #12",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Spectral Raiment",
@@ -140,8 +557,118 @@
         "GainHP"
       ],
       "hp": null,
-      "effects": "Reduce damage dealt to Netherwarden by non-Haunted targets by 1.\nAt the end of the villain turn, Netherwarden regains X HP, where X is [H] minus the number of Haunted heroes.",
-      "quote_text": "Netherwarden: \"We both wear armor to ward our souls, Magus. And while you were gifted yours by inheritance, I needed to craft my own.\"\n@The Menagerie Annual #4"
+      "effects": [
+        {
+          "text": "Reduce damage dealt to Netherwarden by non-",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " targets by 1.\nAt the end of the villain turn, Netherwarden regains X HP, where X is [H] minus the number of ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " heroes.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Netherwarden: \"We both wear armor to ward our souls, ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Magus",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ". And while you were ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "gifted ",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "yours by inheritance, I needed to craft my ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "own",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ".\"\n@The Menagerie Annual #4",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "The Cursed",
@@ -155,8 +682,100 @@
         "DealDamageMelee"
       ],
       "hp": 7,
-      "effects": "When this card enters play, if each hero is Haunted, this card deals each hero target 3 infernal damage, then destroy this card. Otherwise, play this card next to the non-Haunted hero with most cards in hand.\nWhenever the hero next to this card plays a card, this card deals that hero 3 melee damage.",
-      "quote_text": "Ghost Girl: \"Milo! This is beyond the pale, even for you,\"\nThe Menagerie Annual #4"
+      "effects": [
+        {
+          "text": "When this card enters play, if each hero is ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", this card deals each hero target 3 infernal damage, then destroy this card. Otherwise, play this card next to the non-",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " hero with most cards in hand.\nWhenever the hero next to this card plays a card, this card deals that hero 3 melee damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Ghost Girl: \"",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Milo",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "! This is beyond the pale, even for ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "you",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ",\"\nThe Menagerie Annual #4",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "The Possessed",
@@ -171,8 +790,82 @@
         "CannotDrawCards"
       ],
       "hp": 6,
-      "effects": "When this card enters play, if each hero is Haunted, each player discards two cards, then destroy this card. Otherwise, play this card next to the non-Haunted hero with most cards in play.\nThe hero next to this card cannot play more than one card, use more than one power, or draw more than one card each turn.",
-      "quote_text": "Alloy: \"Keep crackling, ghostie. I got a surprise for you.\"\n@The Irregulators #13"
+      "effects": [
+        {
+          "text": "When this card enters play, if each hero is ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", each player discards two cards, then destroy this card. Otherwise, play this card next to the non-",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " hero with most cards in play.\nThe hero next to this card cannot play more than one card, use more than one power, or draw more than one card each turn.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Alloy: \"Keep crackling, ghostie. I got a ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "surprise",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " for you.\"\n@The Irregulators #13",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Naberius, The Goetic",
@@ -187,8 +880,37 @@
         "PlayCardNow"
       ],
       "hp": 7,
-      "effects": "Haunted heroes cannot draw cards.\nAt the end of the villain turn, play the top card of the villain deck.",
-      "quote_text": "\"Naberius. A greater demon, said to contain all knowledge in the universe, both known and unknown by mankind. Will answer any question to exacting detail.\"\n@Book of the Damned"
+      "effects": [
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " heroes cannot draw cards.\nAt the end of the villain turn, play the top card of the villain deck.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "\"Naberius. A greater demon, said to contain all knowledge in the universe, both known and unknown by mankind. Will answer any question to exacting detail.\"\n@Book of the Damned",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "The Wretched",
@@ -203,8 +925,64 @@
         "Manipulate"
       ],
       "hp": 3,
-      "effects": "When this card enters play, if each hero is Haunted, play the top card of the villain deck, then destroy this card. Otherwise, play this card next to the non-Haunted hero with the highest HP.\nWhen this card is destroyed, put it into the environment trash.",
-      "quote_text": "Link: \"Charlotte, are those-\"\nGhost Girl: \"Nonononononoono, please no...\"\n@the Menagerie Annual #4"
+      "effects": [
+        {
+          "text": "When this card enters play, if each hero is ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", play the top card of the villain deck, then destroy this card. Otherwise, play this card next to the non-",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " hero with the highest HP.\nWhen this card is destroyed, put it into the environment trash.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Link: \"Charlotte, are those-\"\nGhost Girl: \"Nonononononoono, please no...\"\n@the Menagerie Annual #4",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Malphas, The Goetic",
@@ -219,8 +997,46 @@
         "DealDamageInfernal"
       ],
       "hp": 7,
-      "effects": "Damage dealt to Haunted heroes is irreducible.\nAt the end of the villain turn, each specter deals the hero next to them 1 infernal damage.",
-      "quote_text": "\"Malphas. A greater demon, said to be the general of all the forces of evil. Though tiny is form, its greatest power comes from being able to mentally control all forces under its command.\"\n@Book of the Damned"
+      "effects": [
+        {
+          "text": "Damage dealt to ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " heroes is irreducible.\nAt the end of the villain turn, each specter deals the hero next to them 1 infernal damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "\"Malphas. A greater demon, said to be the general of all the forces of evil. Though tiny is form, its greatest power comes from being able to mentally control all forces under its command.\"\n@Book of the Damned",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "The Tormented",
@@ -234,8 +1050,64 @@
         "IncreaseDamageDealt"
       ],
       "hp": 6,
-      "effects": "When this card enters play, if each hero is Haunted, this card deals the hero target with the highest HP [H] + 2 melee damage, then destroy this card. Otherwise, play this card next to the non-Haunted hero with the highest HP.\nIncrease damage dealt by this card by 1.",
-      "quote_text": "Netherwarden: \"A spirit is such a fragile thing. A poke, a prod, a bit of torment, and there's no end to the horrors it can inflict.\"\n@the Menagerie #8"
+      "effects": [
+        {
+          "text": "When this card enters play, if each hero is ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", this card deals the hero target with the highest HP [H] + 2 melee damage, then destroy this card. Otherwise, play this card next to the non-",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " hero with the highest HP.\nIncrease damage dealt by this card by 1.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Netherwarden: \"A spirit is such a fragile thing. A poke, a prod, a bit of torment, and there's no end to the horrors it can inflict.\"\n@the Menagerie #8",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "The Stricken",
@@ -249,8 +1121,64 @@
         "ReduceDamageDealt"
       ],
       "hp": 6,
-      "effects": "When this card enters play, if each hero is Haunted, restore each specter to its full HP, then destroy this card. Otherwise, play this card next to the non-Haunted hero with the lowest HP.\nReduce damage dealt by the hero next to this card by 1.",
-      "quote_text": "Skinner: \"Alright squire, ghosts can be real bastards. Only the mystic aspects of Excalibur will hurt them, so focusing on your strength alone won't get you anywhere.\"\n@The Irregulators #13"
+      "effects": [
+        {
+          "text": "When this card enters play, if each hero is ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", restore each specter to its full HP, then destroy this card. Otherwise, play this card next to the non-",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Haunted",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": true,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " hero with the lowest HP.\nReduce damage dealt by the hero next to this card by 1.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Skinner: \"Alright squire, ghosts can be real bastards. Only the mystic aspects of Excalibur will hurt them, so focusing on your strength alone won't get you anywhere.\"\n@The Irregulators #13",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Perdition’s Gates",
@@ -265,8 +1193,100 @@
         "PlayCardNow"
       ],
       "hp": null,
-      "effects": "This card is indestructible.\nWhen a goetic card would be put into the villain trash, put it into the environment trash instead.\nAt the start of the villain turn, if a villain card is on top of the environment deck, play it. Otherwise, discard it and play the top card of the villain deck.",
-      "quote_text": "Netherwarden: \"No- No, you did not defeat Pandemonium, only I can save the world! You are deceiving me, And I will prove it! Shatter, veil between worlds!\"\n@The Menagerie Annual #4"
+      "effects": [
+        {
+          "text": "This card is indestructible.\nWhen a goetic card would be put into the villain trash, put it into the environment trash instead.\nAt the start of the villain turn, if a villain card is on top of the environment deck, play it. Otherwise, discard it and play the top card of the villain deck.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Netherwarden: \"No- No, you did not defeat ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Pandemonium",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", only I can ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "save",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " the world! You are deceiving me, And I will ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "prove",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": " it! ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "Shatter",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": ", veil between worlds!\"\n@The Menagerie Annual #4",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Aspect of the Gatekeeper",
@@ -281,50 +1301,168 @@
         "DealDamageMelee"
       ],
       "hp": 5,
-      "effects": "Specters are immune to damage dealt by heroes they are next to.\nAt the end of the villain turn, reveal the top card of the villain deck. If it is a specter, put it into play. Otherwise, discard is and this card deals the hero target with the highest HP [H] - 2 melee damage.",
-      "quote_text": "A10: \"TK, run!\"\n@The Irregulators #13"
+      "effects": [
+        {
+          "text": "Specters are immune to damage dealt by heroes they are next to.\nAt the end of the villain turn, reveal the top card of the villain deck. If it is a specter, put it into play. Otherwise, discard is and this card deals the hero target with the highest HP [H] - 2 melee damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "A10: \"TK, ",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "run",
+          "bold": true,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        {
+          "text": "!\"\n@The Irregulators #13",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     }
   ],
   "relationships": [
     {
       "name": "Angille.Theurgy",
       "nemesis": false,
-      "opening_line": "Nothing but pathetic parlor tricks. You cannot hope to stand against a true master of the occult."
+      "opening_line": [
+        {
+          "text": "Nothing but pathetic parlor tricks. You cannot hope to stand against a true master of the occult.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Menagerie.GhostGirlCharacter",
       "nemesis": true,
-      "opening_line": "You who should not be, retire from this battle lest I am forced to banish you."
+      "opening_line": [
+        {
+          "text": "You who should not be, retire from this battle lest I am forced to banish you.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Menagerie.SolsticeGhostGirlCharacter",
       "nemesis": false,
-      "opening_line": "Begone spirit, your words of hope will only lead the world of the living to ruin."
+      "opening_line": [
+        {
+          "text": "Begone spirit, your words of hope will only lead the world of the living to ruin.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "default",
       "nemesis": false,
-      "opening_line": "You should have listened. I could have saved the world, but now it’s too late... for you."
+      "opening_line": [
+        {
+          "text": "You should have listened. I could have saved the world, but now it’s too late... for you.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Cauldron.MagnificentMara",
       "nemesis": false,
-      "opening_line": "A pitiful pretender to true power. Relinquish your baubles to someone who will respect their might."
+      "opening_line": [
+        {
+          "text": "A pitiful pretender to true power. Relinquish your baubles to someone who will respect their might.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "SpookyGhostwriter.TsukikoCharacter",
       "nemesis": false,
-      "opening_line": "Such powerful relics, and held by someone without a dram of talent? I must take them for your own well being."
+      "opening_line": [
+        {
+          "text": "Such powerful relics, and held by someone without a dram of talent? I must take them for your own well being.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "Menagerie.MagusGhostGirlCharacter",
       "nemesis": false,
-      "opening_line": "Even as you have abandoned your rotted corpse and become something more, I will not be halted in my mission to stop Pandemonium."
+      "opening_line": [
+        {
+          "text": "Even as you have abandoned your rotted corpse and become something more, I will not be halted in my mission to stop Pandemonium.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     },
     {
       "name": "SpookyGhostwriter.SilhouetteCharacter",
       "nemesis": false,
-      "opening_line": "I can recognize the dread emanations of the Shadow Veil from here. Back, damned soul."
+      "opening_line": [
+        {
+          "text": "I can recognize the dread emanations of the Shadow Veil from here. Back, damned soul.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
     }
   ]
 }

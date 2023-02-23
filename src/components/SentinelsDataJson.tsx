@@ -1,11 +1,37 @@
 import pascalcase from 'pascalcase';
 import { assoc, filter, find, join, map, partition, pluck, prop, propEq, reduce, sortBy, split, startsWith } from "ramda";
 
-import { Card, DeckData, Relationship, Setup } from "../../netlify/functions/notion-retrieve";
+import { Card, DeckData, Relationship, RichText, RichTextBlock, Setup } from "../../netlify/functions/notion-retrieve";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 function identifier(input: string): string {
   return pascalcase(input.replace(/[’'"-]+/g, ''))
+}
+
+function richtextOneline(input: RichText): string {
+  console.dir(input)
+  const blocks = map(
+    (block) => {
+      let text = block.text
+      if (block.italic) {
+        text = `[i]${text}[/i]`
+      }
+      if (block.bold) {
+        text = `[b]${text}[/b]`
+      }
+      if (block.underline) {
+        text = `[u]${text}[/u]`
+      }
+      return text
+    },
+    input
+  )
+
+  return join('', blocks)
+}
+
+function richtext(input: RichText): string[] {
+  return split('\n', richtextOneline(input))
 }
 
 function findPrimarySetupCard(setup: Setup[]): Setup {
@@ -50,20 +76,20 @@ function villainCardToJson(deckData: DeckData) {
       character: true,
       hitpoints: A.hp,
       nemesisIdentifiers,
-      setup: split('\n', A.villain_setup),
-      gameplay: split('\n', A.villain_effects),
-      advanced: A.advanced,
+      setup: richtext(A.villain_setup),
+      gameplay: richtext(A.villain_effects),
+      advanced: richtextOneline(A.advanced),
       icons: A.icons,
       flippedHitpoints: B.hp,
       flippedBody: B.villain_title,
-      flippedGameplay: split('\n', B.villain_effects),
-      flippedAdvanced: B.advanced,
+      flippedGameplay: richtext(B.villain_effects),
+      flippedAdvanced: richtextOneline(B.advanced),
       flippedIcons: B.icons,
       difficulty: A.rating,
-      challengeTitle: A.challenge_name,
-      challengeText: A.challenge,
+      challengeTitle: richtextOneline(A.challenge_name),
+      challengeText: richtextOneline(A.challenge),
       openingLines: reduce(
-        (lines, line: Relationship) => assoc(line.name, line.opening_line, lines),
+        (lines, line: Relationship) => assoc(line.name, richtextOneline(line.opening_line), lines),
         {},
         sortedRelationships)
     }]
@@ -73,8 +99,8 @@ function villainCardToJson(deckData: DeckData) {
 }
 
 // TODO: parse flavor identifiers
-function flavor(quote_text: string): any {
-  const [flavorReferences, flavorQuotes] = partition(startsWith("@"), split("\n", quote_text))
+function flavor(quote_text: string[]): any {
+  const [flavorReferences, flavorQuotes] = partition(startsWith("@"), quote_text)
   return {
     flavorQuotes: map(quote => ({identifier: "Unknown", text: quote}), flavorQuotes),
     flavorReference: join('', flavorReferences).substring(1)
@@ -83,7 +109,7 @@ function flavor(quote_text: string): any {
 
 function cardsToJson(deckData: DeckData, defaultPalette: string | undefined) {
   return map(card => {
-    const { flavorQuotes, flavorReference } = flavor(card.quote_text)
+    const { flavorQuotes, flavorReference } = flavor(richtext(card.quote_text))
     const paletteId = card.palette || defaultPalette
     const palette = find(propEq("id", paletteId), deckData.palettes)
     const hp = card.hp ? {hitpoints: card.hp} : {}
@@ -94,7 +120,7 @@ function cardsToJson(deckData: DeckData, defaultPalette: string | undefined) {
       title: card.name,
       keywords: card.keywords,
       icons: card.icons,
-      body: split("\n", card.effects),
+      body: richtext(card.effects),
       flavorQuotes,
       flavorReference,
       ...hp
