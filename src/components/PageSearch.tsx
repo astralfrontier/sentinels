@@ -1,9 +1,9 @@
-import { ResultType } from "@remix-run/router/dist/utils";
 import { map } from "ramda";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { notionRetrieve, notionSearch, SearchResult } from "../notion";
+import { SearchResult } from "../../netlify/functions/notion-search";
+import { notionSearch } from "../notion";
 import InputWrapper from "./InputWrapper";
 
 interface PageSearchProps {
@@ -17,7 +17,14 @@ interface SearchResultViewProps {
 function SearchResultView(props: SearchResultViewProps) {
     return (
         <>
-            <div className="card block">
+            <div className="card">
+                {props.result.cover &&
+                <div className="card-image">
+                  <figure className="image">
+                    <img src={props.result.cover} alt="Cover image" className="search-result-image" />
+                  </figure>
+                </div>
+                }
                 <div className="card-content">
                     <p className="title">
                         {props.result.title}
@@ -26,7 +33,7 @@ function SearchResultView(props: SearchResultViewProps) {
                 <footer className="card-footer">
                     <p className="card-footer-item">
                         <span>
-                          <Link to={`/${props.result.id}`}>Load data</Link>
+                          <Link to={`/${props.result.id}`} className="button is-primary">Load data</Link>
                         </span>
                     </p>
                     <p className="card-footer-item">
@@ -57,13 +64,13 @@ function PageSearch(_props: PageSearchProps) {
 
   return (
     <>
-      <div className="columns is-centered is-vcentered is-mobile">
+      <div className="columns is-vcentered is-mobile">
         <div className="column">
-            <InputWrapper label={"Deck Name"} help={"Enter the Notion page title for your deck"}>
+            <InputWrapper label={"Deck Name"} help={"Enter the Notion page title for your deck"} isExpanded={true}>
                 <input className="input" type="text" value={query} onChange={event => setQuery(event.target.value)} />
             </InputWrapper>
         </div>
-        <div className="column has-text-centered">
+        <div className="column has-text-centered is-narrow">
           <button
             className="button is-primary mx-2"
             onClick={() => notionSearch(query).then(setResults)}
@@ -72,7 +79,13 @@ function PageSearch(_props: PageSearchProps) {
           </button>
         </div>
       </div>
-      {map(result => <SearchResultView key={result.id} result={result} />, results)}
+      <div className="columns is-multiline">
+        {map(result => 
+          <div className="column is-one-third" key={result.id}>
+            <SearchResultView result={result} />
+          </div>
+        , results)}
+      </div>
       {results.length ? <></> : <h3>No Results</h3>}
     </>
   );

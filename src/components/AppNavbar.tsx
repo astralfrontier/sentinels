@@ -14,7 +14,11 @@ function AppNavbar() {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <a className="navbar-item">Sentinels of the Multiverse</a>
+        <a className="navbar-item">
+          <figure className="image">
+            <img src="/garage_icon-icons.png" width="128" height="128" />
+          </figure>
+        </a>
         <a
           role="button"
           className={isActive ? "navbar-burger is-active" : "navbar-burger"}

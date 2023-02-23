@@ -8,9 +8,10 @@ interface SearchHandlerRequest {
   query: string;
 }
 
-interface SearchResult {
+export interface SearchResult {
   id: string;
   title: string;
+  cover: string | undefined | null;
   url: string;
 }
 
@@ -24,6 +25,7 @@ function notionResultToSearchResult(notionResult: PageObjectResponse | PartialPa
   return {
     id: result.id,
     title: path(['title', 0, 'plain_text'], titleProperty) || "No Title",
+    cover: path(['cover', 'external', 'url'], result),
     url: result.url
   }
 }
@@ -36,7 +38,7 @@ const notionSearchHandler: Handler = async (event, _context) => {
   let data: any = []
 
   while (has_more) {
-    const response = await notion.search({
+    const response: any = await notion.search({
       query: body.query,
       filter: {
         value: 'page',

@@ -1,8 +1,4 @@
-export interface SearchResult {
-  id: string;
-  title: string;
-  url: string;
-}
+import { SearchResult } from "../netlify/functions/notion-search"
 
 async function callNotion(endpoint: string, body: object): Promise<any> {
   const response = await fetch(`/.netlify/functions/${endpoint}`, {

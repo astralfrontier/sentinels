@@ -15,7 +15,7 @@ function InputWrapper(props: InputWrapperProps) {
         {props.label}
       </label>
       <div className={controlClass}>
-        <div className="select is-rounded">{props.children}</div>
+        {props.children}
       </div>
       <p className="help">{props.help}</p>
     </div>

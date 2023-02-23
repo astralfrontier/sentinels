@@ -9,8 +9,6 @@ export default function HomePage(props: HomePageProps) {
   return (
     <>
       <DefaultLayout>
-        <h1 className="title">Sentinels of the Multiverse</h1>
-
         <PageSearch />
       </DefaultLayout>
     </>
