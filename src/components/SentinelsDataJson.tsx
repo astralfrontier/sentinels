@@ -32,8 +32,6 @@ function villainCardToJson(deckData: DeckData) {
     const A_palette = find(propEq("id", A.palette), deckData.palettes)
     const B_palette = find(propEq("id", B.palette || A.palette), deckData.palettes)
 
-    // TODO: the quote uses expansionIdentifier.characternameCharacter, the nemesis icon only uses expansionIdentifier.charactername.
-    // For example, Menagerie.GhostGirlCharacter for quotes, Menagerie.GhostGirl for nemesis icon.
     const nemesisIdentifiers = map(
       (name: string) => name.replace(/Character$/, ''),
       pluck('name', filter(relationship => relationship.nemesis, deckData.relationships) as Relationship[])
@@ -116,7 +114,6 @@ function deckDataToJson(deckData: DeckData): any {
     initialCardIdentifiers: [
       cardName
     ],
-    // TODO: add character card
     cards: [...villainCardToJson(deckData), ...cards],
     promoCards: []
   }
