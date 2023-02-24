@@ -1,7 +1,8 @@
 import pascalcase from 'pascalcase';
 import { assoc, filter, find, join, map, partition, pluck, prop, propEq, reduce, sortBy, split, startsWith } from "ramda";
 
-import { Card, DeckData, Relationship, RichText, RichTextBlock, Setup } from "../../netlify/functions/notion-retrieve";
+import { DeckData, Relationship, RichText, Setup } from "../../netlify/functions/notion-retrieve";
+import CopyableText from './CopyableText';
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 function identifier(input: string): string {
@@ -231,17 +232,9 @@ function deckDataToJson(deckData: DeckData): any {
 export default function SentinelsDataJson(props: SentinelsDataDisplayProps) {
   const jsonText = JSON.stringify(deckDataToJson(props.deckData), null, 2)
 
-  function copyToClipboard() {
-    navigator.clipboard.writeText(jsonText)
-    alert("Copied")
-  }
-
   return (
     <>
-      <pre>
-        <button className='button is-primary is-pulled-right' onClick={copyToClipboard}>Copy</button>
-        {jsonText}
-      </pre>
+      <CopyableText text={jsonText} />
     </>
   );
 }

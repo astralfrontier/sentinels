@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Card, DeckData, Setup } from "../../netlify/functions/notion-retrieve";
+import CopyableText from "./CopyableText";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 // TODO: you could just code to point to images\CamelCaseCardName.png
@@ -104,17 +105,9 @@ function deckDataToCardBuilder(deckData: DeckData): string {
 export default function SentinelsDataCardBuilder(props: SentinelsDataDisplayProps) {
   const jsonText = deckDataToCardBuilder(props.deckData)
 
-  function copyToClipboard() {
-    navigator.clipboard.writeText(jsonText)
-    alert("Copied")
-  }
-
   return (
     <>
-      <pre>
-        <button className='button is-primary is-pulled-right' onClick={copyToClipboard}>Copy</button>
-        {jsonText}
-      </pre>
+      <CopyableText text={jsonText} />
     </>
   );
 }
