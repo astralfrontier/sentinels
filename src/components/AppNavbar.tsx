@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import GarageIcon from "../assets/garage_icon-icons.png"
+
 const activeNavbarItem = ({ isActive }: {isActive: boolean}) =>
   isActive ? "navbar-item has-background-white" : "navbar-item";
 
@@ -16,7 +18,7 @@ function AppNavbar() {
       <div className="navbar-brand">
         <Link className="navbar-item" to={"/"}>
           <figure className="image">
-            <img src="/garage_icon-icons.png" width="128" height="128" />
+            <img src={GarageIcon} width="128" height="128" />
           </figure>
         </Link>
         <a
