@@ -1,10 +1,10 @@
 import DefaultLayout from "../layouts/Default";
 
-interface HomePageProps {
+interface PrivacyPageProps {
   children?: React.ReactNode;
 }
 
-export default function HomePage(props: HomePageProps) {
+export default function PrivacyPage(props: PrivacyPageProps) {
   return (
     <>
       <DefaultLayout>
