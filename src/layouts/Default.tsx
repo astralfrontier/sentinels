@@ -15,7 +15,8 @@ export default function DefaultLayout(props: DefaultLayoutProps) {
             </div>
             <footer className="footer">
                 <div className="content has-text-centered">
-                    <Link to={"/privacy"}>Privacy Policy</Link>
+                    <Link to={"/privacy"}>Privacy Policy</Link> |
+                    <a href={"https://github.com/astralfrontier/newman-garage"} target={"_blank"}>Github</a>
                 </div>
             </footer>
         </>
