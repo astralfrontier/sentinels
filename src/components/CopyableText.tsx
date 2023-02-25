@@ -13,7 +13,7 @@ function CopyableText(props: CopyableTextProps) {
 
   return (
     <>
-      <pre>
+      <pre className="copyable-text">
         <button className='button is-primary is-pulled-right' onClick={copyToClipboard}>Copy</button>
         {props.text}
       </pre>
