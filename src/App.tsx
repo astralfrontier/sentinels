@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import PrivacyPage from './pages/PrivacyPage';
 import SearchPage from './pages/SearchPage';
 import SentinelsPage from './pages/SentinelsPage';
+import TermsOfUsePage from './pages/TermsPage';
 import TestPage from './pages/TestPage';
 
 import './App.css'
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/privacy",
     element: <PrivacyPage />
+  },
+  {
+    path: "/terms",
+    element: <TermsOfUsePage />
   },
   {
     path: "/search",

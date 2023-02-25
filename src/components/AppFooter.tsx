@@ -9,7 +9,10 @@ function AppFooter() {
           <Link to={"/privacy"}>Privacy Policy</Link>
         </div>
         <div className="column is-narrow">
-        <Link to={"https://github.com/astralfrontier/newman-garage"} target="_blank">GitHub</Link>
+          <Link to={"/terms"}>Terms of Use</Link>
+        </div>
+        <div className="column is-narrow">
+          <Link to={"https://github.com/astralfrontier/newman-garage"} target="_blank">GitHub</Link>
         </div>
       </div>
     </footer>
