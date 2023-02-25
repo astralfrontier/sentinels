@@ -1,4 +1,4 @@
-import { SearchResult } from "../netlify/functions/notion-search"
+import { SearchResult } from "../netlify/functions/notion-search";
 
 async function callNotion(endpoint: string, body: object): Promise<any> {
   const response = await fetch(`/.netlify/functions/${endpoint}`, {
@@ -7,25 +7,44 @@ async function callNotion(endpoint: string, body: object): Promise<any> {
     cache: "no-cache",
     credentials: "same-origin",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
     redirect: "follow",
-    body: JSON.stringify(body)
-  })
+    body: JSON.stringify(body),
+  });
   if (!response.ok) {
-    const error = await response.blob()
-    throw new Error(await error.text())
+    const error = await response.blob();
+    throw new Error(await error.text());
   }
-  const data = await response.json()
-  return data
+  const data = await response.json();
+  return data;
 }
 
 export async function notionSearch(query: string): Promise<SearchResult[]> {
-  const data: SearchResult[] = await callNotion("notion-search", {query})
+  const data: SearchResult[] = await callNotion("notion-search", { query });
   return data;
 }
 
 export async function notionRetrieve(id: string): Promise<any> {
-  const data = await callNotion("notion-retrieve", {id})
+  const data = await callNotion("notion-retrieve", { id });
   return data;
+}
+
+export function notionErrorText(error: any): string {
+  // A lot could go wrong. Try and present something helpful.
+  let errorText;
+  if (error.message) {
+    try {
+      let errorData = JSON.parse(error.message);
+      let body = JSON.parse(errorData.body);
+      errorText = body.message;
+    } catch (e) {
+      // Fall through to last chance handler
+    }
+  }
+  // Last chance
+  if (!errorText) {
+    errorText = JSON.stringify(error);
+  }
+  return errorText;
 }

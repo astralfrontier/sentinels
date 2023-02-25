@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { SearchResult } from "../../netlify/functions/notion-search";
-import { notionSearch } from "../notion";
+import { notionErrorText, notionSearch } from "../notion";
 import InputWrapper from "./InputWrapper";
 
 interface PageSearchProps {
@@ -69,22 +69,8 @@ function PageSearch(_props: PageSearchProps) {
         setMessage(null)
         setResults(results)
       })
-      .catch((e: Error) => {
-        // A lot could go wrong. Try and present something helpful.
-        let errorText
-        if (e.message) {
-          try {
-            let errorData = JSON.parse(e.message)
-            let body = JSON.parse(errorData.body)
-            errorText = body.message
-          } catch (f) {
-            // Fall through to last chance handler
-          }
-        }
-        // Last chance
-        if (!errorText) {
-          errorText = JSON.stringify(e)
-        }
+      .catch((e) => {
+        const errorText = notionErrorText(e)
         setMessage(errorText)
       })
   }
