@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { assoc, filter, find, join, map, partition, pluck, prop, propEq, reduce, sortBy, split, startsWith } from "ramda";
+import { assoc, difference, filter, find, join, map, partition, pluck, prop, propEq, reduce, sortBy, split, startsWith } from "ramda";
 
 import { DeckData, Relationship, RichText, Setup } from "../../netlify/functions/notion-retrieve";
 import CopyableText from './CopyableText';
@@ -13,7 +13,7 @@ function richtextOneline(input: RichText): string {
   console.dir(input)
   const blocks = map(
     (block) => {
-      let text = block.text
+      let text = block.text.replaceAll('[H]', '{H}')
       if (block.italic) {
         text = `[i]${text}[/i]`
       }
@@ -111,7 +111,7 @@ function villainCardToJson(deckData: DeckData) {
       count: 1,
       title: A.name,
       keywords: [
-        "villain"
+        "villain", ...difference(['Villain', 'A'], A.tags)
       ],
       body: A.villain_title,
       backgroundColor: A_palette?.box_color  || "ffffff",
