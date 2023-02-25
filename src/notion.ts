@@ -39,7 +39,7 @@ export function notionErrorText(error: any): string {
       let body = JSON.parse(errorData.body);
       errorText = body.message;
     } catch (e) {
-      // Fall through to last chance handler
+      errorText = `${error.message}`
     }
   }
   // Last chance

@@ -273,10 +273,17 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
       }
     }
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({palettes, setup, cards, relationships}),
-    };
+    if (!palettes || !setup || !cards || !relationships) {
+      return {
+        statusCode: 500,
+        body: "Missing one or more databases: Palettes, Setup, Cards, Relationships"
+      };  
+    } else {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({palettes, setup, cards, relationships}),
+      };  
+    }
   } catch (e: any) {
     return {
       statusCode: 500,

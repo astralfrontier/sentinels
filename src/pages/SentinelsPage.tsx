@@ -14,6 +14,7 @@ interface SentinelsPageProps {
 export default function SentinelsPage(_props: SentinelsPageProps) {
   const { id } = useParams();
   const [deckData, setDeckData] = useState<DeckData | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const [message, setMessage] = useState<any>(null)
 
   function hasMessage() {
@@ -22,12 +23,15 @@ export default function SentinelsPage(_props: SentinelsPageProps) {
 
   useEffect(() => {
     if (id) {
+      setIsLoading(true)
       notionRetrieve(id)
       .then(results => {
+        setIsLoading(false)
         setMessage(null)
         setDeckData(results)
       })
       .catch((e) => {
+        setIsLoading(false)
         const errorText = notionErrorText(e)
         setMessage(errorText)
       })
@@ -37,6 +41,9 @@ export default function SentinelsPage(_props: SentinelsPageProps) {
   return (
     <>
       <DefaultLayout>
+        {isLoading ? (
+          <progress className="progress is-large is-info" max="100">Loading...</progress>
+        ) : <></>}
         {hasMessage() ? (
           <div className="column is-narrow">
             <div className="notification is-danger">

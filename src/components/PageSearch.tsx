@@ -61,15 +61,19 @@ function SearchResultView(props: SearchResultViewProps) {
 function PageSearch(_props: PageSearchProps) {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<SearchResult[]>([])
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const [message, setMessage] = useState<any>(null)
 
   function onClickSearch() {
+    setIsLoading(true)
     notionSearch(query)
       .then(results => {
+        setIsLoading(false)
         setMessage(null)
         setResults(results)
       })
       .catch((e) => {
+        setIsLoading(false)
         const errorText = notionErrorText(e)
         setMessage(errorText)
       })
@@ -104,6 +108,9 @@ function PageSearch(_props: PageSearchProps) {
           </button>
         </div>
       </div>
+      {isLoading ? (
+        <progress className="progress is-large is-info" max="100">Loading...</progress>
+      ) : <></>}
       <div className="columns is-multiline">
         {hasMessage() ? (
           <div className="column is-narrow">
