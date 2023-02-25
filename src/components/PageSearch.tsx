@@ -61,6 +61,45 @@ function SearchResultView(props: SearchResultViewProps) {
 function PageSearch(_props: PageSearchProps) {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<SearchResult[]>([])
+  const [message, setMessage] = useState<any>(null)
+
+  function onClickSearch() {
+    notionSearch(query)
+      .then(results => {
+        setMessage(null)
+        setResults(results)
+      })
+      .catch((e: Error) => {
+        // A lot could go wrong. Try and present something helpful.
+        let errorText
+        if (e.message) {
+          try {
+            let errorData = JSON.parse(e.message)
+            let body = JSON.parse(errorData.body)
+            errorText = body.message
+          } catch (f) {
+            // Fall through to last chance handler
+          }
+        }
+        // Last chance
+        if (!errorText) {
+          errorText = JSON.stringify(e)
+        }
+        setMessage(errorText)
+      })
+  }
+
+  function hasResults() {
+    return !message && results.length > 0
+  }
+
+  function hasNoResults() {
+    return !message && results.length == 0
+  }
+
+  function hasMessage() {
+    return !!message
+  }
 
   return (
     <>
@@ -73,20 +112,33 @@ function PageSearch(_props: PageSearchProps) {
         <div className="column has-text-centered is-narrow">
           <button
             className="button is-primary mx-2"
-            onClick={() => notionSearch(query).then(setResults)}
+            onClick={onClickSearch}
           >
             Search
           </button>
         </div>
       </div>
       <div className="columns is-multiline">
-        {map(result => 
+        {hasMessage() ? (
+          <div className="column is-narrow">
+            <div className="notification is-danger">
+              {message}
+            </div>
+          </div>
+        ) : <></>}
+        {hasResults() ? map(result => 
           <div className="column is-one-third" key={result.id}>
             <SearchResultView result={result} />
           </div>
-        , results)}
+        , results) : <></>}
+        {hasNoResults() ? (
+          <div className="column is-narrow">
+            <div className="notification is-info">
+              <p>No Results</p>
+            </div>
+          </div>)
+         : <></>}
       </div>
-      {results.length ? <></> : <h3>No Results</h3>}
     </>
   );
 }

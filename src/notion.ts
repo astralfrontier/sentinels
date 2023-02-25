@@ -12,6 +12,10 @@ async function callNotion(endpoint: string, body: object): Promise<any> {
     redirect: "follow",
     body: JSON.stringify(body)
   })
+  if (!response.ok) {
+    const error = await response.blob()
+    throw new Error(await error.text())
+  }
   const data = await response.json()
   return data
 }
