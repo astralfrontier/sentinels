@@ -33,36 +33,43 @@ function notionResultToSearchResult(notionResult: PageObjectResponse | PartialPa
 const notionSearchHandler: Handler = async (event, _context) => {
   const body: SearchHandlerRequest = JSON.parse(event.body || '')
 
-  let has_more: boolean = true
-  let start_cursor: string | undefined = undefined
-  let data: any = []
-
-  while (has_more) {
-    const response: any = await notion.search({
-      query: body.query,
-      filter: {
-        value: 'page',
-        property: 'object'
-      },
-      sort: {
-        direction: 'descending',
-        timestamp: 'last_edited_time'
-      },
-      start_cursor,
-      page_size: 25
-    })
-    data = data.concat(response.results)
-    start_cursor = response.next_cursor || undefined
-    has_more = response.has_more
+  try {
+    let has_more: boolean = true
+    let start_cursor: string | undefined = undefined
+    let data: any = []
+  
+    while (has_more) {
+      const response: any = await notion.search({
+        query: body.query,
+        filter: {
+          value: 'page',
+          property: 'object'
+        },
+        sort: {
+          direction: 'descending',
+          timestamp: 'last_edited_time'
+        },
+        start_cursor,
+        page_size: 25
+      })
+      data = data.concat(response.results)
+      start_cursor = response.next_cursor || undefined
+      has_more = response.has_more
+    }
+  
+    const nonDatabasePages = reject(pathEq(['parent', 'type'], 'database_id'), data)
+    const final: SearchResult[] = map(notionResultToSearchResult, nonDatabasePages)
+  
+    return {
+      statusCode: 200,
+      body: JSON.stringify(final),
+    };  
+  } catch (e: any) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(e),
+    };
   }
-
-  const nonDatabasePages = reject(pathEq(['parent', 'type'], 'database_id'), data)
-  const final: SearchResult[] = map(notionResultToSearchResult, nonDatabasePages)
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify(final),
-  };
 };
 
 export { notionSearchHandler as handler };

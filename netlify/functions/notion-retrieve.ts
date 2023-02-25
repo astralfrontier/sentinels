@@ -83,26 +83,6 @@ function prop(data: any, name: string): any {
   }
 }
 
-
-/*
-  {
-    type: 'text',
-    text: {
-      content: 'I can recognize the dread emanations of the Shadow Veil from here. Back, damned soul.',
-      link: null
-    },
-    annotations: {
-      bold: false,
-      italic: false,
-      strikethrough: false,
-      underline: false,
-      code: false,
-      color: 'default'
-    },
-    plain_text: 'I can recognize the dread emanations of the Shadow Veil from here. Back, damned soul.',
-    href: null
-  }
- */
 function richtext(data: any): RichText {
   return map(
     (block: any) => ({
@@ -298,7 +278,6 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
       body: JSON.stringify({palettes, setup, cards, relationships}),
     };
   } catch (e: any) {
-    console.log(e["trace"])
     return {
       statusCode: 500,
       body: JSON.stringify(e),
