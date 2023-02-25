@@ -221,7 +221,7 @@ function deckDataToJson(deckData: DeckData): any {
     cards: [
       ...heroCardToJson(deckData),
       ...villainCardToJson(deckData),
-      ...cards
+      ...sortBy(prop('identifier'), cards)
     ],
     promoCards: []
   }
