@@ -138,6 +138,25 @@ function villainCardToJson(deckData: DeckData) {
   }
 }
 
+function environmentCardToJson(deckData: DeckData) {
+  const env = find(card => card.tags.includes("Environment"), deckData.setup)
+
+  if (env) {
+    const palette = find(propEq("id", env.palette), deckData.palettes)
+
+    return [{
+      name: env.name,
+      kind: "Environment",
+      expansionIdentifier: env.expansion,
+      backgroundColor: palette?.box_color  || "ffffff",
+      difficulty: env.rating,
+      shortName: identifier(`${env.name}`),
+    }]
+  } else {
+    return []
+  }
+}
+
 function flavor(quote_text: RichText) {
   let identifier = {}
   let buffer: string[] = []
@@ -221,6 +240,7 @@ function deckDataToJson(deckData: DeckData): any {
     cards: [
       ...heroCardToJson(deckData),
       ...villainCardToJson(deckData),
+      ...environmentCardToJson(deckData),
       ...sortBy(prop('identifier'), cards)
     ],
     promoCards: []
