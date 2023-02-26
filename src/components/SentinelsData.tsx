@@ -4,6 +4,7 @@ import { DeckData } from "../../netlify/functions/notion-retrieve";
 import SentinelsDataCardBuilder from "./SentinelsDataCardBuilder";
 import SentinelsDataDebug from "./SentinelsDataDebug";
 import SentinelsDataJson from "./SentinelsDataJson";
+import SentinelsDataStatistics from "./SentinelsDataStatistics";
 
 interface SentinelsDataProps {
   children?: React.ReactNode;
@@ -16,6 +17,10 @@ export interface SentinelsDataDisplayProps {
 }
 
 const tabs = [
+  {
+    name: "Statistics",
+    element: SentinelsDataStatistics
+  },
   {
     name: "Digital Tool JSON",
     element: SentinelsDataJson
