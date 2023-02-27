@@ -85,8 +85,6 @@ function addVillainCard(deckData: DeckData, card: Setup, defaultPalette?: Palett
 
   const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
 
-  console.dir(palette)
-
   output.push(`##villain`)
   output.push(`[[name]] ${card.name}`) // TODO
   output.push(`[[art]] images\v2-0a.png`) // TODO
@@ -118,13 +116,9 @@ function addVillainCard(deckData: DeckData, card: Setup, defaultPalette?: Palett
   return output
 }
 
-function addEnvironmentCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string[] {
-  let output: string[] = []
-
-  const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
-  // TODO
-  return output
-}
+// function addEnvironmentCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string[] {
+//   return []
+// }
 
 function addSetupRows(deckData: DeckData, defaultPalette?: Palette): string[] {
   let output: string[] = []
@@ -139,8 +133,8 @@ function addSetupRows(deckData: DeckData, defaultPalette?: Palette): string[] {
       output = concat(output, addVillainCard(deckData, card, defaultPalette))
       deckType = "##villain-deck"
     } else if (card.tags.includes("Environment")) {
-      output = concat(output, addEnvironmentCard(deckData, card, defaultPalette))
-      deckType = ""
+      //output = concat(output, addEnvironmentCard(deckData, card, defaultPalette))
+      deckType = "##environment"
     }
   }
   
@@ -161,7 +155,7 @@ function addCardRows(deckData: DeckData, defaultPalette?: Palette) {
     output.push(`[[quantity]] ${card.quantity}`)
     output.push(`[[keywords]] ${card.keywords.join(', ')}`)
     output.push(`[[hp]] ${card.hp || 0}`)
-    output.push(`[[text]] ${richtextEscaped(card.effects)}`) // TODO
+    output.push(`[[text]] ${richtextEscaped(card.effects)}`)
     output.push(`[[quote]]`)
     for (let line of richtext(card.quote_text)) {
       output.push(line.replace(': "', '|"'))
