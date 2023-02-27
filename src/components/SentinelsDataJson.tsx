@@ -10,7 +10,6 @@ function identifier(input: string): string {
 }
 
 function richtextOneline(input: RichText): string {
-  console.dir(input)
   const blocks = map(
     (block) => {
       let text = block.text.replaceAll('[H]', '{H}')

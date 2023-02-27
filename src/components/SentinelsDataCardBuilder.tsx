@@ -1,103 +1,188 @@
+import pascalcase from 'pascalcase';
+import { concat, difference, find, head, join, map, pluck, propEq, split } from "ramda";
 import React from "react";
 
-import { Card, DeckData, Setup } from "../../netlify/functions/notion-retrieve";
+import { DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
 import CopyableText from "./CopyableText";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
+function identifier(input: string): string {
+  return pascalcase(input.replace(/[’'"-]+/g, ''))
+}
+
+function richtextOneline(input: RichText | undefined): string {
+  if (!input) {
+    return ""
+  }
+
+  const blocks = map(
+    (block) => {
+      let text = block.text
+      if (block.italic) {
+        text = `/${text}/`
+      }
+      if (block.bold) {
+        text = `!${text}!`
+      }
+      if (block.underline) {
+        text = `_${text}_`
+      }
+      return text
+    },
+    input
+  )
+
+  return join('', blocks)
+}
+
+function richtext(input: RichText): string[] {
+  return split('\n', richtextOneline(input))
+}
+
+function richtextEscaped(input: RichText): string {
+  return richtextOneline(input).replaceAll('\n', '\\n')
+}
+
 // TODO: you could just code to point to images\CamelCaseCardName.png
 
-function addHeroCard(output: string[], card: Setup) {
+function addHeroCard(deckData: DeckData, card: Setup): string[] {
+  let output: string[] = []
+
+  const palette = find(propEq("id", card.palette), deckData.palettes)
+
+  output.push("##suppress-narrator\n")
   output.push('##hero')
   output.push(`[[name]] ${card.name}`)
   output.push(`[[hp]] ${card.hp}`)
-  output.push(`[[powername]] ${card.hero_power}`)
-  output.push(`[[power]] ${card.hero_power}`) // TODO
+  output.push(`[[powername]] ${card.hero_power_name}`)
+  output.push(`[[power]] ${richtextEscaped(card.hero_power)}`)
   output.push(`[[art]] blank.png`)  // TODO
   output.push(`[[nemesis]] blank.png`)  // TODO
-  output.push(`[[artscale]] centered`)  // TODO
-  output.push(`[[topcolor]] ffffff`)  // TODO
-  output.push(`[[btmcolor]] bd3a3d`)  // TODO
-  output.push(`[[boxcolor]] bd3a3d`)  // TODO
-  output.push(`[[footer]] Art by Mike Williams`)  // TODO
+  output.push(`[[artscale]] ${palette?.scaling || 'center'}`)
+  output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
+  output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
+  output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
+  output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}`)
   output.push('[[save]]\n')
 
   output.push('##hero-incap')
   output.push(`[[art]] blank.png`)
-  output.push(`{ One player draws a card.`) // TODO
-  output.push(`{ Destroy an ongoing card.`)
-  output.push(`{ Select an environment card. It deals one target 2 fire damage.`)
-  output.push(`[[boxcolor]] bd3a3d`)
-  output.push(`[[footer]] Art by Mike Williams`)
+  for (let line of richtext(card.hero_incap)) {
+    output.push(`{ ${line}`)
+  }
+  output.push(`[[artscale]] ${palette?.scaling || 'center'}`)
+  output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
+  output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
+  output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
+  output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}`)
   output.push(`[[save]]\n`)
+ 
+  return output
 }
 
-function addVillainCard(output: string[], card: Setup) {
+function addVillainCard(deckData: DeckData, card: Setup): string[] {
+  let output: string[] = []
+
+  const palette = find(propEq("id", card.palette), deckData.palettes)
+
+  output.push(`##villain`)
+  output.push(`[[name]] ${card.name}`) // TODO
+  output.push(`[[art]] images\v2-0a.png`) // TODO
+  output.push(`[[artscale]] ${palette?.scaling || 'stretched'}`)
+  output.push(`[[footer]] ${palette?.art_credit || 'No art credit'}`)
+  output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
+  output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
+  output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
+  output.push(`[[keywords]] ${difference(['A', 'B'], card.tags)}`) // TODO BROKEN
+  output.push(`[[hp]] ${card.hp}`)
+  output.push(`[[nemesis]] icons\\mercury_icon.png`) // TODO
+  output.push(`[[title]] ${card.villain_title}`)
+  output.push(`[[save]]\n`)
+
+  output.push(`##villain-setup`)
+  output.push(`[[name]] ${card.name}`)
+  output.push(`[[art]] blank.png`)
+  output.push(`[[artscale]] ${palette?.scaling || 'stretched'}`)
+  output.push(`[[footer]] ${palette?.art_credit || 'No art credit'}`)
+  output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
+  output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
+  output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
+  output.push(`[[title]] ${card.villain_title}`)
+  output.push(`[[setup]] ${richtextEscaped(card.villain_setup)}`)
+  output.push(`[[gameplay]] ${richtextEscaped(card.villain_effects)}`)
+  output.push(`[[advanced]] ${richtextEscaped(card.advanced)}`)
+  output.push(`[[save]]\n`)
+
+  return output
+}
+
+function addEnvironmentCard(deckData: DeckData, card: Setup): string[] {
+  let output: string[] = []
+
+  const palette = find(propEq("id", card.palette), deckData.palettes)
   // TODO
+  return output
 }
 
-function addEnvironmentCard(output: string[], card: Setup) {
-  // TODO
-}
+function addSetupRows(deckData: DeckData): string[] {
+  let output: string[] = []
 
-function addSetupRows(output: string[], setup: Setup[]) {
   let deckType = ""
 
-  for (let card of setup) {
+  for (let card of deckData.setup) {
     if (card.tags.includes("Hero")) {
-      output.push("##suppress-narrator\n")
-      addHeroCard(output, card)
+      output = concat(output, addHeroCard(deckData, card))
       deckType = "##hero-deck"
     } else if (card.tags.includes("Villain")) {
-      output.push("##suppress-narrator\n")
-      addVillainCard(output, card)
+      output = concat(output, addVillainCard(deckData, card))
       deckType = "##villain-deck"
     } else if (card.tags.includes("Environment")) {
-      addEnvironmentCard(output, card)
-      deckType = "##hero-deck"
+      output = concat(output, addEnvironmentCard(deckData, card))
+      deckType = ""
     }
   }
   
   if (deckType) {
     output.push(deckType)
   }
+
+  return output
 }
 
-/**
- *  [[title]] "Hello, hero"
- *  [[quantity]] 3
- *  [[keywords]] one-shot
- *  [[text]] Select another hero.\nIf you played this card from your hand, /Charade/ deals that hero 2 irreducible psychic damage.\nThat hero's player draws a card then plays a card or uses a power.
- *  [[quote]]
- *  Jason Quill|"Alycia suddenly appearing and harshly critiquing you before disappearing again just means she's warming up to you."
- *  @Menagerie Secret Origins #16
- *  [[artpos]] centered
- *  [[art]] images\h1-7.png
- *  [[footer]] Art by Mike Williams
- *  [[save]]
- * @param output 
- * @param setup 
- */
-function addCardRows(output: string[], cards: Card[]) {
-  for (let card of cards) {
+function addCardRows(deckData: DeckData, defaultPalette?: Palette) {
+  let output: string[] = []
+
+  for (let card of deckData.cards) {
+    const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
+
     output.push(`[[title]] ${card.name}`)
     output.push(`[[quantity]] ${card.quantity}`)
     output.push(`[[keywords]] ${card.keywords.join(', ')}`)
-    output.push(`[[text]] ${card.effects}`)
-    output.push(`[[quote]]\n${card.quote_text}`)
-    output.push(`[[artpos]] centered`)  // TODO
+    output.push(`[[hp]] ${card.hp || 0}`)
+    output.push(`[[text]] ${richtextEscaped(card.effects)}`) // TODO
+    output.push(`[[quote]]`)
+    for (let line of richtext(card.quote_text)) {
+      output.push(line.replace(': "', '|"'))
+    }
+    output.push(`[[artpos]] ${palette?.scaling}`)
     output.push(`[[art]] blank.png`)    // TODO
-    output.push(`[[footer]] Art by TODO`) // TODO
+    output.push(`[[footer]] ${palette?.art_credit}`)
     output.push(`[[save]]\n`)
   }
+
+  return output
 }
 
 function deckDataToCardBuilder(deckData: DeckData): string {
-  const output: string[] = []
+  let output: string[] = []
+
+  const paletteId = head(pluck('palette', deckData.setup))
+  const defaultPalette = find(propEq("id", paletteId), deckData.palettes)
 
   output.push("##version 107")
 
-  addSetupRows(output, deckData.setup)
-  addCardRows(output, deckData.cards)
+  output = concat(output, addSetupRows(deckData))
+  output = concat(output, addCardRows(deckData, defaultPalette))
 
   return output.join('\n')
 }
