@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/node": "^18.13.0",
     "@types/pascalcase": "^1.0.1",
-    "@types/ramda": "^0.28.22",
+    "@types/ramda": "^0.28.23",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.2.0",
