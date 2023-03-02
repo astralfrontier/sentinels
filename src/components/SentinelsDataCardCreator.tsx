@@ -132,16 +132,22 @@ function addEnvironmentCard(deckData: DeckData, card: Setup, defaultPalette?: Pa
 function addSetupRows(deckData: DeckData, defaultPalette?: Palette): string[] {
   let output: string[] = []
 
+  let extraOutput: string = ""
+
   for (let card of deckData.setup) {
     if (card.tags.includes("Hero")) {
       output = concat(output, addHeroCard(deckData, card, defaultPalette))
-      output.push("##hero-deck")
+      extraOutput = "##hero-deck"
     } else if (card.tags.includes("Villain")) {
       output = concat(output, addVillainCard(deckData, card, defaultPalette))
-      output.push("##villain-deck")
+      extraOutput = "##villain-deck"
     } else if (card.tags.includes("Environment")) {
       output = concat(output, addEnvironmentCard(deckData, card, defaultPalette))
     }
+  }
+
+  if (extraOutput) {
+    output.push(extraOutput)
   }
   
   return output
