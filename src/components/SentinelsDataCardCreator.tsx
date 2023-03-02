@@ -1,12 +1,12 @@
 import pascalcase from 'pascalcase';
-import { concat, difference, find, head, intersection, isNil, join, map, pluck, propEq, reject, split } from "ramda";
+import { difference, find, flatten, head, intersection, isNil, join, map, pluck, propEq, reject, split } from "ramda";
 import React from "react";
 
-import { DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
+import { Card, DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
 import CopyableText from "./CopyableText";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
-const CARD_CREATOR_VERSION = "107"
+const PREAMBLE = "##version 107"
 
 function identifier(input: string): string {
   return pascalcase(input.replace(/[’'"-]+/g, ''))
@@ -45,150 +45,158 @@ function richtextEscaped(input: RichText): string {
   return richtextOneline(input).replaceAll('\n', '\\n')
 }
 
-function addHeroCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string[] {
-  let output: string[] = []
-
-  const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
-
-  output.push("##suppress-narrator\n")
-  output.push('##hero')
-  output.push(`[[name]] ${card.name}`)
-  output.push(`[[hp]] ${card.hp}`)
-  output.push(`[[powername]] ${card.hero_power_name}`)
-  output.push(`[[power]] ${richtextEscaped(card.hero_power)}`)
-  output.push(`[[art]] images\\${identifier(card.name)}A.png`)
-  output.push(`[[nemesis]] blank.png`)  // TODO
-  output.push(`[[artscale]] ${palette?.scaling || 'center'}`)
-  output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
-  output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
-  output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
-  output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}`)
-  output.push('[[save]]\n')
-
-  output.push('##hero-incap')
-  output.push(`[[art]] images\\${identifier(card.name)}B.png`)
-
-  for (let line of richtext(card.hero_incap)) {
-    output.push(`{ ${line}`)
-  }
-
-  output.push(`[[artscale]] ${palette?.scaling || 'center'}`)
-  output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
-  output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
-  output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
-  output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}`)
-  output.push(`[[save]]\n`)
- 
-  return output
+function cardQuote(quote_text: RichText): string {
+  const remappedLines = map(
+    line => line.replace(': "', '|"'),
+    richtext(quote_text)
+  )
+  return join('\n', remappedLines)
 }
 
-function addVillainCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string[] {
-  let output: string[] = []
+function cardToOutput(deckData: DeckData, card: Card, defaultPalette?: Palette): string {
+  const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
 
+  return `
+[[title]] ${card.name}
+[[quantity]] ${card.quantity}
+[[keywords]] ${card.keywords.join(', ')}
+[[hp]] ${card.hp || 0}
+[[text]] ${richtextEscaped(card.effects)}
+[[quote]]
+${cardQuote(card.quote_text)}
+[[artpos]] ${palette?.scaling}
+[[art]] images\\${identifier(card.name)}.png
+[[footer]] ${richtextOneline(palette?.art_credit) || "No art credit"}
+[[save]]
+`
+}
+
+function cardsToOutput(deckData: DeckData, defaultPalette?: Palette): string {
+  const cardOutput = map(
+    card => cardToOutput(deckData, card, defaultPalette),
+    deckData.cards
+  )
+  return join('', cardOutput)
+}
+
+function heroCardIncap(hero_incap: RichText): string {
+  const remappedLines = map(
+    line => `{ ${line}`,
+    richtext(hero_incap)
+  )
+  return join('\n', remappedLines)
+}
+
+function heroCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string {
+  const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
+
+  return `##hero
+[[name]] ${card.name}
+[[hp]] ${card.hp}
+[[powername]] ${card.hero_power_name}
+[[power]] ${richtextEscaped(card.hero_power)}
+[[art]] images\\${identifier(card.name)}A.png
+[[nemesis]] blank.png
+[[artscale]] ${palette?.scaling || 'center'}
+[[topcolor]] ${palette?.top_color || 'ffffff'}
+[[btmcolor]] ${palette?.bottom_color || 'ffffff'}
+[[boxcolor]] ${palette?.box_color || 'ffffff'}
+[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}
+[[save]]
+
+##hero-incap
+[[art]] images\\${identifier(card.name)}B.png
+${heroCardIncap(card.hero_incap)}
+[[artscale]] ${palette?.scaling || 'center'}
+[[topcolor]] ${palette?.top_color || 'ffffff'}
+[[btmcolor]] ${palette?.bottom_color || 'ffffff'}
+[[boxcolor]] ${palette?.box_color || 'ffffff'}
+[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}
+[[save]]
+`
+}
+
+function heroDeck(deckData: DeckData, defaultPalette?: Palette): string {
+  return `${PREAMBLE}
+##suppress-narrator
+
+${join('\n', map(card => heroCard(deckData, card, defaultPalette), deckData.setup))}
+
+##hero-deck
+${cardsToOutput(deckData, defaultPalette)}
+`
+}
+
+function villainCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string {
   const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
   const AorB = head(intersection(['A', 'B'], card.tags))
 
-  output.push("##suppress-narrator\n")
-  output.push(`##villain`)
-  output.push(`[[name]] ${card.name}`)
-  output.push(`[[art]] images\\${identifier(card.name)}${AorB}.png`)
-  output.push(`[[artscale]] ${palette?.scaling || 'stretched'}`)
-  output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}`)
-  output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
-  output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
-  output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
-  output.push(`[[keywords]] ${join(', ', difference(card.tags, ['A', 'B']))}`)
-  output.push(`[[hp]] ${card.hp}`)
-  output.push(`[[nemesis]] blank.png`) // TODO
-  output.push(`[[title]] ${card.villain_title}`)
-  output.push(`[[save]]\n`)
+  return `##villain
+[[name]] ${card.name}
+[[art]] images\\${identifier(card.name)}${AorB}.png
+[[artscale]] ${palette?.scaling || 'stretched'}
+[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}
+[[boxcolor]] ${palette?.box_color || 'ffffff'}
+[[topcolor]] ${palette?.top_color || 'ffffff'}
+[[btmcolor]] ${palette?.bottom_color || 'ffffff'}
+[[keywords]] ${join(', ', difference(card.tags, ['A', 'B']))}
+[[hp]] ${card.hp}
+[[nemesis]] blank.png
+[[title]] ${card.villain_title}
+[[save]]
 
-  output.push(`##villain-setup`)
-  output.push(`[[name]] ${card.name}`)
-  output.push(`[[art]] images\\${identifier(card.name)}${AorB}.png`)
-  output.push(`[[artscale]] ${palette?.scaling || 'stretched'}`)
-  output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}`)
-  output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
-  output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
-  output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
-  output.push(`[[title]] ${card.villain_title}`)
-  output.push(`[[setup]] ${richtextEscaped(card.villain_setup)}`)
-  output.push(`[[gameplay]] ${richtextEscaped(card.villain_effects)}`)
-  output.push(`[[advanced]] ${richtextEscaped(card.advanced)}`)
-  output.push(`[[save]]\n`)
-
-  return output
+##villain-setup
+[[name]] ${card.name}
+[[art]] images\\${identifier(card.name)}${AorB}.png
+[[artscale]] ${palette?.scaling || 'stretched'}
+[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}
+[[boxcolor]] ${palette?.box_color || 'ffffff'}
+[[topcolor]] ${palette?.top_color || 'ffffff'}
+[[btmcolor]] ${palette?.bottom_color || 'ffffff'}
+[[title]] ${card.villain_title}
+[[setup]] ${richtextEscaped(card.villain_setup)}
+[[gameplay]] ${richtextEscaped(card.villain_effects)}
+[[advanced]] ${richtextEscaped(card.advanced)}
+[[save]]
+`
 }
 
-function addEnvironmentCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string[] {
-  let output: string[] = []
+function villainDeck(deckData: DeckData, defaultPalette?: Palette): string {
+  return `${PREAMBLE}
+##suppress-narrator
 
-  output.push('##environment')
-  output.push(`[[name]] ${card.name}`)
-
-  return output
+${join('\n', map(card => villainCard(deckData, card, defaultPalette), deckData.setup))}
+##villain-deck
+${cardsToOutput(deckData, defaultPalette)}
+`
 }
 
-function addSetupRows(deckData: DeckData, defaultPalette?: Palette): string[] {
-  let output: string[] = []
+function environmentDeck(deckData: DeckData, defaultPalette?: Palette): string {
+  return `${PREAMBLE}
+##environment
+${join('\n', map(card => `[[name]] ${card.name}`, deckData.setup))}
+${cardsToOutput(deckData, defaultPalette)}
 
-  let extraOutput: string = ""
-
-  for (let card of deckData.setup) {
-    if (card.tags.includes("Hero")) {
-      output = concat(output, addHeroCard(deckData, card, defaultPalette))
-      extraOutput = "##hero-deck"
-    } else if (card.tags.includes("Villain")) {
-      output = concat(output, addVillainCard(deckData, card, defaultPalette))
-      extraOutput = "##villain-deck"
-    } else if (card.tags.includes("Environment")) {
-      output = concat(output, addEnvironmentCard(deckData, card, defaultPalette))
-    }
-  }
-
-  if (extraOutput) {
-    output.push(extraOutput)
-  }
-  
-  return output
-}
-
-function addCardRows(deckData: DeckData, defaultPalette?: Palette) {
-  let output: string[] = []
-
-  for (let card of deckData.cards) {
-    const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
-
-    output.push(`[[title]] ${card.name}`)
-    output.push(`[[quantity]] ${card.quantity}`)
-    output.push(`[[keywords]] ${card.keywords.join(', ')}`)
-    output.push(`[[hp]] ${card.hp || 0}`)
-    output.push(`[[text]] ${richtextEscaped(card.effects)}`)
-    output.push(`[[quote]]`)
-    for (let line of richtext(card.quote_text)) {
-      output.push(line.replace(': "', '|"'))
-    }
-    output.push(`[[artpos]] ${palette?.scaling}`)
-    output.push(`[[art]] images\\${identifier(card.name)}.png`)
-    output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || "No art credit"}`)
-    output.push(`[[save]]\n`)
-  }
-
-  return output
+` 
 }
 
 function deckDataToCardBuilder(deckData: DeckData): string {
-  let output: string[] = []
-
   const paletteId = head(reject(isNil, pluck('palette', deckData.setup)))
   const defaultPalette = find(propEq("id", paletteId), deckData.palettes)
 
-  output.push(`##version ${CARD_CREATOR_VERSION}`)
+  // Will contain one of "Hero", "Villain", or "Environment"
+  const deckType = find(tag => ["Hero", "Villain", "Environment"].includes(tag), flatten(pluck("tags", deckData.setup)))
 
-  output = concat(output, addSetupRows(deckData, defaultPalette))
-  output = concat(output, addCardRows(deckData, defaultPalette))
-
-  return output.join('\n')
+  switch(deckType) {
+    case "Hero":
+      return heroDeck(deckData, defaultPalette)
+    case "Villain":
+      return villainDeck(deckData, defaultPalette)
+    case "Environment":
+      return environmentDeck(deckData, defaultPalette)
+    default:
+      return "ERROR: no Hero, Villain, or Environment Setup detected"
+  }
 }
 
 export default function SentinelsDataCardBuilder(props: SentinelsDataDisplayProps) {
