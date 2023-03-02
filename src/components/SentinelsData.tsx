@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { DeckData } from "../../netlify/functions/notion-retrieve";
-import SentinelsDataCardBuilder from "./SentinelsDataCardBuilder";
+import SentinelsDataCardBuilder from "./SentinelsDataCardCreator";
 import SentinelsDataDebug from "./SentinelsDataDebug";
 import SentinelsDataJson from "./SentinelsDataJson";
 import SentinelsDataStatistics from "./SentinelsDataStatistics";
@@ -26,7 +26,7 @@ const tabs = [
     element: SentinelsDataJson
   },
   {
-    name: "Card Builder",
+    name: "Card Creator",
     element: SentinelsDataCardBuilder
   },
   {

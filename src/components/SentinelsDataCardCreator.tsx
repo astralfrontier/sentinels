@@ -1,10 +1,12 @@
 import pascalcase from 'pascalcase';
-import { concat, difference, find, head, isNil, join, map, pluck, propEq, reject, split } from "ramda";
+import { concat, difference, find, head, intersection, isNil, join, map, pluck, propEq, reject, split } from "ramda";
 import React from "react";
 
 import { DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
 import CopyableText from "./CopyableText";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
+
+const CARD_CREATOR_VERSION = "107"
 
 function identifier(input: string): string {
   return pascalcase(input.replace(/[’'"-]+/g, ''))
@@ -43,8 +45,6 @@ function richtextEscaped(input: RichText): string {
   return richtextOneline(input).replaceAll('\n', '\\n')
 }
 
-// TODO: you could just code to point to images\CamelCaseCardName.png
-
 function addHeroCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string[] {
   let output: string[] = []
 
@@ -56,7 +56,7 @@ function addHeroCard(deckData: DeckData, card: Setup, defaultPalette?: Palette):
   output.push(`[[hp]] ${card.hp}`)
   output.push(`[[powername]] ${card.hero_power_name}`)
   output.push(`[[power]] ${richtextEscaped(card.hero_power)}`)
-  output.push(`[[art]] blank.png`)  // TODO
+  output.push(`[[art]] images\\${identifier(card.name)}A.png`)
   output.push(`[[nemesis]] blank.png`)  // TODO
   output.push(`[[artscale]] ${palette?.scaling || 'center'}`)
   output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
@@ -66,10 +66,12 @@ function addHeroCard(deckData: DeckData, card: Setup, defaultPalette?: Palette):
   output.push('[[save]]\n')
 
   output.push('##hero-incap')
-  output.push(`[[art]] blank.png`)
+  output.push(`[[art]] images\\${identifier(card.name)}B.png`)
+
   for (let line of richtext(card.hero_incap)) {
     output.push(`{ ${line}`)
   }
+
   output.push(`[[artscale]] ${palette?.scaling || 'center'}`)
   output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
   output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
@@ -84,24 +86,26 @@ function addVillainCard(deckData: DeckData, card: Setup, defaultPalette?: Palett
   let output: string[] = []
 
   const palette = find(propEq("id", card.palette), deckData.palettes) || defaultPalette
+  const AorB = head(intersection(['A', 'B'], card.tags))
 
+  output.push("##suppress-narrator\n")
   output.push(`##villain`)
-  output.push(`[[name]] ${card.name}`) // TODO
-  output.push(`[[art]] images\v2-0a.png`) // TODO
+  output.push(`[[name]] ${card.name}`)
+  output.push(`[[art]] images\\${identifier(card.name)}${AorB}.png`)
   output.push(`[[artscale]] ${palette?.scaling || 'stretched'}`)
   output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}`)
   output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
   output.push(`[[topcolor]] ${palette?.top_color || 'ffffff'}`)
   output.push(`[[btmcolor]] ${palette?.bottom_color || 'ffffff'}`)
-  output.push(`[[keywords]] ${difference(['A', 'B'], card.tags)}`) // TODO BROKEN
+  output.push(`[[keywords]] ${join(', ', difference(card.tags, ['A', 'B']))}`)
   output.push(`[[hp]] ${card.hp}`)
-  output.push(`[[nemesis]] icons\\mercury_icon.png`) // TODO
+  output.push(`[[nemesis]] blank.png`) // TODO
   output.push(`[[title]] ${card.villain_title}`)
   output.push(`[[save]]\n`)
 
   output.push(`##villain-setup`)
   output.push(`[[name]] ${card.name}`)
-  output.push(`[[art]] blank.png`)
+  output.push(`[[art]] images\\${identifier(card.name)}${AorB}.png`)
   output.push(`[[artscale]] ${palette?.scaling || 'stretched'}`)
   output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}`)
   output.push(`[[boxcolor]] ${palette?.box_color || 'ffffff'}`)
@@ -161,7 +165,7 @@ function addCardRows(deckData: DeckData, defaultPalette?: Palette) {
       output.push(line.replace(': "', '|"'))
     }
     output.push(`[[artpos]] ${palette?.scaling}`)
-    output.push(`[[art]] blank.png`)    // TODO
+    output.push(`[[art]] images\\${identifier(card.name)}.png`)
     output.push(`[[footer]] ${richtextOneline(palette?.art_credit) || "No art credit"}`)
     output.push(`[[save]]\n`)
   }
@@ -175,7 +179,7 @@ function deckDataToCardBuilder(deckData: DeckData): string {
   const paletteId = head(reject(isNil, pluck('palette', deckData.setup)))
   const defaultPalette = find(propEq("id", paletteId), deckData.palettes)
 
-  output.push("##version 107")
+  output.push(`##version ${CARD_CREATOR_VERSION}`)
 
   output = concat(output, addSetupRows(deckData, defaultPalette))
   output = concat(output, addCardRows(deckData, defaultPalette))
