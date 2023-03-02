@@ -120,32 +120,30 @@ function addVillainCard(deckData: DeckData, card: Setup, defaultPalette?: Palett
   return output
 }
 
-// function addEnvironmentCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string[] {
-//   return []
-// }
+function addEnvironmentCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): string[] {
+  let output: string[] = []
+
+  output.push('##environment')
+  output.push(`[[name]] ${card.name}`)
+
+  return output
+}
 
 function addSetupRows(deckData: DeckData, defaultPalette?: Palette): string[] {
   let output: string[] = []
 
-  let deckType = ""
-
   for (let card of deckData.setup) {
     if (card.tags.includes("Hero")) {
       output = concat(output, addHeroCard(deckData, card, defaultPalette))
-      deckType = "##hero-deck"
+      output.push("##hero-deck")
     } else if (card.tags.includes("Villain")) {
       output = concat(output, addVillainCard(deckData, card, defaultPalette))
-      deckType = "##villain-deck"
+      output.push("##villain-deck")
     } else if (card.tags.includes("Environment")) {
-      //output = concat(output, addEnvironmentCard(deckData, card, defaultPalette))
-      deckType = "##environment"
+      output = concat(output, addEnvironmentCard(deckData, card, defaultPalette))
     }
   }
   
-  if (deckType) {
-    output.push(deckType)
-  }
-
   return output
 }
 
