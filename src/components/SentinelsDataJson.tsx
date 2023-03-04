@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { assoc, difference, filter, find, join, map, partition, pluck, prop, propEq, reduce, sortBy, split, startsWith } from "ramda";
+import { assoc, difference, evolve, filter, find, isEmpty, join, map, partition, pluck, prop, propEq, reduce, reject, sortBy, split, startsWith } from "ramda";
 
 import { DeckData, Relationship, RichText, Setup } from "../../netlify/functions/notion-retrieve";
 import CopyableText from './CopyableText';
@@ -137,29 +137,10 @@ function villainCardToJson(deckData: DeckData) {
   }
 }
 
-function environmentCardToJson(deckData: DeckData) {
-  const env = find(card => card.tags.includes("Environment"), deckData.setup)
-
-  if (env) {
-    const palette = find(propEq("id", env.palette), deckData.palettes)
-
-    return [{
-      name: env.name,
-      kind: "Environment",
-      expansionIdentifier: env.expansion,
-      backgroundColor: palette?.box_color  || "ffffff",
-      difficulty: env.rating,
-      shortName: identifier(`${env.name}`),
-    }]
-  } else {
-    return []
-  }
-}
-
-function flavor(quote_text: RichText) {
+function flavor(quote_text: RichText, isEnvironmentDeck: boolean) {
   let identifier = {}
   let buffer: string[] = []
-  let flavorQuotes: any[] = []
+  let flavorQuotes = []
   let flavorReference = {}
   let i
 
@@ -177,9 +158,9 @@ function flavor(quote_text: RichText) {
         buffer = []
       }
       identifier = {identifier: line.substring(0, i)}
-      buffer.push(line.substring(i + 2).replaceAll(/^\"|\"$/g, ""))
+      buffer.push(line.substring(i + 2))
     } else {
-      buffer.push(line.replaceAll(/^\"|\"$/g, ""))
+      buffer.push(line)
     }
   }
 
@@ -196,15 +177,28 @@ function flavor(quote_text: RichText) {
     }
   }
 
-  return {
-    flavorQuotes,
-    ...flavorReference
+  if (isEnvironmentDeck) {
+    return {
+      flavorText: join('', pluck("text", flavorQuotes))
+    }
+  } else {
+    // Eliminate empty quotes
+    flavorQuotes = reject((quote: any) => isEmpty(quote.text), flavorQuotes)
+    // Eliminate leading & trailing quotation marks
+    flavorQuotes = map(
+      (quote) => assoc("text", quote.text.replaceAll(/^\"|\"$/g, ""), quote),
+      flavorQuotes
+    )
+    return {
+      flavorQuotes,
+      ...flavorReference
+    }  
   }
 }
 
-function cardsToJson(deckData: DeckData, _defaultPalette: string | undefined) {
+function cardsToJson(deckData: DeckData, _defaultPalette: string | undefined, isEnvironmentDeck: boolean) {
   return map(card => {
-    const cardFlavor = flavor(card.quote_text)
+    const cardFlavor = flavor(card.quote_text, isEnvironmentDeck)
     //const paletteId = card.palette || defaultPalette
     //const palette = find(propEq("id", paletteId), deckData.palettes)
     const hp = card.hp ? {hitpoints: card.hp} : {}
@@ -235,9 +229,9 @@ function deckDataToJson(deckData: DeckData): any {
   const defaultPalette = primarySetupCard.palette
   const cardName = identifier(`${primarySetupCard.name} Character`)
 
-  const cards = cardsToJson(deckData, defaultPalette)
-
   const kind = find(tag => (tag == "Hero" || tag == "Villain" || tag == "Environment"), primarySetupCard.tags)
+
+  const cards = cardsToJson(deckData, defaultPalette, kind == "Environment")
 
   const palette = find(propEq("id", primarySetupCard.palette), deckData.palettes)
 
