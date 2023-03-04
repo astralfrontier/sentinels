@@ -231,22 +231,27 @@ function deckDataToJson(deckData: DeckData): any {
 
   const kind = find(tag => (tag == "Hero" || tag == "Villain" || tag == "Environment"), primarySetupCard.tags)
 
-  const promoCards = (kind == "Environment") ? {} : {promoCards: []}
+  const palette = find(propEq("id", primarySetupCard.palette), deckData.palettes)
+
+  const preamble = (kind == "Environment") ? {
+    backgroundColor: palette?.box_color  || "ffffff",
+    difficulty: primarySetupCard.rating,
+    shortName: identifier(`${primarySetupCard.name}`),
+  } : {
+    initialCardIdentifiers: [cardName],
+    promoCards: []
+  }
 
   const output: any = {
     name: primarySetupCard.name,
     kind,
     expansionIdentifier: primarySetupCard.expansion,
-    initialCardIdentifiers: [
-      cardName
-    ],
+    ...preamble,
     cards: [
       ...heroCardToJson(deckData),
       ...villainCardToJson(deckData),
-      ...environmentCardToJson(deckData),
       ...sortBy(prop('identifier'), cards)
-    ],
-    ...promoCards
+    ]
   }
 
   return output

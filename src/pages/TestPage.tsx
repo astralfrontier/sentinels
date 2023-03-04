@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as deckData from "../../samples/mercury.json"
+import * as deckData from "../../samples/challenger-park.json"
 import SentinelsData from "../components/SentinelsData";
 import DefaultLayout from "../layouts/Default";
 
