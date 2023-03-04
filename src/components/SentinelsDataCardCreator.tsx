@@ -60,7 +60,7 @@ function cardQuote(quote_text: RichText): string {
     } else if (lines.length == 0) {
       lines.push(line)
     } else {
-      lines[lines.length - 1] = `${lines[lines.length - 1]}\r${line}`
+      lines[lines.length - 1] = `${lines[lines.length - 1]}\\r${line}`
     }
   }
   const finalText = join('\n', lines)
