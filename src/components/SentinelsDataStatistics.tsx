@@ -40,14 +40,14 @@ function CardsBy({header, data}: {header: string, data: Record<string,string[]>}
     <>
       <h3>{header}</h3>
 
-      <ul>
+      <table className="table is-fullwidth is-hoverable">
       {map(key => (
-        <li key={key}>
-          <strong>{key}</strong>:{' '}
-          {join(' -- ', data[key])}
-        </li>
+        <tr key={key}>
+          <td><strong>{key}</strong></td>
+          <td>{map(card => <><span className="tag is-info">{card}</span>{' '}</>, data[key])}</td>
+        </tr>
       ), sortBy(identity, keys(data)) as string[])}
-      </ul>
+      </table>
     </>
   )
 }
