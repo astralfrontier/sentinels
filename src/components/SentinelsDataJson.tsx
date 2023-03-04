@@ -229,9 +229,13 @@ function deckDataToJson(deckData: DeckData): any {
 
   const cards = cardsToJson(deckData, defaultPalette)
 
+  const kind = find(tag => (tag == "Hero" || tag == "Villain" || tag == "Environment"), primarySetupCard.tags)
+
+  const promoCards = (kind == "Environment") ? {} : {promoCards: []}
+
   const output: any = {
     name: primarySetupCard.name,
-    kind: find(tag => (tag == "Hero" || tag == "Villain" || tag == "Environment"), primarySetupCard.tags),
+    kind,
     expansionIdentifier: primarySetupCard.expansion,
     initialCardIdentifiers: [
       cardName
@@ -242,7 +246,7 @@ function deckDataToJson(deckData: DeckData): any {
       ...environmentCardToJson(deckData),
       ...sortBy(prop('identifier'), cards)
     ],
-    promoCards: []
+    ...promoCards
   }
 
   return output
