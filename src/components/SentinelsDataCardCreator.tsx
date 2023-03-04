@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { difference, find, flatten, head, intersection, isNil, join, map, pluck, propEq, reject, split } from "ramda";
+import { difference, find, flatten, head, intersection, isEmpty, isNil, join, map, pluck, propEq, reject, split } from "ramda";
 import React from "react";
 
 import { Card, DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
@@ -19,7 +19,7 @@ function richtextOneline(input: RichText | undefined): string {
 
   const blocks = map(
     (block) => {
-      let text = block.text
+      let text = block.text.replaceAll("!", "\\!").replaceAll(/[\{\}]/g, '/')
       if (block.italic) {
         text = `/${text}/`
       }
@@ -50,7 +50,8 @@ function cardQuote(quote_text: RichText): string {
     line => line.replace(': "', '|"').replace('\n', '\\n'),
     richtext(quote_text)
   )
-  return join('\n', remappedLines)
+  const finalText = join('\n', remappedLines)
+  return isEmpty(finalText) ? "null" : finalText
 }
 
 function cardToOutput(deckData: DeckData, card: Card, defaultPalette?: Palette): string {
@@ -108,11 +109,20 @@ function heroCard(deckData: DeckData, card: Setup, defaultPalette?: Palette): st
 [[art]] images\\${identifier(card.name)}B.png
 ${heroCardIncap(card.hero_incap)}
 [[artscale]] ${palette?.scaling || 'center'}
-[[topcolor]] ${palette?.top_color || 'ffffff'}
-[[btmcolor]] ${palette?.bottom_color || 'ffffff'}
 [[boxcolor]] ${palette?.box_color || 'ffffff'}
 [[footer]] ${richtextOneline(palette?.art_credit) || 'No art credit'}
 [[save]]
+
+`
+}
+
+function heroCards(deckData: DeckData, defaultPalette?: Palette): string {
+  const primaryHeroCard = find(card => card.tags.includes("Hero") && !card.tags.includes("Hero Variant"), deckData.setup)
+
+  return `${join('\n', map(card => heroCard(deckData, card, defaultPalette), deckData.setup))}
+
+##hero-deck
+[[name]] ${primaryHeroCard?.name}
 `
 }
 
@@ -120,9 +130,7 @@ function heroDeck(deckData: DeckData, defaultPalette?: Palette): string {
   return `${PREAMBLE}
 ##suppress-narrator
 
-${join('\n', map(card => heroCard(deckData, card, defaultPalette), deckData.setup))}
-
-##hero-deck
+${heroCards(deckData, defaultPalette)}
 ${cardsToOutput(deckData, defaultPalette)}
 `
 }
@@ -158,6 +166,17 @@ function villainCard(deckData: DeckData, card: Setup, defaultPalette?: Palette):
 [[gameplay]] ${richtextEscaped(card.villain_effects)}
 [[advanced]] ${richtextEscaped(card.advanced)}
 [[save]]
+
+`
+}
+
+function villainCards(deckData: DeckData, defaultPalette?: Palette): string {
+  const primaryVillainCard = find(card => card.tags.includes("Villain") && card.tags.includes("A"), deckData.setup)
+
+  return `${join('\n', map(card => villainCard(deckData, card, defaultPalette), deckData.setup))}
+
+##villain-deck
+[[name]] ${primaryVillainCard?.name}
 `
 }
 
@@ -165,8 +184,7 @@ function villainDeck(deckData: DeckData, defaultPalette?: Palette): string {
   return `${PREAMBLE}
 ##suppress-narrator
 
-${join('\n', map(card => villainCard(deckData, card, defaultPalette), deckData.setup))}
-##villain-deck
+${villainCards(deckData, defaultPalette)}
 ${cardsToOutput(deckData, defaultPalette)}
 `
 }
