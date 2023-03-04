@@ -9,7 +9,7 @@ import { SentinelsDataDisplayProps } from "./SentinelsData";
 const PREAMBLE = "##version 107"
 
 function identifier(input: string): string {
-  return pascalcase(input.replace(/[’'"-]+/g, ''))
+  return pascalcase(input.replace(/['"-]+/g, ''))
 }
 
 function richtextOneline(input: RichText | undefined): string {
@@ -47,7 +47,7 @@ function richtextEscaped(input: RichText): string {
 
 function cardQuote(quote_text: RichText): string {
   const remappedLines = map(
-    line => line.replace(': "', '|"'),
+    line => line.replace(': "', '|"').replace('\n', '\\n'),
     richtext(quote_text)
   )
   return join('\n', remappedLines)

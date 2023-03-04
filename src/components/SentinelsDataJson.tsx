@@ -6,7 +6,7 @@ import CopyableText from './CopyableText';
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 function identifier(input: string): string {
-  return pascalcase(input.replace(/[’'"-]+/g, ''))
+  return pascalcase(input.replace(/['"-]+/g, ''))
 }
 
 function richtextOneline(input: RichText): string {
