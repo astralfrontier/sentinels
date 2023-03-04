@@ -45,6 +45,15 @@ function richtextEscaped(input: RichText): string {
   return richtextOneline(input).replaceAll('\n', '\\n')
 }
 
+function bodyAndPowers(card: Card) {
+  const effects = richtextEscaped(card.effects)
+  const powers = card.powers.length ? map(
+    line => `!Power: !>${line}<`,
+    richtext(card.powers)
+  ) : []
+  return `${effects}${(card.effects.length && card.powers.length) ? '\\n' : ''}${join('\\n', powers)}`
+}
+
 function cardQuote(quote_text: RichText): string {
   // Buckle up...
   // So the rule for Card Creator is that:
@@ -75,7 +84,7 @@ function cardToOutput(deckData: DeckData, card: Card, defaultPalette?: Palette):
 [[quantity]] ${card.quantity}
 [[keywords]] ${card.keywords.join(', ')}
 [[hp]] ${card.hp || 0}
-[[text]] ${richtextEscaped(card.effects)}
+[[text]] ${bodyAndPowers(card)}
 [[quote]]
 ${cardQuote(card.quote_text)}
 [[artpos]] ${palette?.scaling}
