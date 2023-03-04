@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { difference, find, flatten, head, includes, intersection, isEmpty, isNil, join, map, pluck, propEq, reject, split, startsWith } from "ramda";
+import { difference, find, flatten, head, includes, intersection, isEmpty, isNil, join, map, pluck, prop, propEq, reject, sortBy, split, startsWith } from "ramda";
 import React from "react";
 
 import { Card, DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
@@ -88,7 +88,7 @@ ${cardQuote(card.quote_text)}
 function cardsToOutput(deckData: DeckData, defaultPalette?: Palette): string {
   const cardOutput = map(
     card => cardToOutput(deckData, card, defaultPalette),
-    deckData.cards
+    sortBy(card => identifier(prop('name', card)), deckData.cards) as Card[]
   )
   return join('', cardOutput)
 }
