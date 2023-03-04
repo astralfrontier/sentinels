@@ -41,7 +41,7 @@ function CardsBy({header, data}: {header: string, data: Record<string,string[]>}
 
       <ul>
       {map(key => (
-        <li>
+        <li key={key}>
           <strong>{key}</strong>:{' '}
           {join(' -- ', data[key])}
         </li>

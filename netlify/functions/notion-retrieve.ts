@@ -83,10 +83,14 @@ function prop(data: any, name: string): any {
   }
 }
 
+function stripSmartQuotes(input: string): string {
+  return input.replaceAll(/[‘’]/g, "'").replaceAll(/[“”]/g, '"')
+}
+
 function richtext(data: any): RichText {
   return map(
     (block: any) => ({
-      text: block.plain_text,
+      text: stripSmartQuotes(block.plain_text),
       bold: block.annotations.bold,
       italic: block.annotations.italic,
       strikethrough: block.annotations.strikethrough,
@@ -97,7 +101,7 @@ function richtext(data: any): RichText {
 }
 
 function plaintext(data: any): string {
-  return join("", pluck("plain_text")(data));
+  return stripSmartQuotes(join("", pluck("plain_text")(data)));
 }
 
 function tag(data: any): string {
