@@ -63,6 +63,7 @@ export interface Card {
   icons: string[];
   hp: number | null;
   effects: RichText;
+  powers: RichText;
   quote_text: RichText;
 }
 
@@ -87,9 +88,9 @@ function stripSmartQuotes(input: string): string {
   return input.replaceAll(/[‘’]/g, "'").replaceAll(/[“”]/g, '"')
 }
 
-function richtext(data: any): RichText {
+function richtext(data: any[]): RichText {
   return map(
-    (block: any) => ({
+    (block) => ({
       text: stripSmartQuotes(block.plain_text),
       bold: block.annotations.bold,
       italic: block.annotations.italic,
@@ -97,7 +98,7 @@ function richtext(data: any): RichText {
       underline: block.annotations.underline,
       code: block.annotations.code,
       color: block.annotations.color
-    }), data)
+    }), data || [])
 }
 
 function plaintext(data: any): string {
@@ -174,6 +175,7 @@ function parseCards(data: any) {
       icons: tags(prop(row, "Icons")),
       hp: prop(row, "HP"),
       effects: richtext(prop(row, "Effects")),
+      powers: richtext(prop(row, "Powers")),
       quote_text: richtext(prop(row, "Quote Text")),
     });
   }
