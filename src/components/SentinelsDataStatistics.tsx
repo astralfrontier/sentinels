@@ -2,6 +2,7 @@ import { append, assoc, identity, join, keys, map, prop, reduce, sortBy } from "
 import React from "react";
 
 import { DeckData } from "../../netlify/functions/notion-retrieve";
+import preflightWarnings from "../preflight";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 interface DeckStatistics {
@@ -52,10 +53,25 @@ function CardsBy({header, data}: {header: string, data: Record<string,string[]>}
 }
 
 export default function SentinelsDataDebug(props: SentinelsDataDisplayProps) {
+  const warnings = preflightWarnings(props.deckData)
   const stats = deckStatistics(props.deckData)
 
   return (
     <>
+      {warnings.length == 0 ? <></> :
+      <article className="message is-warning">
+        <div className="message-header">
+          <p>Preflight Warnaings</p>
+        </div>
+        <div className="message-body">
+          <ul>
+            {map(
+              warning => (<li key={warning}>{warning}</li>)
+            , warnings)}
+          </ul>
+        </div>
+      </article>
+      }
       <div className="content">
         <p>
           <strong>Card Count:</strong> {stats.cardCount} ({props.deckData.cards.length} unique cards)
