@@ -1,0 +1,656 @@
+{
+    "palettes": [
+      {
+        "id": "406d7451-2d76-44ce-a430-2a9a26c6d29a",
+        "name": "ID Mercury",
+        "scaling": "centered",
+        "top_color": "ffffff",
+        "box_color": "f9dc8c",
+        "bottom_color": "b14343",
+        "art_credit": [
+          {
+            "text": "Art by Michael Williams",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      },
+      {
+        "id": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "name": "Mercury Colors",
+        "scaling": "centered",
+        "top_color": "ffffff",
+        "box_color": "f9dc8c",
+        "bottom_color": "f9dc8c",
+        "art_credit": [
+          {
+            "text": "Art by Michael Williams",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      },
+      {
+        "id": "5d92652d-5bcf-4b58-9cf4-1e4b4ff7c965",
+        "name": "Menagerie Colors",
+        "scaling": "centered",
+        "top_color": "ffffff",
+        "box_color": "bd3a3d",
+        "bottom_color": "bd3a3d",
+        "art_credit": [
+          {
+            "text": "Art by Michael Williams",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      }
+    ],
+    "setup": [
+      {
+        "name": "Fourth of July Mercury",
+        "palette": "406d7451-2d76-44ce-a430-2a9a26c6d29a",
+        "expansion": "Menagerie",
+        "rating": null,
+        "hp": 19,
+        "tags": [
+          "Hero",
+          "Hero Variant"
+        ],
+        "icons": [
+          "RedirectDamage",
+          "ReduceDamageTaken"
+        ],
+        "hero_power_name": "Star Spangled Streak",
+        "hero_power": [
+          {
+            "text": "Select a target. Until the start of your next turn, redirect the next damage dealt by that target to {Mercury} and reduce it by 1.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "hero_incap_icons": [
+          "UsePowerNow",
+          "PlayCardNow",
+          "Manipulate"
+        ],
+        "hero_incap": [
+          {
+            "text": "One player uses a power.\nOne player plays a card.\nPut one environment card on the bottom of its deck, then play the top card of the environment deck.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "villain_title": "",
+        "villain_setup": [
+          {
+            "text": "Leave this blank",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "villain_effects": [
+          {
+            "text": "Leave this blank",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "advanced": [],
+        "challenge_name": [],
+        "challenge": []
+      },
+      {
+        "name": "Mercury",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "expansion": "Menagerie",
+        "rating": 2,
+        "hp": 20,
+        "tags": [
+          "Hero"
+        ],
+        "icons": [
+          "DrawCardNow",
+          "Discard",
+          "GainHP"
+        ],
+        "hero_power_name": "Up to Speed",
+        "hero_power": [
+          {
+            "text": "Draw a card. You may discard a card. If you do, {Mercury} regains 1 HP.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "hero_incap_icons": [
+          "DrawCardNow",
+          "PlayCardNow",
+          "ReduceDamageTaken"
+        ],
+        "hero_incap": [
+          {
+            "text": "One player draws a card.\nOne player plays a card.\nSelect a hero. Until the start of your next turn, reduce damage dealt to that hero by 1.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "villain_title": "Leave this blank",
+        "villain_setup": [
+          {
+            "text": "Leave this blank",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "villain_effects": [
+          {
+            "text": "Leave this blank",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "advanced": [
+          {
+            "text": "Leave this blank",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "challenge_name": [
+          {
+            "text": "Leave this blank",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "challenge": [
+          {
+            "text": "Leave this blank",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      }
+    ],
+    "cards": [
+      {
+        "name": "Sonic Shockwave",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 2,
+        "keywords": [
+          "One-Shot"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "{Mercury} deals up to three targets 2 sonic damage each.\nOne player draws a card.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": []
+      },
+      {
+        "name": "Upholding the Legacy",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "Ongoing"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "Power: {Mercury} regains 1 HP. Select a villain target. Until the start of your next turn, the next time that target deals a hero target damage, redirect that damage to {Mercury}.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": []
+      },
+      {
+        "name": "Too Fast to Follow",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "Ongoing"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "Whenever {Mercury} would be dealt damage, you may reduce that damage by 1 and redirect it to any target. If you do, destroy this card.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": []
+      },
+      {
+        "name": "Sickening Spin",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "One-Shot"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "{Mercury} deals up to two targets 2 toxic damage each.\nUntil the start of your next turn, reduce damage dealt by targets dealt damage this way by 1.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": []
+      },
+      {
+        "name": "Quick Hits",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "One-Shot"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "{Mercury} deals one target 1 melee damage and 1 sonic damage.\nDraw a card or play a card.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": []
+      },
+      {
+        "name": "Mach Speed Teen",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "Ongoing",
+          "Limited"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "You may play an additional card during your turn.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": [
+          {
+            "text": "Harry Gale: \"I was in the seat when the bell stopped ringing, that should count!\"\n@Menagerie Secret Origins #4",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      },
+      {
+        "name": "HUD Visor",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "equipment",
+          "Limited"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "You may draw an additional card during your draw phase.\nWhenever a target enters play, {Mercury} is immune to damage dealt by that target until the end of the turn.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": []
+      },
+      {
+        "name": "Halcyon's Silver Son",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "Ongoing",
+          "Limited"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "Whenever damage dealt by a villain target is redirected to {Mercury}, increase the next damage dealt to that villain by 1.\nPower: Mercury deals one target 1 melee damage and one target 1 sonic damage.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": [
+          {
+            "text": "Silver Streak: \"Son, the people of Halcyon are going to expecting a lot of you because of what our family has done. That's a lot of pressure.\"\n@Menagerie Secret Origins #4",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      },
+      {
+        "name": "Flash Disassembly",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "One-Shot"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "One player draws a card.\nYou may destroy an ongoing card, an environment card, or a device with 4 or fewer HP.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": [
+          {
+            "text": "Unmute: \"What did you do?!\"\nMercury: \"I just yanked all the cables out. They looked important.\"\n@The Menagerie Annual #2",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      },
+      {
+        "name": "Dust Up",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 2,
+        "keywords": [
+          "Ongoing"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "Non-character targets and environment cards cannot deal hero targets damage.\nAt the start of your turn, destroy this card.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": []
+      },
+      {
+        "name": "Drama Magnet",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "Ongoing",
+          "Limited"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "Whenever damage dealt by a villain target is redirected to {Mercury}, {Mercury} regains 1 HP.\nOnce per turn, when a villain target would deal damage to another hero target, you may redirect that damage to {Mercury}.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": [
+          {
+            "text": "Mercury: \"",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          {
+            "text": "I REGRET EVERYTHING.",
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          {
+            "text": "\"\n@The Menagerie #23",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      },
+      {
+        "name": "Annoying Barrage",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 4,
+        "keywords": [
+          "One-Shot"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "{Mercury} deals one target 2 melee damage.\nRedirect the next damage dealt by that target to {Mercury} and reduce it by 2.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": []
+      },
+      {
+        "name": "A10's Jacket",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 2,
+        "keywords": [
+          "equipment",
+          "Limited"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "Power: Select a target. Until the start of your next turn, reduce damage dealt by that target to {Mercury} by 1.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": [
+          {
+            "text": "A10: \"This one's armored. Maybe it'll keep you from getting hurt all the time.\"\n@The Menagerie #39",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      },
+      {
+        "name": "\"Chips, Anyone?\"",
+        "palette": "202eb9e4-9db6-440b-b046-a5dc1f67652d",
+        "quantity": 3,
+        "keywords": [
+          "One-Shot"
+        ],
+        "icons": [],
+        "hp": null,
+        "effects": [
+          {
+            "text": "Another hero regains 3 HP.\nThen, if that hero has fewer HP than Mercury, redirect the next damage dealt by that target to {Mercury}.",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ],
+        "quote_text": [
+          {
+            "text": "Harry Gale: \"They're Jalapeno Chocolate Shrimp.\"\nJason Quill: \"I'll pass.\"\n@Two-Fisted Science Tales #1",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "Menagerie.Unmute",
+        "nemesis": false,
+        "opening_line": [
+          {
+            "text": "Oh no, it's Unmute!",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      },
+      {
+        "name": "default",
+        "nemesis": false,
+        "opening_line": [
+          {
+            "text": "It's me, Mercury!",
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          }
+        ]
+      }
+    ]
+  }
