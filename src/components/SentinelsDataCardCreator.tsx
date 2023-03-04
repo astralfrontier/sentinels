@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { difference, find, flatten, head, intersection, isEmpty, isNil, join, map, pluck, propEq, reject, split } from "ramda";
+import { difference, find, flatten, head, includes, intersection, isEmpty, isNil, join, map, pluck, propEq, reject, split, startsWith } from "ramda";
 import React from "react";
 
 import { Card, DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
@@ -46,11 +46,24 @@ function richtextEscaped(input: RichText): string {
 }
 
 function cardQuote(quote_text: RichText): string {
-  const remappedLines = map(
-    line => line.replace(': "', '|"').replace('\n', '\\n'),
-    richtext(quote_text)
-  )
-  const finalText = join('\n', remappedLines)
+  // Buckle up...
+  // So the rule for Card Creator is that:
+  //   1. If a line starts with @, always append a new line, it's the book name
+  //   2. If a line contains a hero name identifier (HeroName: "Text"), start a new line
+  //   2. Otherwise, append "\rline" to the previous line
+  const lines: string[] = []
+  for (let line of richtext(quote_text)) {
+    if (startsWith("@", line)) {
+      lines.push(line)
+    } else if(line.includes(": \"")) {
+      lines.push(line.replace(": \"", "|\""))
+    } else if (lines.length == 0) {
+      lines.push(line)
+    } else {
+      lines[lines.length - 1] = `${lines[lines.length - 1]}\r${line}`
+    }
+  }
+  const finalText = join('\n', lines)
   return isEmpty(finalText) ? "null" : finalText
 }
 
