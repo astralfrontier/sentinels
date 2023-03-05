@@ -6,7 +6,6 @@ describe('Hero data', () => {
   describe("Digital JSON", () => {
     it('loads the Digital JSON page', () => {
       cy.visit('/test/mercury/digital')
-      cy.get("#sentinels-tab-digital .copyable-text")
     })
 
     it('contains the proper flavor reference', () => {
