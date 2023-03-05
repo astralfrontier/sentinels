@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 import { DeckData } from "../../netlify/functions/notion-retrieve";
 import SentinelsDataCardBuilder from "./SentinelsDataCardCreator";
@@ -19,36 +20,46 @@ export interface SentinelsDataDisplayProps {
 const tabs = [
   {
     name: "Statistics",
+    tab: "home",
     element: SentinelsDataStatistics
   },
   {
     name: "Digital Tool JSON",
+    tab: "digital",
     element: SentinelsDataJson
   },
   {
     name: "Card Creator",
+    tab: "cc",
     element: SentinelsDataCardBuilder
   },
   {
     name: "Debug",
+    tab: "debug",
     element: SentinelsDataDebug
   },
 ]
 
 export default function SentinelsData(props: SentinelsDataProps) {
-  const [selectedTab, setSelectedTab] = useState<number>(0)
+  const { id, currentTab } = useParams();
   const { deckData } = props;
 
   return (
     <>
       <div className="tabs">
         <ul>
-          {tabs.map((tab, idx) => (
-            <li className={selectedTab == idx ? "is-active" : ""} onClick={() => setSelectedTab(idx)}><a>{tab.name}</a></li>
+          {tabs.map((t) => (
+            <li key={t.tab} className={(currentTab == t.tab) ? "is-active" : ""}>
+              <Link to={`/results/notion/${id}/${t.tab}`}>{t.name}</Link>
+            </li>
           ))}
         </ul>
       </div>
-      {tabs[selectedTab].element({deckData})}
+      {tabs.map((t) => 
+        <div key={t.tab} className={(currentTab == t.tab) ? "" : "is-hidden"}>
+          {t.element({deckData})}
+        </div>
+      )}
     </>
   );
 }

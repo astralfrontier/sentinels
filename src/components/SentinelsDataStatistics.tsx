@@ -1,5 +1,5 @@
 import { append, assoc, identity, join, keys, map, prop, reduce, sortBy } from "ramda";
-import React from "react";
+import React, { useMemo } from "react";
 
 import { DeckData } from "../../netlify/functions/notion-retrieve";
 import preflightWarnings from "../preflight";
@@ -41,27 +41,29 @@ function CardsBy({header, data}: {header: string, data: Record<string,string[]>}
       <h3>{header}</h3>
 
       <table className="table is-fullwidth is-hoverable">
-      {map(key => (
-        <tr key={key}>
-          <td><strong>{key}</strong></td>
-          <td>{map(card => <><span className="tag is-info">{card}</span>{' '}</>, data[key])}</td>
-        </tr>
-      ), sortBy(identity, keys(data)) as string[])}
+        <tbody>
+          {map(key => (
+            <tr key={key}>
+              <td><strong>{key}</strong></td>
+              <td>{map(card => <span key={card}><span className="tag is-info">{card}</span>{' '}</span>, data[key])}</td>
+            </tr>
+          ), sortBy(identity, keys(data)) as string[])}
+        </tbody>
       </table>
     </>
   )
 }
 
 export default function SentinelsDataDebug(props: SentinelsDataDisplayProps) {
-  const warnings = preflightWarnings(props.deckData)
-  const stats = deckStatistics(props.deckData)
+  const warnings = useMemo(() => preflightWarnings(props.deckData), [props.deckData])
+  const stats = useMemo(() => deckStatistics(props.deckData), [props.deckData])
 
   return (
     <>
       {warnings.length == 0 ? <></> :
       <article className="message is-warning">
         <div className="message-header">
-          <p>Preflight Warnaings</p>
+          <p>Preflight Warnings</p>
         </div>
         <div className="message-body">
           <ul>

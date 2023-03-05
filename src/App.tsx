@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DocumentationPage from './pages/DocumentationPage';
 import HomePage from './pages/HomePage';
 import PrivacyPage from './pages/PrivacyPage';
+import ResultsPage from './pages/ResultsPage';
 import SearchPage from './pages/SearchPage';
-import SentinelsPage from './pages/SentinelsPage';
 import TermsOfUsePage from './pages/TermsPage';
 import TestPage from './pages/TestPage';
 
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     element: <TermsOfUsePage />
   },
   {
-    path: "/search",
+    path: "/search/notion",
     element: <SearchPage />
   },
   {
@@ -37,8 +37,8 @@ const router = createBrowserRouter([
     element: <DocumentationPage />
   },
   {
-    path: "/:id",
-    element: <SentinelsPage />
+    path: "/results/notion/:id/:currentTab",
+    element: <ResultsPage />
   },
   {
     path: "*",

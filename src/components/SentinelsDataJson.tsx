@@ -1,5 +1,6 @@
 import pascalcase from 'pascalcase';
 import { assoc, difference, evolve, filter, find, isEmpty, join, map, partition, pluck, prop, propEq, reduce, reject, sortBy, split, startsWith } from "ramda";
+import { useMemo } from 'react';
 
 import { DeckData, Relationship, RichText, Setup } from "../../netlify/functions/notion-retrieve";
 import CopyableText from './CopyableText';
@@ -272,7 +273,7 @@ function deckDataToJson(deckData: DeckData): any {
 }
 
 export default function SentinelsDataJson(props: SentinelsDataDisplayProps) {
-  const jsonText = JSON.stringify(deckDataToJson(props.deckData), null, 2)
+  const jsonText = useMemo(() => JSON.stringify(deckDataToJson(props.deckData), null, 2), [props.deckData])
 
   return (
     <>
