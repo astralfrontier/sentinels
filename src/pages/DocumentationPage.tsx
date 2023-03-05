@@ -1,5 +1,5 @@
 import DefaultLayout from "../layouts/Default";
-import Documentation from "./documentation.md";
+import Documentation from "../documentation.md";
 
 export default function DocumentationPage() {
   return (

@@ -47,13 +47,13 @@ function AppNavbar() {
               Test Data
             </a>
             <div className="navbar-dropdown">
-              <NavLink className={"navbar-item"} to={"/test/mercury"} onClick={() => setIsActive(false)}>
+              <NavLink className={"navbar-item"} to={"/test/mercury/home"} onClick={() => setIsActive(false)}>
                 Mercury
               </NavLink>
-              <NavLink className={"navbar-item"} to={"/test/netherwarden"} onClick={() => setIsActive(false)}>
+              <NavLink className={"navbar-item"} to={"/test/netherwarden/home"} onClick={() => setIsActive(false)}>
                 Netherwarden
               </NavLink>
-              <NavLink className={"navbar-item"} to={"/test/challengerPark"} onClick={() => setIsActive(false)}>
+              <NavLink className={"navbar-item"} to={"/test/challengerPark/home"} onClick={() => setIsActive(false)}>
                 Challenger Park
               </NavLink>
             </div>

@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     element: <SearchPage />
   },
   {
-    path: "/test/:deckName",
+    path: "/test/:deckName/:currentTab",
     element: <TestPage />
   },
   {

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React from "react";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 import { DeckData } from "../../netlify/functions/notion-retrieve";
 import SentinelsDataCardBuilder from "./SentinelsDataCardCreator";
@@ -41,8 +41,11 @@ const tabs = [
 ]
 
 export default function SentinelsData(props: SentinelsDataProps) {
-  const { id, currentTab } = useParams();
+  const location = useLocation()
+  const { currentTab } = useParams();
   const { deckData } = props;
+
+  const tabUrl = (newtab: string) => location.pathname.replace(/\/[^\/]*$/, `/${newtab}`)
 
   return (
     <>
@@ -50,7 +53,7 @@ export default function SentinelsData(props: SentinelsDataProps) {
         <ul>
           {tabs.map((t) => (
             <li key={t.tab} className={(currentTab == t.tab) ? "is-active" : ""}>
-              <Link to={`/results/notion/${id}/${t.tab}`}>{t.name}</Link>
+              <Link to={tabUrl(t.tab)}>{t.name}</Link>
             </li>
           ))}
         </ul>

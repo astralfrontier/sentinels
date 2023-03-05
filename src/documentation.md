@@ -28,9 +28,11 @@ When writing flavor text, use this syntax:
 > Character: "Quotation! **Bold** assertion! *Emphasized* word!  
 > New Line! Et Cetera!"  
 > Other Character: "Retort!"  
-> @Big Comic Book Annual #1
+> - Big Comic Book Annual #1
 
-Lines beginning with "@" are considered the reference. Character quotations must include the quotation mark after the colon. Use only one space between the colon and the quotation mark.
+Lines beginning with a single dash ("-") are considered the reference. You can include any number of spaces after the dash, but only one dash character.
+
+Character quotations must include the quotation mark after the colon. Use only one space between the colon and the quotation mark.
 
 ## Dynamic Hit Points
 
