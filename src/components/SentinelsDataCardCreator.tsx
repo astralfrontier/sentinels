@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { difference, find, flatten, head, includes, intersection, isEmpty, isNil, join, map, pluck, prop, propEq, reject, sortBy, split, startsWith } from "ramda";
+import { difference, find, flatten, head, includes, intersection, isEmpty, isNil, join, map, pluck, prop, propEq, reject, sortBy, split, startsWith, trim } from "ramda";
 import React, { useMemo } from "react";
 
 import { Card, DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
@@ -72,8 +72,8 @@ function cardQuote(quote_text: RichText): string {
   //   2. Otherwise, append "\rline" to the previous line
   const lines: string[] = []
   for (let line of richtext(quote_text)) {
-    if (startsWith("@", line)) {
-      lines.push(line)
+    if (startsWith("-", line)) {
+      lines.push(`@${trim(line.substring(1))}`)
     } else if(line.includes(": \"")) {
       lines.push(line.replace(": \"", "|\""))
     } else if (lines.length == 0) {

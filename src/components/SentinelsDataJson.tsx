@@ -1,5 +1,5 @@
 import pascalcase from 'pascalcase';
-import { assoc, difference, evolve, filter, find, isEmpty, join, map, partition, pluck, prop, propEq, reduce, reject, sortBy, split, startsWith } from "ramda";
+import { assoc, difference, filter, find, isEmpty, join, map, partition, pluck, prop, propEq, reduce, reject, sortBy, split, startsWith, trim } from "ramda";
 import { useMemo } from 'react';
 
 import { DeckData, Relationship, RichText, Setup } from "../../netlify/functions/notion-retrieve";
@@ -147,8 +147,8 @@ function flavor(quote_text: RichText, isEnvironmentDeck: boolean) {
 
   let text = richtext(quote_text)
   for (let line of text) {
-    if (startsWith("@", line)) {
-      flavorReference = {flavorReference: line.substring(1)}
+    if (startsWith("-", line)) {
+      flavorReference = {flavorReference: trim(line.substring(1))}
     } else if ((i = line.indexOf(": ")) > -1) {
       // We found a new identifier, push any existing buffer
       if (buffer.length > 0) {
