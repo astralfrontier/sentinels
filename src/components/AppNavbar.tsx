@@ -39,6 +39,9 @@ function AppNavbar() {
           <NavLink className={activeNavbarItem} to={"/search"} onClick={() => setIsActive(false)}>
             Search
           </NavLink>
+          <NavLink className={activeNavbarItem} to={"/docs"} onClick={() => setIsActive(false)}>
+            Documentation
+          </NavLink>
           <div className="navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">
               Test Data

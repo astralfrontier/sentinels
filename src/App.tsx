@@ -1,6 +1,7 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import DocumentationPage from './pages/DocumentationPage';
 import HomePage from './pages/HomePage';
 import PrivacyPage from './pages/PrivacyPage';
 import SearchPage from './pages/SearchPage';
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/test/:deckName",
     element: <TestPage />
+  },
+  {
+    path: "/docs",
+    element: <DocumentationPage />
   },
   {
     path: "/:id",
