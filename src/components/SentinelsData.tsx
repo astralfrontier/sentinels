@@ -59,7 +59,7 @@ export default function SentinelsData(props: SentinelsDataProps) {
         </ul>
       </div>
       {tabs.map((t) => 
-        <div key={t.tab} className={(currentTab == t.tab) ? "" : "is-hidden"}>
+        <div key={t.tab} id={`sentinels-tab-${t.tab}`} className={(currentTab == t.tab) ? "" : "is-hidden"}>
           {t.element({deckData})}
         </div>
       )}
