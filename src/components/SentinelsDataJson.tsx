@@ -209,7 +209,7 @@ function cardHp(hp: number | null): object {
   }
 }
 
-function cardsToJson(deckData: DeckData, _defaultPalette: string | undefined) {
+function cardsToJson(deckData: DeckData, _defaultPalette: string | undefined, isEnvironmentDeck: boolean) {
   return map(card => {
     const cardFlavor = flavor(card.quote_text, isEnvironmentDeck)
     //const paletteId = card.palette || defaultPalette
