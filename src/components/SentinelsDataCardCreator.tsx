@@ -1,6 +1,6 @@
 import pascalcase from 'pascalcase';
 import { difference, find, flatten, head, includes, intersection, isEmpty, isNil, join, map, pluck, prop, propEq, reject, sortBy, split, startsWith } from "ramda";
-import React from "react";
+import React, { useMemo } from "react";
 
 import { Card, DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
 import CopyableText from "./CopyableText";
@@ -250,7 +250,7 @@ function deckDataToCardBuilder(deckData: DeckData): string {
 }
 
 export default function SentinelsDataCardBuilder(props: SentinelsDataDisplayProps) {
-  const jsonText = deckDataToCardBuilder(props.deckData)
+  const jsonText = useMemo(() => deckDataToCardBuilder(props.deckData), [props.deckData])
 
   return (
     <>

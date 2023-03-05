@@ -33,7 +33,7 @@ function SearchResultView(props: SearchResultViewProps) {
                 <footer className="card-footer">
                     <p className="card-footer-item">
                         <span>
-                          <Link to={`/${props.result.id}`} className="button is-primary">Load data</Link>
+                          <Link to={`/results/notion/${props.result.id}/home`} className="button is-primary">Load data</Link>
                         </span>
                     </p>
                     <p className="card-footer-item">

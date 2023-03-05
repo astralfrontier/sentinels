@@ -7,11 +7,11 @@ import { notionErrorText, notionRetrieve } from "../notion";
 import type { DeckData } from "../../netlify/functions/notion-retrieve"
 import SentinelsData from "../components/SentinelsData";
 
-interface SentinelsPageProps {
+interface ResultsPageProps {
   children?: React.ReactNode;
 }
 
-export default function SentinelsPage(_props: SentinelsPageProps) {
+export default function ResultsPage(_props: ResultsPageProps) {
   const { id } = useParams();
   const [deckData, setDeckData] = useState<DeckData | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
