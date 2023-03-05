@@ -202,12 +202,24 @@ function flavor(quote_text: RichText) {
   }
 }
 
+function cardHp(hp: number | null): object {
+  if (hp == null) {
+    return {}
+  } else if (hp > -1) {
+    return {hitpoints: hp}
+  } else {
+    return {
+      hitpoints: Math.abs(hp),
+      hitpointsText: "*"
+    }
+  }
+}
+
 function cardsToJson(deckData: DeckData, _defaultPalette: string | undefined) {
   return map(card => {
     const cardFlavor = flavor(card.quote_text)
     //const paletteId = card.palette || defaultPalette
     //const palette = find(propEq("id", paletteId), deckData.palettes)
-    const hp = card.hp ? {hitpoints: card.hp} : {}
 
     const bodyAndPowers: any = {}
     if (card.effects.length > 0) {
@@ -225,7 +237,7 @@ function cardsToJson(deckData: DeckData, _defaultPalette: string | undefined) {
       icons: card.icons,
       ...bodyAndPowers,
       ...cardFlavor,
-      ...hp
+      ...cardHp(card.hp)
     }
   }, deckData.cards)
 }

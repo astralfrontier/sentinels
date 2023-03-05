@@ -54,6 +54,16 @@ function bodyAndPowers(card: Card) {
   return `${effects}${(card.effects.length && card.powers.length) ? '\\n' : ''}${join('\\n', powers)}`
 }
 
+function cardHp(hp: number | null): string {
+  if (hp == null) {
+    return "0"
+  } else if (hp > -1) {
+    return `${hp}`
+  } else {
+    return "*"
+  }
+}
+
 function cardQuote(quote_text: RichText): string {
   // Buckle up...
   // So the rule for Card Creator is that:
@@ -83,7 +93,7 @@ function cardToOutput(deckData: DeckData, card: Card, defaultPalette?: Palette):
 [[title]] ${card.name}
 [[quantity]] ${card.quantity}
 [[keywords]] ${card.keywords.join(', ')}
-[[hp]] ${card.hp || 0}
+[[hp]] ${cardHp(card.hp)}
 [[text]] ${bodyAndPowers(card)}
 [[quote]]
 ${cardQuote(card.quote_text)}
