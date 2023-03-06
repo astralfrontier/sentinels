@@ -6,6 +6,16 @@ interface RetrieveHandlerRequest {
   id: string;
 }
 
+/**
+ * Rich text handling:
+ * 
+ * RichText is an array of RichTextBlock objects.
+ * Each block contains text and a list of booleans, indicating which markup applies to that block.
+ * To turn rich text into plain text, concatenate all the "text" properties of the RichText array.
+ * We capture more attributes (e.g. strikethrough, code, color) than Sentinels actually supports,
+ * just in case.
+ */
+
 export interface RichTextBlock {
   text: string;
   bold: boolean;
@@ -77,11 +87,18 @@ const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
+/**
+ * Return a Notion page property by name.
+ * Notion objects have a "type" property,
+ * then a data property named the same as the value of "type",
+ * so just return that.
+ */
 function prop(data: any, name: string): any {
   const propData = data.properties[name];
   if (propData) {
     return propData[propData.type];
   }
+  // TODO: else throw error
 }
 
 function stripSmartQuotes(input: string): string {
@@ -105,10 +122,20 @@ function plaintext(data: any): string {
   return stripSmartQuotes(join("", pluck("plain_text")(data)));
 }
 
+/**
+ * Return an array of strings from a Notion select field
+ * @param data 
+ * @returns 
+ */
 function tag(data: any): string {
   return data.name
 }
 
+/**
+ * Return an array of strings from a Notion multi-select field
+ * @param data 
+ * @returns 
+ */
 function tags(data: any): string[] {
   return pluck("name")(data);
 }
@@ -117,11 +144,9 @@ function id(data: any): string {
   return data[0]?.id
 }
 
-function parsePalette(data: any) {
-  const palettes: Palette[] = [];
-
-  for (let row of data) {
-    palettes.push({
+function parsePalette(data: any): Palette[] {
+  return map(
+    row => ({
       id: row.id,
       name: plaintext(prop(row, "Name")),
       scaling: tag(prop(row, "Scaling")),
@@ -129,17 +154,14 @@ function parsePalette(data: any) {
       box_color: plaintext(prop(row, "Box Color")),
       bottom_color: plaintext(prop(row, "Bottom Color")),
       art_credit: richtext(prop(row, "Art Credit")),
-    })
-  }
-
-  return palettes;
+    }),
+    data
+  )
 }
 
-function parseSetup(data: any) {
-  const setup: Setup[] = [];
-
-  for (let row of data) {
-    setup.push({
+function parseSetup(data: any): Setup[] {
+  return map(
+    row => ({
       name: plaintext(prop(row, "Name")),
       palette: id(prop(row, "Palette")),
       expansion: plaintext(prop(row, "Expansion")),
@@ -157,17 +179,14 @@ function parseSetup(data: any) {
       advanced: richtext(prop(row, "Advanced")),
       challenge_name: richtext(prop(row, "Challenge Name")),
       challenge: richtext(prop(row, "Challenge")),
-    });
-  }
-
-  return setup;
+    }),
+    data
+  )
 }
 
-function parseCards(data: any) {
-  const cards: Card[] = [];
-
-  for (let row of data) {
-    cards.push({
+function parseCards(data: any): Card[] {
+  return map(
+    row => ({
       name: plaintext(prop(row, "Name")),
       palette: id(prop(row, "Palette")),
       quantity: prop(row, "Quantity") || 1,
@@ -177,24 +196,20 @@ function parseCards(data: any) {
       effects: richtext(prop(row, "Effects")),
       powers: richtext(prop(row, "Powers")),
       quote_text: richtext(prop(row, "Quote Text")),
-    });
-  }
-
-  return cards;
+    }),
+    data
+  )
 }
 
 function parseRelationships(data: any): Relationship[] {
-  const relationships: Relationship[] = [];
-
-  for (let row of data) {
-    relationships.push({
+  return map(
+    row => ({
       name: plaintext(prop(row, "Name")),
       nemesis: prop(row, "Nemesis"),
       opening_line: richtext(prop(row, "Opening Line")),
-    });
-  }
-
-  return relationships;
+    }),
+    data
+  )
 }
 
 /**

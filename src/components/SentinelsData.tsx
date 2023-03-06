@@ -1,5 +1,7 @@
+import { head, pluck } from "ramda";
 import React from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 import { DeckData } from "../../netlify/functions/notion-retrieve";
 import SentinelsDataCardBuilder from "./SentinelsDataCardCreator";
@@ -21,48 +23,60 @@ const tabs = [
   {
     name: "Statistics",
     tab: "home",
-    element: SentinelsDataStatistics
+    element: SentinelsDataStatistics,
   },
   {
     name: "Digital Tool JSON",
     tab: "digital",
-    element: SentinelsDataJson
+    element: SentinelsDataJson,
   },
   {
     name: "Card Creator",
     tab: "cc",
-    element: SentinelsDataCardBuilder
+    element: SentinelsDataCardBuilder,
   },
   {
     name: "Debug",
     tab: "debug",
-    element: SentinelsDataDebug
+    element: SentinelsDataDebug,
   },
-]
+];
+
+function deckName(deckData: DeckData): string {
+  return head(pluck("name", deckData.setup)) || "Unknown Deck";
+}
 
 export default function SentinelsData(props: SentinelsDataProps) {
-  const location = useLocation()
+  const location = useLocation();
   const { currentTab } = useParams();
   const { deckData } = props;
 
-  const tabUrl = (newtab: string) => location.pathname.replace(/\/[^\/]*$/, `/${newtab}`)
+  const tabUrl = (newtab: string) =>
+    location.pathname.replace(/\/[^\/]*$/, `/${newtab}`);
 
   return (
     <>
+      <Helmet>
+        <title>{deckName(deckData)}</title>
+      </Helmet>
       <div className="tabs">
         <ul>
           {tabs.map((t) => (
-            <li key={t.tab} className={(currentTab == t.tab) ? "is-active" : ""}>
+            <li key={t.tab} className={currentTab == t.tab ? "is-active" : ""}>
               <Link to={tabUrl(t.tab)}>{t.name}</Link>
             </li>
           ))}
         </ul>
       </div>
-      {tabs.map((t) => 
-        <div key={t.tab} id={`sentinels-tab-${t.tab}`} className={(currentTab == t.tab) ? "" : "is-hidden"}>
-          {t.element({deckData})}
+      {tabs.map((t) => (
+        <div
+          key={t.tab}
+          id={`sentinels-tab-${t.tab}`}
+          className={currentTab == t.tab ? "" : "is-hidden"}
+        >
+          {t.element({ deckData })}
         </div>
-      )}
+      ))}
     </>
   );
 }
