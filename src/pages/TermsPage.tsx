@@ -1,4 +1,5 @@
 import DefaultLayout from "../layouts/Default";
+import Terms from "../terms.md";
 
 interface TermsOfUseProps {
   children?: React.ReactNode;
@@ -9,8 +10,7 @@ export default function TermsOfUsePage(props: TermsOfUseProps) {
     <>
       <DefaultLayout>
         <div className="content">
-          <h1>Terms of Use</h1>
-          <p>Coming soon</p>
+          <Terms />
         </div>
       </DefaultLayout>
     </>
