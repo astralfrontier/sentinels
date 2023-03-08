@@ -21,7 +21,7 @@ function AuthorizationButton(props: AuthorizationWrapperProps) {
 
   return (
     <>
-      <a className={hasAccessToken ? "button is-info" : "button is-error"} href={authorizationUrl()}>Authorize</a>
+      <a className={hasAccessToken ? "button is-info" : "button is-danger"} href={authorizationUrl()}>Authorize</a>
     </>
   )
 }
