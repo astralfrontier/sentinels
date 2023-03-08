@@ -4,13 +4,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import DefaultLayout from "../layouts/Default";
 
-/*
-{
-  "access_token": "secret_jrmZupHuwjPv9vdl5devibZLChnvJJasgAJTVv3EvxY",
-  "duplicated_template_id": "5fed4514-1c03-401a-aaea-6c4237f94f51"
-}
- */
-
 interface OAuth2PageProps {
   children?: React.ReactNode;
 }
