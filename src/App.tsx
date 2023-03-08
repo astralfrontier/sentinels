@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import DocumentationPage from './pages/DocumentationPage';
 import HomePage from './pages/HomePage';
+import OAuth2Page from './pages/OAuth2Page';
 import PrivacyPage from './pages/PrivacyPage';
 import ResultsPage from './pages/ResultsPage';
 import SearchPage from './pages/SearchPage';
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/results/notion/:id/:currentTab",
     element: <ResultsPage />
+  },
+  {
+    path: "/oauth2/notion",
+    element: <OAuth2Page />
   },
   {
     path: "*",

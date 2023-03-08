@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import NewmanGarageLogo from "../assets/NewmanGarageLogo.png"
+import AuthorizationButton from "./AuthorizationButton";
 
 const activeNavbarItem = ({ isActive }: {isActive: boolean}) =>
   isActive ? "navbar-item has-background-white" : "navbar-item";
@@ -57,6 +58,11 @@ function AppNavbar() {
                 Challenger Park
               </NavLink>
             </div>
+          </div>
+        </div>
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <AuthorizationButton />
           </div>
         </div>
       </div>
