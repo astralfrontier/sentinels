@@ -1,5 +1,27 @@
 [[toc]]
 
+# Authorize
+
+To use the tool, you must have a user account on [Notion](https://www.notion.so).
+
+On the tool itself, there is an "Authorize" button in the top right corner. It will be red if you are not authorized, and blue if you are.
+
+To start using the tool, click "Authorize".
+
+1. If you aren't logged into Notion, it will ask you to log in
+2. It will ask you to grant permission to view selected pages
+3. Click "Next"
+4. It will offer you a choice to use a template, or select pages
+   - If you want to create a _new_ deck, choose "use a template"
+   - If you want to work on _existing_ decks, choose "select pages"
+5. Click "Allow access"
+6. If prompted, select the pages containing decks you want to work on
+7. If you chose to create a _new_ deck, it should take you to the URL for that new deck, otherwise it will take you to the search page
+
+If you create a new deck and it gives you an error reading "Block type copy_indicator is not supported via the API", reload the page, it should work after that.
+
+Access tokens are stored as browser cookies. Right now they're **session cookies**, so if you close out & open the browser later, you have to log in again.
+
 # Intended Workflow
 
 The intended use of this tool works like this:
