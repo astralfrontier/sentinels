@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "./CopyableText.module.sass"
 
 interface CopyableTextProps {
   text: string;
@@ -13,7 +14,7 @@ function CopyableText(props: CopyableTextProps) {
 
   return (
     <>
-      <pre className="copyable-text">
+      <pre className={classes.copyableText}>
         <button className='button is-primary is-pulled-right' onClick={copyToClipboard}>Copy</button>
         {props.text}
       </pre>

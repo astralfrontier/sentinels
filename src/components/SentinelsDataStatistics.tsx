@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { DeckData } from "../../netlify/functions/notion-retrieve";
 import preflightWarnings from "../preflight";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
+import classes from './SentinelsDataStatistics.module.sass'
 
 interface DeckStatistics {
   cardCount: number;
@@ -44,7 +45,7 @@ function CardsBy({header, data}: {header: string, data: Record<string,string[]>}
         <tbody>
           {map(key => (
             <tr key={key}>
-              <td><strong>{key}</strong></td>
+              <td className={classes.cardsByKey}><strong>{key}</strong></td>
               <td>{map(card => <span key={card}><span className="tag is-info">{card}</span>{' '}</span>, data[key])}</td>
             </tr>
           ), sortBy(identity, keys(data)) as string[])}

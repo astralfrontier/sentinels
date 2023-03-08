@@ -7,6 +7,11 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {
+    modules: {
+      localsConvention: "camelCaseOnly"
+    }
+  },
   define: {
     "import.meta.env.NOTION_CLIENT_ID": `\"${process.env.NOTION_CLIENT_ID}\"`,
     "import.meta.env.DEPLOY_PRIME_URL": `\"${process.env.DEPLOY_PRIME_URL}\"`

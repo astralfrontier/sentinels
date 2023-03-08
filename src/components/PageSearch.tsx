@@ -7,6 +7,8 @@ import { SearchResult } from "../../netlify/functions/notion-search";
 import { notionErrorText, notionSearch } from "../notion";
 import InputWrapper from "./InputWrapper";
 
+import classes from "./PageSearch.module.sass"
+
 interface PageSearchProps {
   children?: React.ReactNode;
 }
@@ -25,7 +27,7 @@ function SearchResultView(props: SearchResultViewProps) {
               <img
                 src={props.result.cover}
                 alt="Cover image"
-                className="search-result-image"
+                className={classes.searchResultImage}
               />
             </figure>
           </div>
