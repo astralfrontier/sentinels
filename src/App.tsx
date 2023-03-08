@@ -1,4 +1,5 @@
 import React from 'react'
+import { CookiesProvider } from 'react-cookie';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import DocumentationPage from './pages/DocumentationPage';
@@ -62,7 +63,9 @@ function ErrorPage(_props: any) {
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <CookiesProvider>
+      <RouterProvider router={router} />
+    </CookiesProvider>
   )
 }
 

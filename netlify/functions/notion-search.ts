@@ -6,6 +6,7 @@ import { find, map, path, pathEq, propEq, reject, values } from "ramda";
 
 interface SearchHandlerRequest {
   query: string;
+  access_token: string;
 }
 
 export interface SearchResult {
@@ -14,10 +15,6 @@ export interface SearchResult {
   cover: string | undefined | null;
   url: string;
 }
-
-const notion = new Client({
-  auth: process.env.NOTION_TOKEN,
-});
 
 function notionResultToSearchResult(notionResult: PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse): SearchResult {
   const result = notionResult as PageObjectResponse
@@ -32,6 +29,10 @@ function notionResultToSearchResult(notionResult: PageObjectResponse | PartialPa
 
 const notionSearchHandler: Handler = async (event, _context) => {
   const body: SearchHandlerRequest = JSON.parse(event.body || '')
+
+  const notion = new Client({
+    auth: body.access_token
+  });
 
   try {
     let has_more: boolean = true

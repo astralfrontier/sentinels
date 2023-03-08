@@ -6,12 +6,14 @@ import { notionErrorText, notionRetrieve } from "../notion";
 
 import type { DeckData } from "../../netlify/functions/notion-retrieve"
 import SentinelsData from "../components/SentinelsData";
+import { useCookies } from "react-cookie";
 
 interface ResultsPageProps {
   children?: React.ReactNode;
 }
 
 export default function ResultsPage(_props: ResultsPageProps) {
+  const [cookies] = useCookies(['access_token']);
   const { id } = useParams();
   const [deckData, setDeckData] = useState<DeckData | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -24,7 +26,7 @@ export default function ResultsPage(_props: ResultsPageProps) {
   useEffect(() => {
     if (id) {
       setIsLoading(true)
-      notionRetrieve(id)
+      notionRetrieve(id, cookies.access_token)
       .then(results => {
         setIsLoading(false)
         setMessage(null)

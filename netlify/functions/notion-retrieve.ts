@@ -4,6 +4,7 @@ import { addIndex, assoc, filter, join, map, pluck, propEq } from "ramda";
 
 interface RetrieveHandlerRequest {
   id: string;
+  access_token: string;
 }
 
 /**
@@ -82,10 +83,6 @@ export interface Relationship {
   nemesis: boolean;
   opening_line: RichText;
 }
-
-const notion = new Client({
-  auth: process.env.NOTION_TOKEN,
-});
 
 /**
  * Return a Notion page property by name.
@@ -216,7 +213,7 @@ function parseRelationships(data: any): Relationship[] {
  * Retrieves all the blocks on a page or database and returns them
  * @param block_id the GUID of the block to retrieve
  */
-async function fetchBlock(block_id: string): Promise<any> {
+async function fetchBlock(notion: Client, block_id: string): Promise<any> {
   let has_more: boolean = true;
   let start_cursor: string | undefined = undefined;
   let data: any = [];
@@ -235,7 +232,7 @@ async function fetchBlock(block_id: string): Promise<any> {
   return data;
 }
 
-async function fetchDatabase(database_id: string): Promise<any> {
+async function fetchDatabase(notion: Client, database_id: string): Promise<any> {
   let has_more: boolean = true;
   let start_cursor: string | undefined = undefined;
   let data: any = [];
@@ -257,8 +254,12 @@ async function fetchDatabase(database_id: string): Promise<any> {
 const notionRetrieveHandler: Handler = async (event, _context) => {
   const body: RetrieveHandlerRequest = JSON.parse(event.body || "");
 
+  const notion = new Client({
+    auth: body.access_token
+  });
+
   try {
-    const childBlocks = await fetchBlock(body.id);
+    const childBlocks = await fetchBlock(notion, body.id);
     const childDatabases = map(
       (block: any) => ({
         id: block.id,
@@ -268,7 +269,7 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
     );
 
     const childData = await Promise.all(
-      map(fetchDatabase, pluck("id", childDatabases))
+      map((id: string) => fetchDatabase(notion, id), pluck("id", childDatabases))
     );
     const finalData: Record<string,any>[] = addIndex(map)(
       (child, idx, _all) => assoc("data", childData[idx], child),

@@ -20,13 +20,13 @@ async function callNotion(endpoint: string, body: object): Promise<any> {
   return data;
 }
 
-export async function notionSearch(query: string): Promise<SearchResult[]> {
-  const data: SearchResult[] = await callNotion("notion-search", { query });
+export async function notionSearch(query: string, access_token: string): Promise<SearchResult[]> {
+  const data: SearchResult[] = await callNotion("notion-search", { query, access_token });
   return data;
 }
 
-export async function notionRetrieve(id: string): Promise<any> {
-  const data = await callNotion("notion-retrieve", { id });
+export async function notionRetrieve(id: string, access_token: string): Promise<any> {
+  const data = await callNotion("notion-retrieve", { id, access_token });
   return data;
 }
 

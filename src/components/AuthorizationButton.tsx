@@ -1,4 +1,5 @@
 import React from "react";
+import { useCookies } from "react-cookie";
 
 interface AuthorizationWrapperProps {
   children?: React.ReactNode;
@@ -14,9 +15,13 @@ export function authorizationUrl(): string {
 }
 
 function AuthorizationButton(props: AuthorizationWrapperProps) {
+  const [cookies] = useCookies(['access_token']);
+
+  const hasAccessToken = !!cookies.access_token
+
   return (
     <>
-      <a className="button is-primary" href={authorizationUrl()}>Authorize</a>
+      <a className={hasAccessToken ? "button is-info" : "button is-error"} href={authorizationUrl()}>Authorize</a>
     </>
   )
 }
