@@ -1,0 +1,726 @@
+{
+  "palettes": [
+    {
+      "id": "86ac5fd1-b3a3-4794-aaf5-9e32c67fb4ab",
+      "name": "Halloween Colors",
+      "scaling": "centered",
+      "top_color": "ffffff",
+      "box_color": "d3932e",
+      "bottom_color": "d3932e",
+      "art_credit": [
+        {
+          "text": "Art by Mike Williams",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "id": "cc9af07c-609b-4027-ac2b-51d8db9f6a54",
+      "name": "Dawn Patrol Colors",
+      "scaling": "centered",
+      "top_color": "ffffff",
+      "box_color": "ffc90e",
+      "bottom_color": "ffc90e",
+      "art_credit": [
+        {
+          "text": "Art by Mike Williams",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "id": "372af673-203b-4948-b725-866664b0e54d",
+      "name": "Space Bug Colors",
+      "scaling": "centered",
+      "top_color": "ffffff",
+      "box_color": "ed2024",
+      "bottom_color": "ed2024",
+      "art_credit": [
+        {
+          "text": "Art by Mike Williams",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    }
+  ],
+  "setup": [
+    {
+      "name": "Halloween Space Bug",
+      "palette": "86ac5fd1-b3a3-4794-aaf5-9e32c67fb4ab",
+      "expansion": "Menagerie",
+      "rating": null,
+      "hp": 26,
+      "tags": [
+        "Hero",
+        "Hero Variant"
+      ],
+      "icons": [],
+      "hero_power_name": "BRZZZZK",
+      "hero_power": [
+        {
+          "text": "You may destroy one of your non-character cards. Then Space Bug deals one target X irreducible melee damage, where X is the number of your cards destroyed this turn.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "hero_incap_icons": [],
+      "hero_incap": [
+        {
+          "text": "One player plays a card.\nOne player draws a card.\nEach target deals themselves 1 irreducible melee damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_title": "",
+      "villain_setup": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_effects": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "advanced": [],
+      "challenge_name": [],
+      "challenge": []
+    },
+    {
+      "name": "Space Bug",
+      "palette": "372af673-203b-4948-b725-866664b0e54d",
+      "expansion": "Menagerie",
+      "rating": 1,
+      "hp": 25,
+      "tags": [
+        "Hero"
+      ],
+      "icons": [],
+      "hero_power_name": "Scavenge Junk",
+      "hero_power": [
+        {
+          "text": "Draw a card. You may discard a card. If you do, draw a card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "hero_incap_icons": [],
+      "hero_incap": [
+        {
+          "text": "One player uses a power.\nOne player plays a card.\nOne player puts a card from their trash second from the top of their deck.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_title": "Leave this blank",
+      "villain_setup": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_effects": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "advanced": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "challenge_name": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "challenge": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Dawn Patrol Space Bug",
+      "palette": "cc9af07c-609b-4027-ac2b-51d8db9f6a54",
+      "expansion": "Menagerie",
+      "rating": null,
+      "hp": 23,
+      "tags": [
+        "Hero",
+        "Hero Variant"
+      ],
+      "icons": [],
+      "hero_power_name": "Murder Spree",
+      "hero_power": [
+        {
+          "text": "Space Bug deals one target 1 energy damage. You may destroy one of your Equipment cards to repeat this power. If no cards are destroyed by this power this turn, draw a card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "hero_incap_icons": [],
+      "hero_incap": [
+        {
+          "text": "One player uses a power.\nPut a card from a trash on the bottom of its deck.\nSelect a hero. The next time that hero destroys a target, they draw a card and play a card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_title": "",
+      "villain_setup": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_effects": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "advanced": [],
+      "challenge_name": [],
+      "challenge": []
+    }
+  ],
+  "cards": [
+    {
+      "name": "Option Two: More Murder!",
+      "quantity": 1,
+      "keywords": [
+        "One-Shot"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "Destroy a target with 4 or less hp.\nIf a target was destroyed this way, increase the next damage dealt by Space Bug by 2.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": []
+    },
+    {
+      "name": "Multi-blasters",
+      "quantity": 3,
+      "keywords": [
+        "Equipment"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "Whenever a villain card enters play, Space Bug deals one target 1 irreducible energy damage.\nAt the start of your turn, destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": []
+    },
+    {
+      "name": "Twitchy Little Bug",
+      "quantity": 2,
+      "keywords": [
+        "Ongoing",
+        "Limited"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "At the start of your turn, you may use a power. Then, if a card was destroyed, Space Bug regains 1 hp.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": []
+    },
+    {
+      "name": "Stolen Grenades",
+      "quantity": 2,
+      "keywords": [
+        "Equipment"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [],
+      "powers": [
+        {
+          "text": "Space Bug deals up to three targets 1 energy damage each. You may destroy one ongoing or environment card. Destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": []
+    },
+    {
+      "name": "Sensor Scope",
+      "quantity": 3,
+      "keywords": [
+        "Equipment"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "When this card enters play, reveal the top three cards of a deck. If you reveal a target this way, increase the next damage dealt by Space Bug by 2. Put up to two cards on the bottom of that deck, and the remaining cards to the top of their deck in any order.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": []
+    },
+    {
+      "name": "The Void Beetle",
+      "quantity": 2,
+      "keywords": [
+        "Equipment",
+        "Limited"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "When this card enters play, discard any number of cards and then draw that many cards.\nWhen this card is destroyed, Space Bug deals up to three targets 2 fire damage each.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": []
+    },
+    {
+      "name": "Lightform Bracer",
+      "quantity": 3,
+      "keywords": [
+        "Equipment"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [],
+      "powers": [
+        {
+          "text": "Space Bug deals one target 2 melee damage. Draw a card and discard a card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": []
+    },
+    {
+      "name": "Option One: Murder!",
+      "quantity": 1,
+      "keywords": [
+        "One-Shot"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "Destroy a target with 4 or less hp.\nIf a target was destroyed this way, increase the next damage dealt by Space Bug by 2.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": []
+    },
+    {
+      "name": "Rail Cannon",
+      "quantity": 2,
+      "keywords": [
+        "Equipment",
+        "Limited"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [],
+      "powers": [
+        {
+          "text": "Space Bug deals one target 5 energy damage. Destroy one of your equipment cards.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": []
+    },
+    {
+      "name": "Break and Rebuild",
+      "quantity": 4,
+      "keywords": [
+        "One-Shot"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "Draw a card.\nDestroy one of your equipment cards.\nReveal cards from the top of your deck until you reveal two equipment cards with different names. Put both of those cards into play, and discard the rest.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Electrogeist: \"Could you not break everything we need to survive for like five minutes?\"\n- Dawn Patrol #1",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Energy Cells to 11",
+      "quantity": 3,
+      "keywords": [
+        "One-Shot"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "Use a power. Increase all damage dealt by that power by 2.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Electrogeist: \"Is that safe?\"\nSpace Bug: \"Not even slightly!\"\n- Dawn Patrol #1",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Forced Assistance",
+      "quantity": 3,
+      "keywords": [
+        "One-Shot"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "Space Bug deals another hero 2 toxic damage.\nPlay the top card of your deck and then the top card of that hero's deck.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Space Bug: \"We are now on a team-up!\"\nCharlie: \"Oh god, your breath stinks so bad.\"\n- Dawn Patrol #0",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Gravity Belt",
+      "quantity": 2,
+      "keywords": [
+        "Equipment",
+        "Limited"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "At the end of your turn, if you did not use the power on this card since the end of your last turn, reduce damage dealt to Space Bug by 1 until the end of your next turn.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [
+        {
+          "text": "Space Bug each non-hero target 1 projectile damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": []
+    },
+    {
+      "name": "Alternative Ammo",
+      "palette": "372af673-203b-4948-b725-866664b0e54d",
+      "quantity": 3,
+      "keywords": [
+        "Ongoing",
+        "Limited"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "Whenever one of your equipment cards is destroyed or discarded from your hand, Space Bug deals one target 1 projectile damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Space Bug: \"This one is empty. YEET!\"\nElectrogeist: \"How do you know what internet memes are?!\"\n- Dawn Patrol #1",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Backup Power Source",
+      "quantity": 4,
+      "keywords": [
+        "Equipment"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "When this card enters play, destroy each other copy of Backup Power Source, then draw a card and play a card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [
+        {
+          "text": "Put a card other than Backup Power Source from your trash on top of your deck. Destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "quote_text": [
+        {
+          "text": "Electrogeist: \"Are those power sources compatible.\"\nSpace Bug: \"If no kaboom, then yes.\"\n- Dawn Patrol #3",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Annoying Gremlin",
+      "palette": "372af673-203b-4948-b725-866664b0e54d",
+      "quantity": 2,
+      "keywords": [
+        "One-Shot"
+      ],
+      "icons": [],
+      "hp": null,
+      "effects": [
+        {
+          "text": "In turn order, each other player may reveal the top card of their deck. That player may have one of their targets deal Space Bug 2 psychic damage. If they do, put that card into play. Otherwise, discard it.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": []
+    }
+  ],
+  "relationships": [
+    {
+      "name": "default",
+      "nemesis": false,
+      "opening_line": [
+        {
+          "text": "Tremble and Obey!",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    }
+  ]
+}

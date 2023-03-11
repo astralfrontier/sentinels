@@ -37,7 +37,7 @@ function richtext(input: RichText): string[] {
 
 function findPrimarySetupCard(setup: Setup[]): Setup {
   for (let card of setup) {
-    if (card.tags.includes("Hero")) {
+    if (card.tags.includes("Hero") && !card.tags.includes("Hero Variant")) {
       return card;
     } else if (card.tags.includes("Villain") && card.tags.includes("A")) {
       return card;
@@ -65,16 +65,21 @@ function relationships(deckData: DeckData) {
   return {openingLines, nemesisIdentifiers}
 }
 
-function heroCardToJson(deckData: DeckData) {
-  const hero = find(card => card.tags.includes("Hero"), deckData.setup)
-
+function heroCardToJson(deckData: DeckData, hero: Setup, variantTemplate?: Setup) {
   if (hero) {
     const {openingLines, nemesisIdentifiers} = relationships(deckData)
 
     const palette = find(propEq("id", hero.palette), deckData.palettes)
 
+    const identifiers = variantTemplate ? ({
+      identifier: identifier(`${variantTemplate.name} Character`),
+      promoIdentifier: identifier(`${hero.name} Character`),
+    }) : ({
+      identifier: identifier(`${hero.name} Character`)
+    })
+
     return [{
-      identifier: identifier(`${hero.name} Character`),
+      ...identifiers,
       count: 1,
       title: hero.name,
       body: hero.hero_power_name,
@@ -254,7 +259,10 @@ function deckDataToJson(deckData: DeckData): any {
     shortName: identifier(`${primarySetupCard.name}`),
   } : {
     initialCardIdentifiers: [cardName],
-    promoCards: []
+    promoCards: map(
+      (card: Setup) => heroCardToJson(deckData, card, primarySetupCard),
+      filter(card => card.tags.includes("Hero Variant"), deckData.setup)
+    )
   }
 
   const output: any = {
@@ -263,7 +271,7 @@ function deckDataToJson(deckData: DeckData): any {
     expansionIdentifier: primarySetupCard.expansion,
     ...preamble,
     cards: [
-      ...heroCardToJson(deckData),
+      ...heroCardToJson(deckData, primarySetupCard),
       ...villainCardToJson(deckData),
       ...sortBy(prop('identifier'), cards)
     ]

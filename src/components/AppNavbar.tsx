@@ -54,8 +54,11 @@ function AppNavbar() {
               <NavLink className={"navbar-item"} to={"/test/netherwarden/home"} onClick={() => setIsActive(false)}>
                 Netherwarden
               </NavLink>
-              <NavLink className={"navbar-item"} to={"/test/challengerPark/home"} onClick={() => setIsActive(false)}>
+              <NavLink className={"navbar-item"} to={"/test/challengerpark/home"} onClick={() => setIsActive(false)}>
                 Challenger Park
+              </NavLink>
+              <NavLink className={"navbar-item"} to={"/test/spacebug/home"} onClick={() => setIsActive(false)}>
+                Space Bug
               </NavLink>
             </div>
           </div>

@@ -1,0 +1,483 @@
+{
+  "name": "Radiance",
+  "kind": "Hero",
+  "expansionIdentifier": "Menagerie",
+  "initialCardIdentifiers": [
+    "RadianceCharacter"
+  ],
+  "cards": [
+    {
+      "identifier": "RadianceCharacter",
+      "count": 1,
+      "title": "Radiance",
+      "body": "Always There to Defend",
+      "backgroundColor": "4167b1",
+      "foilBackgroundColor": "4167b1",
+      "hitpointsColor": "4167b1",
+      "character": true,
+      "powers": [
+        "{Radiance} regains 1 hp, then deals one target 1 radiant damage."
+      ],
+      "icons": [
+        "HasPower",
+        "GainHP",
+        "DealDamageRadiant"
+      ],
+      "hitpoints": 30,
+      "nemesisIdentifiers": [
+        "Menagerie.Radiance"
+      ],
+      "incapacitatedAbilities": [
+        "One player draws a card.",
+        "One player plays a card.",
+        "Select a target.  Until the start of your next turn, whenever that target is dealt damage by another target they deal the source of that damage 1 radiant damage."
+      ],
+      "flippedIcons": [
+        "DrawCardNow",
+        "PlayCardNow",
+        "CounterDamage",
+        "DealDamageRadiant"
+      ],
+      "openingLines": {
+        "default": "Let's go, team. Together we can save the day!",
+        "OblivAeonFrontPageCharacter": "All the worlds of the Multiverse stand against you! We are just the first wave."
+      },
+      "complexity": 1
+    },
+    {
+      "identifier": "BlindingFlare",
+      "count": 2,
+      "title": "Blinding Flare",
+      "keywords": [
+        "ongoing",
+        "hologram"
+      ],
+      "icons": [
+        "DealDamageRadiant",
+        "ReduceDamageTaken",
+        "DestroySelf"
+      ],
+      "body": [
+        "When this card enters play, {Radiance} deals each non-hero target 1 radiant damage.",
+        "Reduce damage dealt to hero targets by non-hero targets by 1.",
+        "At the start of your turn, destroy this card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Charade",
+          "text": "Radiance, a distraction please."
+        }
+      ],
+      "flavorReference": "Charade, Halcyon Nights One-shot"
+    },
+
+    {
+      "identifier": "BeaconOfHope",
+      "count": 2,
+      "title": "Beacon of Hope",
+      "keywords": [
+        "ongoing",
+        "hologram"
+      ],
+      "icons": [
+        "GainHP",
+        "IncreaseDamageDealt",
+        "DestroySelf"
+      ],
+      "body": [
+        "When this card enters play, each hero target regains 1 hp.",
+        "Increase damage dealt by hero targets to non-hero targets by 1.",
+        "At the start of your turn, destroy this card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Radiance",
+          "text": "Help is on the way."
+        }
+      ],
+      "flavorReference": "Radiance, Menagerie Secret Origins #16"
+    },
+
+    {
+      "identifier": "TeenageFightingGuardianRobot",
+      "count": 3,
+      "title": "Teenage Guardian Fighting Robot",
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "icons": [
+        "CounterDamage",
+        "DealDamageRadiant"
+      ],
+      "body": [
+        "The first time {Radiance} is dealt damage by any non-hero target each turn, {Radiance} deals that target 2 radiant damage."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Agent 1337",
+          "text": "It's Like if Skynet sent back{BR}a prom queen to murder sarah connor."
+        }
+      ],
+      "flavorReference": "Agent 1337, Menagerie Secret Origins #16"
+    },
+
+    {
+      "identifier": "MightyCharge",
+      "count": 3,
+      "title": "Mighty Charge",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "DealDamageRadiant",
+        "DealDamageMelee"
+      ],
+      "body": [
+        "{Radiance} deals any number of targets 3 radiant damage each.",
+        "Then, each of those targets deals {Radiance} 1 melee damage."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Concord",
+          "text": "Wait Summer, there's too many of them!"
+        }
+      ],
+      "flavorReference": "Concord, The Menagerie #48"
+    },
+
+    {
+      "identifier": "LightTheWay",
+      "count": 2,
+      "title": "Light the Way",
+      "keywords": [
+        "ongoing",
+        "hologram"
+      ],
+      "icons": [
+        "Manipulate",
+        "DrawCardExtra",
+        "DestroySelf"
+      ],
+      "body": [
+        "When this card enters play, reveal the top card of each deck, and either discard or replace it.",
+        "Each player may draw an additional card during their draw phase.",
+        "At the start of your turn, destroy this card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Radiance",
+          "text": "Stay behind me, I'll{BR}protect you girls!"
+        },
+        {
+          "identifier": "Sparklemuffin",
+          "text": "I could protect [b]you[/b] if{BR}you'd [b]let go[/b]."
+        }
+      ],
+      "flavorReference": "Lost Faith One-shot"
+    },
+
+    {
+      "identifier": "ButterflyDrones",
+      "count": 3,
+      "title": "Butterfly Drones",
+      "keywords": [
+        "equipment",
+        "limited"
+      ],
+      "icons": [
+        "GainHP",
+        "HasPower",
+        "DealDamageRadiant"
+      ],
+      "body": [
+        "Whenever a hologram card is destroyed, one target regains 2 hp."
+      ],
+      "powers": [
+        "{Radiance} deals up to two targets 2 radiant damage each."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Charade",
+          "text": "Those are so... [b]you[/b], Radiance."
+        }
+      ],
+      "flavorReference": "Charade, The Menagerie #53"
+    },
+
+    {
+      "identifier": "DreamTeam",
+      "count": 2,
+      "title": "Dream Team",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "Manipulate"
+      ],
+      "body": [
+        "Reveal the top card of each hero deck. One player plays their revealed card, then each other player puts their revealed card into their hand."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Radiance",
+          "text": "Let's go, Menagerie!{BR}One more time!"
+        }
+      ],
+      "flavorReference": "Radiance, The Menagerie Annual #4"
+    },
+
+    {
+      "identifier": "EmergencyEmitter",
+      "count": 2,
+      "title": "Emergency Emitter",
+      "keywords": [
+        "equipment",
+        "limited"
+      ],
+      "icons": [
+        "GainHP",
+        "DestroySelf"
+      ],
+      "body": [
+        "At the end of your turn, {Radiance} regains 1 hp.",
+        "When {Radiance} would be reduced to 0 or fewer HP, restore {Radiance} to 5 hp, then destroy this card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Summer",
+          "text": "Careful, Agent Waters.{BR}This is my body right now."
+        }
+      ],
+      "flavorReference": "Summer, The Menagerie Annual #2"
+    },
+
+    {
+      "identifier": "FriendlyTeamUp",
+      "count": 3,
+      "title": "Friendly Team-Up",
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "icons": [
+        "HasPower",
+        "IncreaseDamageDealt"
+      ],
+      "powers": [
+        "Select a hero target. Until the end of your next turn, increase damage dealt by that hero by 1 and change the damage type to radiant."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Radiance",
+          "text": "Ready for our [b]First[/b] official team-up, sis?"
+        },
+        {
+          "identifier": "Pneuma",
+          "text": "Been waiting all our lives."
+        }
+      ],
+      "flavorReference": "The Menagerie Annual #4"
+    },
+
+    {
+      "identifier": "HardLightBarrier",
+      "count": 2,
+      "title": "Hard Light Barrier",
+      "keywords": [
+        "ongoing",
+        "hologram"
+      ],
+      "icons": [
+        "DestroyEnvironment",
+        "CannotDealDamage",
+        "DestroySelf"
+      ],
+      "body": [
+        "When this card enters play, you may destroy an environment card.",
+        "Environment cards are immune to damage and cannot deal damage.",
+        "At the start of your turn, destroy this card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Radiance",
+          "text": "Give me a minute. Don't want{BR}this wall falling on anyone."
+        }
+      ],
+      "flavorReference": "Radiance, The Menagerie #54"
+    },
+
+    {
+      "identifier": "HoloPrismPower",
+      "count": 4,
+      "title": "Holo Prism Power!",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "Manipulate",
+        "PlayCardNow"
+      ],
+      "body": [
+        "Reveal cards from the top of your deck until two hologram cards are revealed. Put both into your hand and discard the other revealed cards.",
+        "You may play a hologram card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Summer",
+          "text": "Time to be a hero..."
+        }
+      ],
+      "flavorReference": "Summer, Menagerie Secret Origins #16"
+    },
+
+    {
+      "identifier": "IllCoverYou",
+      "count": 3,
+      "title": "\"I'll Cover You!\"",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "DealDamageMelee",
+        "RedirectDamage",
+        "ReduceDamageDealt"
+      ],
+      "body": [
+        "{Radiance} deals one target 2 melee damage.",
+        "Until the start of your next turn, redirect damage dealt by that target to {Radiance}. Reduce damage redirected this way by 1."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Radiance",
+          "text": "Alycia's friend, please{BR}ignore the ghosts and get the{BR}civilians to safety."
+        }
+      ],
+      "flavorReference": "Radiance, The Menagerie Annual #4"
+    },
+
+    {
+      "identifier": "RadiantDuplicate",
+      "count": 2,
+      "title": "Radiant Duplicate",
+      "keywords": [
+        "ongoing",
+        "hologram"
+      ],
+      "icons": [
+        "Manipulate",
+        "UsePowerExtra",
+        "PlayCardExtra",
+        "DestroySelf"
+      ],
+      "body": [
+        "When this card enters play, each player may discard a card. If they do, they draw a card.",
+        "At the start of each player's turn, they may play a card or use a power. If they play a card, they skip their power phase. If they use a power, they skip their play phase.",
+        "At the start of your turn, destroy this card."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Mercury",
+          "text": "Thanks, Radiance."
+        },
+        {
+          "identifier": "Hologram",
+          "text": "Radiance's attention is elsewhere. Please state immediate concerns."
+        }
+      ],
+      "flavorReference": "A10 and Mercury #8"
+    },
+
+    {
+      "identifier": "RedesignOnTheFly",
+      "count": 4,
+      "title": "Redesign On The Fly",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "DrawCardNow",
+        "GainHP",
+        "DealDamageMelee",
+        "DealDamageRadiant"
+      ],
+      "body": [
+        "Draw two cards or {Radiance} regains 2 hp.",
+        "{Radiance} deals one target 3 melee damage or up to three targets 1 radiant damage each."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Radiance",
+          "text": "What if I did a halo? A halo{BR}of stars might be cute."
+        }
+      ],
+      "flavorReference": "Radiance, The Menagerie Annual #3"
+    },
+
+    {
+      "identifier": "ThunderousUppercut",
+      "count": 3,
+      "title": "Thunderous Uppercut",
+      "keywords": [
+        "one-shot"
+      ],
+      "icons": [
+        "DealDamageMelee"
+      ],
+      "body": [
+        "One non-hero target deals {Radiance} 2 melee damage.",
+        "Then {Radiance} deals that target 5 melee damage."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Radiance",
+          "text": "I know this really isn't the{BR}time, but can we talk about how{BR}[b]Cool[/b] it is to punch [b]GHOSTS[/b]?"
+        }
+      ],
+      "flavorReference": "Radiance, The Menagerie Annual #4"
+    }
+
+  ],
+  "promoCards": [
+    {
+      "identifier": "RadianceCharacter",
+      "promoIdentifier": "PrincessRadianceCharacter",
+      "count": 1,
+      "title": "Radiance",
+      "promoTitle": "Princess Radiance",
+      "shortPromoTitle": "Radiance",
+      "body": "Fairy Fire",
+      "backgroundColor": "4167b1",
+      "foilBackgroundColor": "4167b1",
+      "hitpointsColor": "4167b1",
+      "character": true,
+      "powers": [
+        "Select a target. The next damage dealt to that target is irreducible and increased by 1."
+      ],
+      "icons": [
+        "HasPower",
+        "MakeDamageIrreducible",
+        "IncreaseDamageTaken"
+      ],
+      "hitpoints": 28,
+      "nemesisIdentifiers": [
+        "Menagerie.Radiance"
+      ],
+      "incapacitatedAbilities": [
+        "One player draws a card.",
+        "One Player plays a card.",
+        "The Environment deals each target 1 radiant damage."
+      ],
+      "flippedIcons": [
+        "DrawCardNow",
+        "PlayCardNow",
+        "DealDamageRadiant"
+      ],
+      "openingLines": {
+        "default": "A pure heart should be protected from the likes of you. In the name of the Fairy Kingdoms, I'll punish you!",
+        "OblivAeonFrontPageCharacter": "I am the guardian of the Fairy Kingdom, here to protect all realms from your corruption!"
+      },
+      "complexity": 1
+    }
+  ]
+}
