@@ -1,14 +1,10 @@
-import pascalcase from 'pascalcase';
 import { assoc, difference, filter, find, isEmpty, join, map, partition, pluck, prop, propEq, reduce, reject, sortBy, split, startsWith, trim } from "ramda";
 import { useMemo } from 'react';
 
 import { DeckData, Relationship, RichText, Setup } from "../../netlify/functions/notion-retrieve";
+import { findPrimarySetupCard, identifier } from "../utility";
 import CopyableText from './CopyableText';
 import { SentinelsDataDisplayProps } from "./SentinelsData";
-
-function identifier(input: string): string {
-  return pascalcase(input.replace(/['"-]+/g, ''))
-}
 
 function richtextOneline(input: RichText): string {
   const blocks = map(
@@ -33,19 +29,6 @@ function richtextOneline(input: RichText): string {
 
 function richtext(input: RichText): string[] {
   return split('\n', richtextOneline(input))
-}
-
-function findPrimarySetupCard(setup: Setup[]): Setup {
-  for (let card of setup) {
-    if (card.tags.includes("Hero") && !card.tags.includes("Hero Variant")) {
-      return card;
-    } else if (card.tags.includes("Villain") && card.tags.includes("A")) {
-      return card;
-    } else if (card.tags.includes("Environment")) {
-      return card;
-    }
-  }
-  return setup[0]
 }
 
 function relationships(deckData: DeckData) {

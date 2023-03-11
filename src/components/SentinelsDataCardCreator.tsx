@@ -1,16 +1,12 @@
-import pascalcase from 'pascalcase';
 import { difference, find, flatten, head, includes, intersection, isEmpty, isNil, join, map, pluck, prop, propEq, reject, sortBy, split, startsWith, trim } from "ramda";
 import React, { useMemo } from "react";
 
 import { Card, DeckData, Palette, RichText, Setup } from "../../netlify/functions/notion-retrieve";
+import { findPrimarySetupCard, identifier } from "../utility";
 import CopyableText from "./CopyableText";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
 const PREAMBLE = "##version 107"
-
-function identifier(input: string): string {
-  return pascalcase(input.replace(/['"-]+/g, ''))
-}
 
 function richtextOneline(input: RichText | undefined): string {
   if (!input) {
@@ -149,7 +145,7 @@ ${heroCardIncap(card.hero_incap)}
 }
 
 function heroCards(deckData: DeckData, defaultPalette?: Palette): string {
-  const primaryHeroCard = find(card => card.tags.includes("Hero") && !card.tags.includes("Hero Variant"), deckData.setup)
+  const primaryHeroCard = findPrimarySetupCard(deckData.setup)
 
   return `${join('\n', map(card => heroCard(deckData, card, defaultPalette), deckData.setup))}
 
@@ -203,7 +199,7 @@ function villainCard(deckData: DeckData, card: Setup, defaultPalette?: Palette):
 }
 
 function villainCards(deckData: DeckData, defaultPalette?: Palette): string {
-  const primaryVillainCard = find(card => card.tags.includes("Villain") && card.tags.includes("A"), deckData.setup)
+  const primaryVillainCard = findPrimarySetupCard(deckData.setup)
 
   return `${join('\n', map(card => villainCard(deckData, card, defaultPalette), deckData.setup))}
 

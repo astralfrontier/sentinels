@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { Link, useLocation, useParams } from "react-router-dom";
 
 import { DeckData } from "../../netlify/functions/notion-retrieve";
+import { findPrimarySetupCard } from "../utility";
 import SentinelsDataCardBuilder from "./SentinelsDataCardCreator";
 import SentinelsDataDebug from "./SentinelsDataDebug";
 import SentinelsDataJson from "./SentinelsDataJson";
@@ -43,7 +44,8 @@ const tabs = [
 ];
 
 function deckName(deckData: DeckData): string {
-  return head(pluck("name", deckData.setup)) || "Unknown Deck";
+  const primarySetupCard = findPrimarySetupCard(deckData.setup)
+  return primarySetupCard.name
 }
 
 export default function SentinelsData(props: SentinelsDataProps) {
