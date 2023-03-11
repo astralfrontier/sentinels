@@ -12,6 +12,11 @@ describe('Hero data', () => {
       cy.visit('/test/mercury/digital')
       cy.get("#sentinels-tab-digital .copyable-text").should('include.text', "\"flavorReference\": \"A10, The Menagerie #39\"")
     })
+
+    it('includes promo identifiers', () => {
+      cy.visit('/test/mercury/digital')
+      cy.get("#sentinels-tab-digital .copyable-text").should('include.text', "\"promoIdentifier\": \"FourthOfJulyMercuryCharacter\"")
+    })
   })
 
   describe("Card Creator", () => {
