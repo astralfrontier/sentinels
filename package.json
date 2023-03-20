@@ -35,7 +35,7 @@
     "@types/react-dom": "^18.0.11",
     "@types/react-helmet": "^6.1.6",
     "@vitejs/plugin-react-swc": "^3.2.0",
-    "cypress": "^12.7.0",
+    "cypress": "^12.8.1",
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-table-of-contents": "^0.6.0",
     "netlify-cli": "^13.1.3",
