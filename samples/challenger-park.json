@@ -79,11 +79,13 @@
       ],
       "advanced": [],
       "challenge_name": [],
-      "challenge": []
+      "challenge": [],
+      "nemesis": []
     }
   ],
   "cards": [
     {
+      "id": "blue42",
       "name": "Weekend Training",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 1,
@@ -112,9 +114,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Small-Time Thief",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 1,
@@ -148,9 +152,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Public Nuisance",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 2,
@@ -184,9 +190,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Power Pony",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 1,
@@ -215,9 +223,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Lucius",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 1,
@@ -246,9 +256,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Jaycee",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 1,
@@ -277,9 +289,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Interview with Tasha Starr",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 2,
@@ -308,9 +322,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "In the Shadow of Justice",
       "quantity": 2,
       "keywords": [],
@@ -338,9 +354,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Corner Store Snack run",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 1,
@@ -374,9 +392,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Falling Debris",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 1,
@@ -405,9 +425,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Community Service",
       "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
       "quantity": 2,
@@ -441,11 +463,13 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     }
   ],
   "relationships": [
     {
+      "id": "blue42",
       "name": "default",
       "opening_line": [
         {

@@ -97,7 +97,8 @@
         }
       ],
       "challenge_name": [],
-      "challenge": []
+      "challenge": [],
+      "nemesis": []
     },
     {
       "id": "f8d7a038-0528-4ea6-a96a-1d6a38eaf352",
@@ -187,11 +188,13 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": ["2d0ed715-50fd-4ff0-b001-8c74766b173e"]
     }
   ],
   "cards": [
     {
+      "id": "6015e470-ee59-4cf3-bb9e-f6576feedb13",
       "name": "Fractal",
       "palette": "e8bcfe69-25ef-4ba9-886c-9e4594b8c19e",
       "quantity": 1,
@@ -243,9 +246,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": ["04eeb392-166e-44cc-bfaa-81380709e133"]
     },
     {
+      "id": "791ba4cf-7162-497b-aec6-65efabc7f212",
       "name": "Ego Trip",
       "palette": "e8bcfe69-25ef-4ba9-886c-9e4594b8c19e",
       "quantity": 1,
@@ -274,9 +279,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": ["896143f4-b6fe-417a-bda9-660bf8b7b5a9"]
     },
     {
+      "id": "910f619f-368d-4f76-b083-4791aed7c59f",
       "name": "Rabid Fans",
       "palette": "e8bcfe69-25ef-4ba9-886c-9e4594b8c19e",
       "quantity": 3,
@@ -341,15 +348,18 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     }
   ],
   "relationships": [
     {
+      "id": "04eeb392-166e-44cc-bfaa-81380709e133",
       "name": "Menagerie.Concord",
       "opening_line": []
     },
     {
+      "id": "185bcd9a-842d-464d-b1cb-36105243969e",
       "name": "CaseFiles.CharlieCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -365,6 +375,7 @@
       ]
     },
     {
+      "id": "3b03a8bb-5d61-426a-9e93-541ca61b045a",
       "name": "RooksGambitCharlieCharacter",
       "spoken_by": "f8d7a038-0528-4ea6-a96a-1d6a38eaf352",
       "opening_line": [
@@ -380,6 +391,7 @@
       ]
     },
     {
+      "id": "5a7547d3-56b8-4e8c-b2d9-b745a1a4b9bf",
       "name": "GunClubSpeedrunnerCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -395,6 +407,7 @@
       ]
     },
     {
+      "id": "5fad107c-f5ec-4341-a738-4185878deebc",
       "name": "BartKFSentinels.TheGoalieCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -410,10 +423,12 @@
       ]
     },
     {
+      "id": "896143f4-b6fe-417a-bda9-660bf8b7b5a9",
       "name": "Menagerie.Radiance",
       "opening_line": []
     },
     {
+      "id": "94af1a45-d482-4843-861b-38f889497133",
       "name": "JpJw.DinoFancie.BonnieCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -429,6 +444,7 @@
       ]
     },
     {
+      "id": "b0dcf519-b74f-48fe-ac71-a158cc7a4ef4",
       "name": "SilhouetteInkblotCharacter",
       "spoken_by": "f8d7a038-0528-4ea6-a96a-1d6a38eaf352",
       "opening_line": [
@@ -444,6 +460,7 @@
       ]
     },
     {
+      "id": "cd822314-0b32-4a43-aa08-8606dfbaef34",
       "name": "Angille.SpeedrunnerCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -459,6 +476,7 @@
       ]
     },
     {
+      "id": "17290abf-44b7-4f7f-bc52-9d7bb606284c",
       "name": "TheGoalieOnIceCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -474,6 +492,7 @@
       ]
     },
     {
+      "id": "2d0ed715-50fd-4ff0-b001-8c74766b173e",
       "name": "Menagerie.Mercury",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -489,6 +508,7 @@
       ]
     },
     {
+      "id": "468bf883-7bdb-40ad-a83b-5e2dcf75724d",
       "name": "GoldDragonInkblotHumanCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -504,6 +524,7 @@
       ]
     },
     {
+      "id": "55695e14-0b6a-4b0b-a946-88c5871d0453",
       "name": "TsukikoInkblotCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -519,6 +540,7 @@
       ]
     },
     {
+      "id": "66ded547-e9bf-4b20-8646-bfd9662d4c80",
       "name": "default",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -534,6 +556,7 @@
       ]
     },
     {
+      "id": "795e5cd9-026e-4757-b736-e342d1c1d572",
       "name": "ChristmasBonnieCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -549,6 +572,7 @@
       ]
     },
     {
+      "id": "bd054d2c-0e9a-40f8-9592-10b6c7f52a9e",
       "name": "MoondancerCharlieCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -564,6 +588,7 @@
       ]
     },
     {
+      "id": "e0dd6264-42ab-4370-8ccb-52a4f76e697a",
       "name": "SpookyGhostwriter.SilhouetteCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [
@@ -579,6 +604,7 @@
       ]
     },
     {
+      "id": "e3caa745-5ded-4204-a29e-c5c5f56bbbeb",
       "name": "SpookyGhostwriter.GoldDragonHumanCharacter",
       "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
       "opening_line": [

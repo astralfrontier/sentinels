@@ -133,7 +133,8 @@
         }
       ],
       "challenge_name": [],
-      "challenge": []
+      "challenge": [],
+      "nemesis": []
     },
     {
       "id": "orange-julius",
@@ -259,11 +260,13 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     }
   ],
   "cards": [
     {
+      "id": "blue42",
       "name": "Rite of Ruination",
       "quantity": 2,
       "keywords": ["One-Shot"],
@@ -363,9 +366,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Grave Peril",
       "quantity": 1,
       "keywords": ["Ongoing"],
@@ -451,9 +456,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Eligos, The Goetic",
       "quantity": 1,
       "keywords": ["Goetic", "Demon"],
@@ -490,9 +497,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Call of the Necromancer",
       "quantity": 3,
       "keywords": ["One-Shot"],
@@ -520,9 +529,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Spectral Raiment",
       "quantity": 1,
       "keywords": ["Ongoing"],
@@ -640,9 +651,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "The Cursed",
       "quantity": 1,
       "keywords": ["Specter"],
@@ -742,9 +755,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "The Possessed",
       "quantity": 2,
       "keywords": ["Specter"],
@@ -831,9 +846,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Naberius, The Goetic",
       "quantity": 1,
       "keywords": ["Goetic", "Demon"],
@@ -870,9 +887,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "The Wretched",
       "quantity": 5,
       "keywords": ["Specter", "Wisp"],
@@ -939,6 +958,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "Malphas, The Goetic",
       "quantity": 1,
       "keywords": ["Goetic", "Demon"],
@@ -991,6 +1011,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "The Tormented",
       "quantity": 2,
       "keywords": ["Specter"],
@@ -1057,6 +1078,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "The Stricken",
       "quantity": 2,
       "keywords": ["Specter"],
@@ -1123,7 +1145,8 @@
       ]
     },
     {
-      "name": "Perdition’s Gates",
+      "id": "blue42",
+      "name": "Perdition's Gates",
       "quantity": 1,
       "keywords": ["Rift"],
       "icons": [
@@ -1230,6 +1253,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "Aspect of the Gatekeeper",
       "quantity": 2,
       "keywords": ["Demon"],
@@ -1285,6 +1309,7 @@
   ],
   "relationships": [
     {
+      "id": "blue42",
       "name": "Angille.Theurgy",
       "opening_line": [
         {
@@ -1299,6 +1324,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "Menagerie.GhostGirlCharacter",
       "opening_line": [
         {
@@ -1313,6 +1339,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "Menagerie.SolsticeGhostGirlCharacter",
       "opening_line": [
         {
@@ -1327,6 +1354,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "default",
       "opening_line": [
         {
@@ -1341,6 +1369,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "Cauldron.MagnificentMara",
       "opening_line": [
         {
@@ -1355,6 +1384,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "SpookyGhostwriter.TsukikoCharacter",
       "opening_line": [
         {
@@ -1369,6 +1399,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "Menagerie.MagusGhostGirlCharacter",
       "opening_line": [
         {
@@ -1383,6 +1414,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "SpookyGhostwriter.SilhouetteCharacter",
       "opening_line": [
         {

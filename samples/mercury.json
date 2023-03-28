@@ -128,7 +128,8 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
       "id": "orange-julius",
@@ -188,11 +189,13 @@
       ],
       "advanced": [],
       "challenge_name": [],
-      "challenge": []
+      "challenge": [],
+      "nemesis": []
     }
   ],
   "cards": [
     {
+      "id": "blue42",
       "name": "\"Chips, Anyone?\"",
       "quantity": 3,
       "keywords": ["One-Shot"],
@@ -220,9 +223,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "A10's Jacket",
       "quantity": 2,
       "keywords": ["Equipment", "Limited"],
@@ -250,9 +255,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Annoying Barrage",
       "quantity": 4,
       "keywords": ["One-Shot"],
@@ -270,9 +277,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Sonic Shockwave",
       "quantity": 2,
       "keywords": ["One-Shot"],
@@ -290,9 +299,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Too Fast to Follow",
       "quantity": 3,
       "keywords": ["Ongoing"],
@@ -310,9 +321,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Upholding the Legacy",
       "quantity": 3,
       "keywords": ["Ongoing"],
@@ -330,9 +343,11 @@
           "color": "default"
         }
       ],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Sickening Spin",
       "quantity": 3,
       "keywords": ["One-Shot"],
@@ -350,9 +365,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Quick Hits",
       "quantity": 3,
       "keywords": ["One-Shot"],
@@ -370,9 +387,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Mach Speed Teen",
       "quantity": 3,
       "keywords": ["Ongoing", "Limited"],
@@ -400,9 +419,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "HUD Visor",
       "quantity": 3,
       "keywords": ["Equipment", "Limited"],
@@ -420,9 +441,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Halcyon's Silver Son",
       "quantity": 3,
       "keywords": ["Ongoing", "Limited"],
@@ -460,9 +483,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Flash Disassembly",
       "quantity": 3,
       "keywords": ["One-Shot"],
@@ -490,9 +515,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue42",
       "name": "Dust Up",
       "quantity": 2,
       "keywords": ["Ongoing"],
@@ -513,6 +540,7 @@
       "quote_text": []
     },
     {
+      "id": "blue42",
       "name": "Drama Magnet",
       "quantity": 3,
       "keywords": ["Ongoing", "Limited"],
@@ -558,11 +586,13 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     }
   ],
   "relationships": [
     {
+      "id": "blue42",
       "name": "Menagerie.Unmute",
       "opening_line": [
         {
@@ -577,6 +607,7 @@
       ]
     },
     {
+      "id": "blue42",
       "name": "default",
       "opening_line": [
         {

@@ -117,7 +117,8 @@
       ],
       "advanced": [],
       "challenge_name": [],
-      "challenge": []
+      "challenge": [],
+      "nemesis": []
     },
     {
       "id": "orange-julius",
@@ -207,7 +208,8 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
       "id": "metroglyph",
@@ -267,11 +269,13 @@
       ],
       "advanced": [],
       "challenge_name": [],
-      "challenge": []
+      "challenge": [],
+      "nemesis": []
     }
   ],
   "cards": [
     {
+      "id": "blue 42",
       "name": "Option Two: More Murder!",
       "quantity": 1,
       "keywords": ["One-Shot"],
@@ -289,9 +293,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Multi-blasters",
       "quantity": 3,
       "keywords": ["Equipment"],
@@ -309,9 +315,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Twitchy Little Bug",
       "quantity": 2,
       "keywords": ["Ongoing", "Limited"],
@@ -329,9 +337,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Stolen Grenades",
       "quantity": 2,
       "keywords": ["Equipment"],
@@ -349,9 +359,11 @@
           "color": "default"
         }
       ],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Sensor Scope",
       "quantity": 3,
       "keywords": ["Equipment"],
@@ -369,9 +381,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "The Void Beetle",
       "quantity": 2,
       "keywords": ["Equipment", "Limited"],
@@ -389,9 +403,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Lightform Bracer",
       "quantity": 3,
       "keywords": ["Equipment"],
@@ -409,9 +425,11 @@
           "color": "default"
         }
       ],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Option One: Murder!",
       "quantity": 1,
       "keywords": ["One-Shot"],
@@ -429,9 +447,11 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Rail Cannon",
       "quantity": 2,
       "keywords": ["Equipment", "Limited"],
@@ -449,9 +469,11 @@
           "color": "default"
         }
       ],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Break and Rebuild",
       "quantity": 4,
       "keywords": ["One-Shot"],
@@ -479,9 +501,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Energy Cells to 11",
       "quantity": 3,
       "keywords": ["One-Shot"],
@@ -509,9 +533,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Forced Assistance",
       "quantity": 3,
       "keywords": ["One-Shot"],
@@ -539,9 +565,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Gravity Belt",
       "quantity": 2,
       "keywords": ["Equipment", "Limited"],
@@ -569,9 +597,11 @@
           "color": "default"
         }
       ],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Alternative Ammo",
       "palette": "372af673-203b-4948-b725-866664b0e54d",
       "quantity": 3,
@@ -600,9 +630,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Backup Power Source",
       "quantity": 4,
       "keywords": ["Equipment"],
@@ -640,9 +672,11 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
+      "id": "blue 42",
       "name": "Annoying Gremlin",
       "palette": "372af673-203b-4948-b725-866664b0e54d",
       "quantity": 2,
@@ -661,11 +695,13 @@
         }
       ],
       "powers": [],
-      "quote_text": []
+      "quote_text": [],
+      "nemesis": []
     }
   ],
   "relationships": [
     {
+      "id": "blue 42",
       "name": "default",
       "opening_line": [
         {
