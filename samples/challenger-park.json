@@ -1,512 +1,463 @@
 {
-    "palettes": [
-      {
-        "id": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "name": "Menagerie Colors",
-        "scaling": "centered",
-        "top_color": "ffffff",
-        "box_color": "bd3a3d",
-        "bottom_color": "bd3a3d",
-        "art_credit": [
-          {
-            "text": "Art by Michael Williams",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      }
-    ],
-    "setup": [
-      {
-        "name": "Challenger Park",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "expansion": "Menagerie",
-        "rating": 2,
-        "hp": null,
-        "tags": [
-          "Environment"
-        ],
-        "icons": [],
-        "hero_power_name": "",
-        "hero_power": [
-          {
-            "text": "Leave this blank",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "hero_incap_icons": [],
-        "hero_incap": [
-          {
-            "text": "Leave this blank",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "villain_title": "",
-        "villain_setup": [
-          {
-            "text": "Leave this blank",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "villain_effects": [
-          {
-            "text": "Leave this blank",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "advanced": [],
-        "challenge_name": [],
-        "challenge": []
-      }
-    ],
-    "cards": [
-      {
-        "name": "Weekend Training",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 1,
-        "keywords": [],
-        "icons": [
-          "StartAndEndOfTurnAction",
-          "Manipulate",
-          "DestroySelf"
-        ],
-        "hp": null,
-        "effects": [
-          {
-            "text": "At the end of environment turn, one player may search their deck for an ongoing card and put it into their hand. If they do, shuffle their deck and destroy this card.\nAt the start of the environment turn, each player draws a card or plays an ongoing card. Then destroy this card.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "As Armiger turned the corner, Jaycee\nchecked the stopwatch. \"3:40 isn't bad, but\nthe rest of your team-\" \"Can you at least\ncompare me to Alloy? She doesn't fly.\"",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Small-Time Thief",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 1,
-        "keywords": [
-          "Challenge"
-        ],
-        "icons": [
-          "EndOfTurnAction",
-          "DealDamageToxic",
-          "DestroyHero",
-          "CancelledDamageGreen"
-        ],
-        "hp": 5,
-        "effects": [
-          {
-            "text": "At the end of the environment turn, this card deals the hero with the most cards in play 4 toxic damage. That hero may destroy one of their ongoing or equipment cards to prevent this damage.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "Kevin knew his fatigue-inducing powers\nwouldn't do squat against an actual\nsuperhero, so he took to robbing coffee\nshops and corner stores.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Public Nuisance",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 2,
-        "keywords": [
-          "Challenge"
-        ],
-        "icons": [
-          "StartAndEndOfTurnAction",
-          "DealDamageProjectile",
-          "PlayCardNow",
-          "DestroySelf"
-        ],
-        "hp": null,
-        "effects": [
-          {
-            "text": "At the end of the environment turn, a hero may have the villain target with the lowest HP deal them 4 projectile damage. If they take damage this way, destroy this card.\nAt the start of the environment turn, play the top card of the villain deck and then destroy this card.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "\"How does he keep getting stronger?\" Jason\nwondered aloud. \"That's Ego Trip!\" a girl\nbehind him shouted. \"He gets more powerful\nthe more people are paying attention to him.\"",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Power Pony",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 1,
-        "keywords": [
-          "Mentor",
-          "Superfan"
-        ],
-        "icons": [
-          "EndOfTurnAction",
-          "DealDamageMelee",
-          "GainHP"
-        ],
-        "hp": 4,
-        "effects": [
-          {
-            "text": "At the end of the environment turn, the hero with the lowest HP may deal a villain target 1 melee damage. If a target is destroyed this way, that hero regains 1 HP.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "\"Thanks for the tips on handling Ego Trip, I'll\nrelay them to link,\" Jason Quill said with a\nsmile. \"Can you also tell him to follow my\ntwitter? And the rest of your team too!\"",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Lucius",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 1,
-        "keywords": [
-          "Mentor",
-          "Grail Knight"
-        ],
-        "icons": [
-          "DrawCardNow",
-          "Discard",
-          "UsePowerNow"
-        ],
-        "hp": 4,
-        "effects": [
-          {
-            "text": "The first time a villain target or a challenge target is destroyed each turn, one player may draw a card or discard a card. If that player discards a card, they may use a power.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "The retired Knight only takes up the sword\nin times of need, but is always around for\nthe next generation of heroes to consult in\nmatters both mystic and supernatural.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Jaycee",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 1,
-        "keywords": [
-          "Mentor",
-          "Barista"
-        ],
-        "icons": [
-          "StartOfTurnAction",
-          "DealDamageMelee",
-          "PlayCardNow"
-        ],
-        "hp": 4,
-        "effects": [
-          {
-            "text": "At the start of the environment turn, one hero may deal themselves 3 melee damage. If they take damage this way, they play an ongoing card.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "Named Halcyon's Best Barista by the Halcyon\nHerald, Jaycee spends her evenings improving\nher pastry cooking, researching history, and\ntraining the Grail Knight, Will Eddison.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Interview with Tasha Starr",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 2,
-        "keywords": [
-          "Challenge"
-        ],
-        "icons": [
-          "StartAndEndOfTurnAction",
-          "Discard",
-          "DestroySelf"
-        ],
-        "hp": null,
-        "effects": [
-          {
-            "text": "At the end of the environment turn, one player may discard all but one card from their hand. If they do, destroy this card.\nAt the start of the environment turn, each player discards two cards. Then destroy this card.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "With a studio overlooking Challenger Park,\nTasha Starr is always on the hunt for new\nsupers. Most think it's for her tv show, but\nthey don't know her corporate sponsors.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "In the Shadow of Justice",
-        "quantity": 2,
-        "keywords": [],
-        "icons": [
-          "EndOfTurnAction",
-          "PlayCardNow",
-          "DestroySelf"
-        ],
-        "hp": null,
-        "effects": [
-          {
-            "text": "At the end of the environment turn, if there are no challenges in play, play the top card of the environment deck.\nWhen a challenge card is destroyed during the environment turn, one player may play a card. If they do, destroy this card.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "Justice was Halcyon's first hero and a\nsymbol of what could be accomplished to\nall future generations. Today, many aspiring\nheroes flock to her statue for inspiration.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Corner Store Snack run",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 1,
-        "keywords": [],
-        "icons": [
-          "StartAndEndOfTurnAction",
-          "Manipulate",
-          "GainHP",
-          "DestroySelf"
-        ],
-        "hp": null,
-        "effects": [
-          {
-            "text": "At the end of the environment turn, one player may destroy this card and put a card from their trash into their hand.\nAt the start of the environment turn, each player either has each of their targets regain 1 HP or puts a card from their trash on top of their deck. Then destroy this card.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "\"Hey Harry,\" the shop owner called to the\nspeedster, \"I got in a box of those\nNorwegian fish-flavored chips you\nwanted.\" \"You're the best, mister Fleuter!\"",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Falling Debris",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 1,
-        "keywords": [
-          "Challenge"
-        ],
-        "icons": [
-          "ReduceDamageTaken",
-          "EndOfTurnAction",
-          "DealDamageProjectile"
-        ],
-        "hp": 5,
-        "effects": [
-          {
-            "text": "Reduce damage dealt to this card by 1.\nAt the end of the environment turn, this card deals the five targets other than itself with the lowest HP 2 projectile damage each.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "Lucius' fight with his spectral foe had\ngotten out of hand. The creature\nthrashed about, tearing debris loose\nfrom any buildings it touched.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      },
-      {
-        "name": "Community Service",
-        "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
-        "quantity": 2,
-        "keywords": [
-          "Challenge"
-        ],
-        "icons": [
-          "StartAndEndOfTurnAction",
-          "DestroyOngoing",
-          "GainHP",
-          "DestroySelf"
-        ],
-        "hp": null,
-        "effects": [
-          {
-            "text": "At the end of the environment turn, one player may destroy one of their ongoing cards. If they do, destroy this card.\nAt the start of the environment turn, each villain target regains 3 HP, then destroy this card.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ],
-        "powers": [],
-        "quote_text": [
-          {
-            "text": "Park clean-up sucked, but Becky still\ntook any opportunity to get out of her\ncell she could. And if she got time off\nfor good behavior, all the better.",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      }
-    ],
-    "relationships": [
-      {
-        "name": "default",
-        "nemesis": false,
-        "opening_line": [
-          {
-            "text": "Tremble and Obey!",
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          }
-        ]
-      }
-    ]
-  }
+  "palettes": [
+    {
+      "id": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "name": "Menagerie Colors",
+      "scaling": "centered",
+      "top_color": "ffffff",
+      "box_color": "bd3a3d",
+      "bottom_color": "bd3a3d",
+      "art_credit": [
+        {
+          "text": "Art by Michael Williams",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    }
+  ],
+  "setup": [
+    {
+      "id": "blue42",
+      "name": "Challenger Park",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "expansion": "Menagerie",
+      "rating": 2,
+      "hp": null,
+      "tags": ["Environment"],
+      "icons": [],
+      "hero_power_name": "",
+      "hero_power": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "hero_incap_icons": [],
+      "hero_incap": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_title": "",
+      "villain_setup": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "villain_effects": [
+        {
+          "text": "Leave this blank",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "advanced": [],
+      "challenge_name": [],
+      "challenge": []
+    }
+  ],
+  "cards": [
+    {
+      "name": "Weekend Training",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 1,
+      "keywords": [],
+      "icons": ["StartAndEndOfTurnAction", "Manipulate", "DestroySelf"],
+      "hp": null,
+      "effects": [
+        {
+          "text": "At the end of environment turn, one player may search their deck for an ongoing card and put it into their hand. If they do, shuffle their deck and destroy this card.\nAt the start of the environment turn, each player draws a card or plays an ongoing card. Then destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "As Armiger turned the corner, Jaycee\nchecked the stopwatch. \"3:40 isn't bad, but\nthe rest of your team-\" \"Can you at least\ncompare me to Alloy? She doesn't fly.\"",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Small-Time Thief",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 1,
+      "keywords": ["Challenge"],
+      "icons": [
+        "EndOfTurnAction",
+        "DealDamageToxic",
+        "DestroyHero",
+        "CancelledDamageGreen"
+      ],
+      "hp": 5,
+      "effects": [
+        {
+          "text": "At the end of the environment turn, this card deals the hero with the most cards in play 4 toxic damage. That hero may destroy one of their ongoing or equipment cards to prevent this damage.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Kevin knew his fatigue-inducing powers\nwouldn't do squat against an actual\nsuperhero, so he took to robbing coffee\nshops and corner stores.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Public Nuisance",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 2,
+      "keywords": ["Challenge"],
+      "icons": [
+        "StartAndEndOfTurnAction",
+        "DealDamageProjectile",
+        "PlayCardNow",
+        "DestroySelf"
+      ],
+      "hp": null,
+      "effects": [
+        {
+          "text": "At the end of the environment turn, a hero may have the villain target with the lowest HP deal them 4 projectile damage. If they take damage this way, destroy this card.\nAt the start of the environment turn, play the top card of the villain deck and then destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "\"How does he keep getting stronger?\" Jason\nwondered aloud. \"That's Ego Trip!\" a girl\nbehind him shouted. \"He gets more powerful\nthe more people are paying attention to him.\"",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Power Pony",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 1,
+      "keywords": ["Mentor", "Superfan"],
+      "icons": ["EndOfTurnAction", "DealDamageMelee", "GainHP"],
+      "hp": 4,
+      "effects": [
+        {
+          "text": "At the end of the environment turn, the hero with the lowest HP may deal a villain target 1 melee damage. If a target is destroyed this way, that hero regains 1 HP.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "\"Thanks for the tips on handling Ego Trip, I'll\nrelay them to link,\" Jason Quill said with a\nsmile. \"Can you also tell him to follow my\ntwitter? And the rest of your team too!\"",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Lucius",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 1,
+      "keywords": ["Mentor", "Grail Knight"],
+      "icons": ["DrawCardNow", "Discard", "UsePowerNow"],
+      "hp": 4,
+      "effects": [
+        {
+          "text": "The first time a villain target or a challenge target is destroyed each turn, one player may draw a card or discard a card. If that player discards a card, they may use a power.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "The retired Knight only takes up the sword\nin times of need, but is always around for\nthe next generation of heroes to consult in\nmatters both mystic and supernatural.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Jaycee",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 1,
+      "keywords": ["Mentor", "Barista"],
+      "icons": ["StartOfTurnAction", "DealDamageMelee", "PlayCardNow"],
+      "hp": 4,
+      "effects": [
+        {
+          "text": "At the start of the environment turn, one hero may deal themselves 3 melee damage. If they take damage this way, they play an ongoing card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Named Halcyon's Best Barista by the Halcyon\nHerald, Jaycee spends her evenings improving\nher pastry cooking, researching history, and\ntraining the Grail Knight, Will Eddison.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Interview with Tasha Starr",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 2,
+      "keywords": ["Challenge"],
+      "icons": ["StartAndEndOfTurnAction", "Discard", "DestroySelf"],
+      "hp": null,
+      "effects": [
+        {
+          "text": "At the end of the environment turn, one player may discard all but one card from their hand. If they do, destroy this card.\nAt the start of the environment turn, each player discards two cards. Then destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "With a studio overlooking Challenger Park,\nTasha Starr is always on the hunt for new\nsupers. Most think it's for her tv show, but\nthey don't know her corporate sponsors.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "In the Shadow of Justice",
+      "quantity": 2,
+      "keywords": [],
+      "icons": ["EndOfTurnAction", "PlayCardNow", "DestroySelf"],
+      "hp": null,
+      "effects": [
+        {
+          "text": "At the end of the environment turn, if there are no challenges in play, play the top card of the environment deck.\nWhen a challenge card is destroyed during the environment turn, one player may play a card. If they do, destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Justice was Halcyon's first hero and a\nsymbol of what could be accomplished to\nall future generations. Today, many aspiring\nheroes flock to her statue for inspiration.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Corner Store Snack run",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 1,
+      "keywords": [],
+      "icons": [
+        "StartAndEndOfTurnAction",
+        "Manipulate",
+        "GainHP",
+        "DestroySelf"
+      ],
+      "hp": null,
+      "effects": [
+        {
+          "text": "At the end of the environment turn, one player may destroy this card and put a card from their trash into their hand.\nAt the start of the environment turn, each player either has each of their targets regain 1 HP or puts a card from their trash on top of their deck. Then destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "\"Hey Harry,\" the shop owner called to the\nspeedster, \"I got in a box of those\nNorwegian fish-flavored chips you\nwanted.\" \"You're the best, mister Fleuter!\"",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Falling Debris",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 1,
+      "keywords": ["Challenge"],
+      "icons": ["ReduceDamageTaken", "EndOfTurnAction", "DealDamageProjectile"],
+      "hp": 5,
+      "effects": [
+        {
+          "text": "Reduce damage dealt to this card by 1.\nAt the end of the environment turn, this card deals the five targets other than itself with the lowest HP 2 projectile damage each.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Lucius' fight with his spectral foe had\ngotten out of hand. The creature\nthrashed about, tearing debris loose\nfrom any buildings it touched.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    },
+    {
+      "name": "Community Service",
+      "palette": "687969c5-ed2a-4a8e-b190-d3760b0f4cb5",
+      "quantity": 2,
+      "keywords": ["Challenge"],
+      "icons": [
+        "StartAndEndOfTurnAction",
+        "DestroyOngoing",
+        "GainHP",
+        "DestroySelf"
+      ],
+      "hp": null,
+      "effects": [
+        {
+          "text": "At the end of the environment turn, one player may destroy one of their ongoing cards. If they do, destroy this card.\nAt the start of the environment turn, each villain target regains 3 HP, then destroy this card.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ],
+      "powers": [],
+      "quote_text": [
+        {
+          "text": "Park clean-up sucked, but Becky still\ntook any opportunity to get out of her\ncell she could. And if she got time off\nfor good behavior, all the better.",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "name": "default",
+      "opening_line": [
+        {
+          "text": "Tremble and Obey!",
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        }
+      ]
+    }
+  ]
+}

@@ -41,18 +41,13 @@
   ],
   "setup": [
     {
+      "id": "blue42",
       "name": "Netherwarden",
       "expansion": "Menagerie",
       "rating": null,
       "hp": 40,
-      "tags": [
-        "Villain",
-        "B"
-      ],
-      "icons": [
-        "ReduceDamageTaken",
-        "DealDamageInfernal"
-      ],
+      "tags": ["Villain", "B"],
+      "icons": ["ReduceDamageTaken", "DealDamageInfernal"],
       "hero_power_name": "",
       "hero_power": [
         {
@@ -141,19 +136,14 @@
       "challenge": []
     },
     {
+      "id": "orange-julius",
       "name": "Netherwarden",
       "palette": "47e12af1-db9f-46ca-8c14-b2f1353f1c1c",
       "expansion": "Menagerie",
       "rating": 3,
       "hp": 40,
-      "tags": [
-        "Villain",
-        "A"
-      ],
-      "icons": [
-        "PlayCardNow",
-        "DealDamageInfernal"
-      ],
+      "tags": ["Villain", "A"],
+      "icons": ["PlayCardNow", "DealDamageInfernal"],
       "hero_power_name": "Leave this blank",
       "hero_power": [
         {
@@ -276,12 +266,8 @@
     {
       "name": "Rite of Ruination",
       "quantity": 2,
-      "keywords": [
-        "One-Shot"
-      ],
-      "icons": [
-        "DestroyHero"
-      ],
+      "keywords": ["One-Shot"],
+      "icons": ["DestroyHero"],
       "hp": null,
       "effects": [
         {
@@ -382,9 +368,7 @@
     {
       "name": "Grave Peril",
       "quantity": 1,
-      "keywords": [
-        "Ongoing"
-      ],
+      "keywords": ["Ongoing"],
       "icons": [
         "ImmuneToDamage",
         "DealDamageInfernal",
@@ -472,15 +456,8 @@
     {
       "name": "Eligos, The Goetic",
       "quantity": 1,
-      "keywords": [
-        "Goetic",
-        "Demon"
-      ],
-      "icons": [
-        "CannotGainHP",
-        "EndOfTurnAction",
-        "DealDamageMelee"
-      ],
+      "keywords": ["Goetic", "Demon"],
+      "icons": ["CannotGainHP", "EndOfTurnAction", "DealDamageMelee"],
       "hp": 7,
       "effects": [
         {
@@ -518,14 +495,8 @@
     {
       "name": "Call of the Necromancer",
       "quantity": 3,
-      "keywords": [
-        "One-Shot"
-      ],
-      "icons": [
-        "Manipulate",
-        "DealDamageInfernal",
-        "PlayCardNow"
-      ],
+      "keywords": ["One-Shot"],
+      "icons": ["Manipulate", "DealDamageInfernal", "PlayCardNow"],
       "hp": null,
       "effects": [
         {
@@ -554,14 +525,8 @@
     {
       "name": "Spectral Raiment",
       "quantity": 1,
-      "keywords": [
-        "Ongoing"
-      ],
-      "icons": [
-        "ReduceDamageTaken",
-        "EndOfTurnAction",
-        "GainHP"
-      ],
+      "keywords": ["Ongoing"],
+      "icons": ["ReduceDamageTaken", "EndOfTurnAction", "GainHP"],
       "hp": null,
       "effects": [
         {
@@ -680,14 +645,8 @@
     {
       "name": "The Cursed",
       "quantity": 1,
-      "keywords": [
-        "Specter"
-      ],
-      "icons": [
-        "DealDamageInfernal",
-        "DestroySelf",
-        "DealDamageMelee"
-      ],
+      "keywords": ["Specter"],
+      "icons": ["DealDamageInfernal", "DestroySelf", "DealDamageMelee"],
       "hp": 7,
       "effects": [
         {
@@ -788,9 +747,7 @@
     {
       "name": "The Possessed",
       "quantity": 2,
-      "keywords": [
-        "Specter"
-      ],
+      "keywords": ["Specter"],
       "icons": [
         "Discard",
         "CannotPlayCards",
@@ -879,15 +836,8 @@
     {
       "name": "Naberius, The Goetic",
       "quantity": 1,
-      "keywords": [
-        "Goetic",
-        "Demon"
-      ],
-      "icons": [
-        "CannotDrawCards",
-        "EndOfTurnAction",
-        "PlayCardNow"
-      ],
+      "keywords": ["Goetic", "Demon"],
+      "icons": ["CannotDrawCards", "EndOfTurnAction", "PlayCardNow"],
       "hp": 7,
       "effects": [
         {
@@ -925,15 +875,8 @@
     {
       "name": "The Wretched",
       "quantity": 5,
-      "keywords": [
-        "Specter",
-        "Wisp"
-      ],
-      "icons": [
-        "PlayCardNow",
-        "DestroySelf",
-        "Manipulate"
-      ],
+      "keywords": ["Specter", "Wisp"],
+      "icons": ["PlayCardNow", "DestroySelf", "Manipulate"],
       "hp": 3,
       "effects": [
         {
@@ -998,10 +941,7 @@
     {
       "name": "Malphas, The Goetic",
       "quantity": 1,
-      "keywords": [
-        "Goetic",
-        "Demon"
-      ],
+      "keywords": ["Goetic", "Demon"],
       "icons": [
         "MakeDamageIrreducible",
         "EndOfTurnAction",
@@ -1053,14 +993,8 @@
     {
       "name": "The Tormented",
       "quantity": 2,
-      "keywords": [
-        "Specter"
-      ],
-      "icons": [
-        "DealDamageMelee",
-        "DestroySelf",
-        "IncreaseDamageDealt"
-      ],
+      "keywords": ["Specter"],
+      "icons": ["DealDamageMelee", "DestroySelf", "IncreaseDamageDealt"],
       "hp": 6,
       "effects": [
         {
@@ -1125,14 +1059,8 @@
     {
       "name": "The Stricken",
       "quantity": 2,
-      "keywords": [
-        "Specter"
-      ],
-      "icons": [
-        "GainHP",
-        "DestroySelf",
-        "ReduceDamageDealt"
-      ],
+      "keywords": ["Specter"],
+      "icons": ["GainHP", "DestroySelf", "ReduceDamageDealt"],
       "hp": 6,
       "effects": [
         {
@@ -1197,9 +1125,7 @@
     {
       "name": "Perdition’s Gates",
       "quantity": 1,
-      "keywords": [
-        "Rift"
-      ],
+      "keywords": ["Rift"],
       "icons": [
         "Indestructible",
         "Manipulate",
@@ -1306,9 +1232,7 @@
     {
       "name": "Aspect of the Gatekeeper",
       "quantity": 2,
-      "keywords": [
-        "Demon"
-      ],
+      "keywords": ["Demon"],
       "icons": [
         "ImmuneToDamage",
         "EndOfTurnAction",
@@ -1362,7 +1286,6 @@
   "relationships": [
     {
       "name": "Angille.Theurgy",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "Nothing but pathetic parlor tricks. You cannot hope to stand against a true master of the occult.",
@@ -1377,7 +1300,6 @@
     },
     {
       "name": "Menagerie.GhostGirlCharacter",
-      "nemesis": true,
       "opening_line": [
         {
           "text": "You who should not be, retire from this battle lest I am forced to banish you.",
@@ -1392,7 +1314,6 @@
     },
     {
       "name": "Menagerie.SolsticeGhostGirlCharacter",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "Begone spirit, your words of hope will only lead the world of the living to ruin.",
@@ -1407,7 +1328,6 @@
     },
     {
       "name": "default",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "You should have listened. I could have saved the world, but now it’s too late... for you.",
@@ -1422,7 +1342,6 @@
     },
     {
       "name": "Cauldron.MagnificentMara",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "A pitiful pretender to true power. Relinquish your baubles to someone who will respect their might.",
@@ -1437,7 +1356,6 @@
     },
     {
       "name": "SpookyGhostwriter.TsukikoCharacter",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "Such powerful relics, and held by someone without a dram of talent? I must take them for your own well being.",
@@ -1452,7 +1370,6 @@
     },
     {
       "name": "Menagerie.MagusGhostGirlCharacter",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "Even as you have abandoned your rotted corpse and become something more, I will not be halted in my mission to stop Pandemonium.",
@@ -1467,7 +1384,6 @@
     },
     {
       "name": "SpookyGhostwriter.SilhouetteCharacter",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "I can recognize the dread emanations of the Shadow Veil from here. Back, damned soul.",

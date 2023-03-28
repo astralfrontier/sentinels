@@ -41,19 +41,14 @@
   ],
   "setup": [
     {
+      "id": "blue42",
       "name": "Mercury",
       "palette": "62e835c6-f6dc-4ea2-a346-8a13e408baec",
       "expansion": "Menagerie",
       "rating": 2,
       "hp": 20,
-      "tags": [
-        "Hero"
-      ],
-      "icons": [
-        "DrawCardNow",
-        "Discard",
-        "GainHP"
-      ],
+      "tags": ["Hero"],
+      "icons": ["DrawCardNow", "Discard", "GainHP"],
       "hero_power_name": "Up to Speed",
       "hero_power": [
         {
@@ -66,11 +61,7 @@
           "color": "default"
         }
       ],
-      "hero_incap_icons": [
-        "DrawCardNow",
-        "PlayCardNow",
-        "ReduceDamageTaken"
-      ],
+      "hero_incap_icons": ["DrawCardNow", "PlayCardNow", "ReduceDamageTaken"],
       "hero_incap": [
         {
           "text": "One player draws a card.\nOne player plays a card.\nSelect a hero. Until the start of your next turn, reduce damage dealt to that hero by 1.",
@@ -140,19 +131,14 @@
       ]
     },
     {
+      "id": "orange-julius",
       "name": "Fourth of July Mercury",
       "palette": "91d48cf0-8b8d-4af2-825a-23c053033f79",
       "expansion": "Menagerie",
       "rating": null,
       "hp": 19,
-      "tags": [
-        "Hero",
-        "Hero Variant"
-      ],
-      "icons": [
-        "RedirectDamage",
-        "ReduceDamageTaken"
-      ],
+      "tags": ["Hero", "Hero Variant"],
+      "icons": ["RedirectDamage", "ReduceDamageTaken"],
       "hero_power_name": "Star Spangled Streak",
       "hero_power": [
         {
@@ -165,11 +151,7 @@
           "color": "default"
         }
       ],
-      "hero_incap_icons": [
-        "UsePowerNow",
-        "PlayCardNow",
-        "Manipulate"
-      ],
+      "hero_incap_icons": ["UsePowerNow", "PlayCardNow", "Manipulate"],
       "hero_incap": [
         {
           "text": "One player uses a power.\nOne player plays a card.\nPut one environment card on the bottom of its deck, then play the top card of the environment deck.",
@@ -213,9 +195,7 @@
     {
       "name": "\"Chips, Anyone?\"",
       "quantity": 3,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -245,10 +225,7 @@
     {
       "name": "A10's Jacket",
       "quantity": 2,
-      "keywords": [
-        "Equipment",
-        "Limited"
-      ],
+      "keywords": ["Equipment", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [],
@@ -278,9 +255,7 @@
     {
       "name": "Annoying Barrage",
       "quantity": 4,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -300,9 +275,7 @@
     {
       "name": "Sonic Shockwave",
       "quantity": 2,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -322,9 +295,7 @@
     {
       "name": "Too Fast to Follow",
       "quantity": 3,
-      "keywords": [
-        "Ongoing"
-      ],
+      "keywords": ["Ongoing"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -344,9 +315,7 @@
     {
       "name": "Upholding the Legacy",
       "quantity": 3,
-      "keywords": [
-        "Ongoing"
-      ],
+      "keywords": ["Ongoing"],
       "icons": [],
       "hp": null,
       "effects": [],
@@ -366,9 +335,7 @@
     {
       "name": "Sickening Spin",
       "quantity": 3,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -388,9 +355,7 @@
     {
       "name": "Quick Hits",
       "quantity": 3,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -410,10 +375,7 @@
     {
       "name": "Mach Speed Teen",
       "quantity": 3,
-      "keywords": [
-        "Ongoing",
-        "Limited"
-      ],
+      "keywords": ["Ongoing", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -443,10 +405,7 @@
     {
       "name": "HUD Visor",
       "quantity": 3,
-      "keywords": [
-        "Equipment",
-        "Limited"
-      ],
+      "keywords": ["Equipment", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -466,10 +425,7 @@
     {
       "name": "Halcyon's Silver Son",
       "quantity": 3,
-      "keywords": [
-        "Ongoing",
-        "Limited"
-      ],
+      "keywords": ["Ongoing", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -509,9 +465,7 @@
     {
       "name": "Flash Disassembly",
       "quantity": 3,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -541,9 +495,7 @@
     {
       "name": "Dust Up",
       "quantity": 2,
-      "keywords": [
-        "Ongoing"
-      ],
+      "keywords": ["Ongoing"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -563,10 +515,7 @@
     {
       "name": "Drama Magnet",
       "quantity": 3,
-      "keywords": [
-        "Ongoing",
-        "Limited"
-      ],
+      "keywords": ["Ongoing", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -615,7 +564,6 @@
   "relationships": [
     {
       "name": "Menagerie.Unmute",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "Oh no, it's Unmute!",
@@ -630,7 +578,6 @@
     },
     {
       "name": "default",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "It's me, Mercury!",

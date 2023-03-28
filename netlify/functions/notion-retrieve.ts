@@ -9,7 +9,7 @@ interface RetrieveHandlerRequest {
 
 /**
  * Rich text handling:
- * 
+ *
  * RichText is an array of RichTextBlock objects.
  * Each block contains text and a list of booleans, indicating which markup applies to that block.
  * To turn rich text into plain text, concatenate all the "text" properties of the RichText array.
@@ -27,7 +27,9 @@ export interface RichTextBlock {
   color: string;
 }
 
-export type RichText = RichTextBlock[]
+export type RichText = RichTextBlock[];
+
+export type ReferenceId<T> = string;
 
 export interface DeckData {
   palettes: Palette[];
@@ -37,7 +39,7 @@ export interface DeckData {
 }
 
 export interface Palette {
-  id: string;
+  id: ReferenceId<Palette>;
   name: string;
   scaling: string;
   top_color: string;
@@ -47,8 +49,9 @@ export interface Palette {
 }
 
 export interface Setup {
+  id: ReferenceId<Setup>;
   name: string;
-  palette?: string | undefined;
+  palette?: ReferenceId<Palette> | undefined;
   expansion: string;
   rating: number | null;
   hp: number | null;
@@ -64,11 +67,13 @@ export interface Setup {
   advanced: RichText;
   challenge_name: RichText;
   challenge: RichText;
+  nemesis: any;
 }
 
 export interface Card {
+  id: ReferenceId<Card>;
   name: string;
-  palette?: string | undefined;
+  palette?: ReferenceId<Palette> | undefined;
   quantity: number;
   keywords: string[];
   icons: string[];
@@ -79,8 +84,9 @@ export interface Card {
 }
 
 export interface Relationship {
+  id: ReferenceId<Relationship>;
   name: string;
-  nemesis: boolean;
+  spoken_by?: ReferenceId<Setup> | undefined;
   opening_line: RichText;
 }
 
@@ -99,7 +105,7 @@ function prop(data: any, name: string): any {
 }
 
 function stripSmartQuotes(input: string): string {
-  return input.replaceAll(/[‘’]/g, "'").replaceAll(/[“”]/g, '"')
+  return input.replaceAll(/[‘’]/g, "'").replaceAll(/[“”]/g, '"');
 }
 
 function richtext(data: any[]): RichText {
@@ -111,8 +117,10 @@ function richtext(data: any[]): RichText {
       strikethrough: block.annotations.strikethrough,
       underline: block.annotations.underline,
       code: block.annotations.code,
-      color: block.annotations.color
-    }), data || [])
+      color: block.annotations.color,
+    }),
+    data || []
+  );
 }
 
 function plaintext(data: any): string {
@@ -121,29 +129,33 @@ function plaintext(data: any): string {
 
 /**
  * Return an array of strings from a Notion select field
- * @param data 
- * @returns 
+ * @param data
+ * @returns
  */
 function tag(data: any): string {
-  return data.name
+  return data.name;
 }
 
 /**
  * Return an array of strings from a Notion multi-select field
- * @param data 
- * @returns 
+ * @param data
+ * @returns
  */
 function tags(data: any): string[] {
   return pluck("name")(data);
 }
 
-function id(data: any): string {
-  return data[0]?.id
+function id<T>(data: any): ReferenceId<T> {
+  return data[0]?.id;
+}
+
+function ids<T>(data: any): ReferenceId<T>[] {
+  return pluck("id")(data);
 }
 
 function parsePalette(data: any): Palette[] {
   return map(
-    row => ({
+    (row) => ({
       id: row.id,
       name: plaintext(prop(row, "Name")),
       scaling: tag(prop(row, "Scaling")),
@@ -153,14 +165,15 @@ function parsePalette(data: any): Palette[] {
       art_credit: richtext(prop(row, "Art Credit")),
     }),
     data
-  )
+  );
 }
 
 function parseSetup(data: any): Setup[] {
   return map(
-    row => ({
+    (row) => ({
+      id: row.id,
       name: plaintext(prop(row, "Name")),
-      palette: id(prop(row, "Palette")),
+      palette: id<Palette>(prop(row, "Palette")),
       expansion: plaintext(prop(row, "Expansion")),
       rating: prop(row, "Rating"),
       hp: prop(row, "HP"),
@@ -176,16 +189,18 @@ function parseSetup(data: any): Setup[] {
       advanced: richtext(prop(row, "Advanced")),
       challenge_name: richtext(prop(row, "Challenge Name")),
       challenge: richtext(prop(row, "Challenge")),
+      nemesis: ids<Relationship>(prop(row, "Nemesis")),
     }),
     data
-  )
+  );
 }
 
 function parseCards(data: any): Card[] {
   return map(
-    row => ({
+    (row) => ({
+      id: row.id,
       name: plaintext(prop(row, "Name")),
-      palette: id(prop(row, "Palette")),
+      palette: id<Palette>(prop(row, "Palette")),
       quantity: prop(row, "Quantity") || 1,
       keywords: tags(prop(row, "Keywords")),
       icons: tags(prop(row, "Icons")),
@@ -193,20 +208,22 @@ function parseCards(data: any): Card[] {
       effects: richtext(prop(row, "Effects")),
       powers: richtext(prop(row, "Powers")),
       quote_text: richtext(prop(row, "Quote Text")),
+      nemesis: ids<Relationship>(prop(row, "Nemesis")),
     }),
     data
-  )
+  );
 }
 
 function parseRelationships(data: any): Relationship[] {
   return map(
-    row => ({
+    (row) => ({
+      id: row.id,
       name: plaintext(prop(row, "Name")),
-      nemesis: prop(row, "Nemesis"),
+      spoken_by: id<Setup>(prop(row, "Spoken By")),
       opening_line: richtext(prop(row, "Opening Line")),
     }),
     data
-  )
+  );
 }
 
 /**
@@ -232,7 +249,10 @@ async function fetchBlock(notion: Client, block_id: string): Promise<any> {
   return data;
 }
 
-async function fetchDatabase(notion: Client, database_id: string): Promise<any> {
+async function fetchDatabase(
+  notion: Client,
+  database_id: string
+): Promise<any> {
   let has_more: boolean = true;
   let start_cursor: string | undefined = undefined;
   let data: any = [];
@@ -255,7 +275,7 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
   const body: RetrieveHandlerRequest = JSON.parse(event.body || "");
 
   const notion = new Client({
-    auth: body.access_token
+    auth: body.access_token,
   });
 
   try {
@@ -269,9 +289,12 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
     );
 
     const childData = await Promise.all(
-      map((id: string) => fetchDatabase(notion, id), pluck("id", childDatabases))
+      map(
+        (id: string) => fetchDatabase(notion, id),
+        pluck("id", childDatabases)
+      )
     );
-    const finalData: Record<string,any>[] = addIndex(map)(
+    const finalData: Record<string, any>[] = addIndex(map)(
       (child, idx, _all) => assoc("data", childData[idx], child),
       childDatabases
     );
@@ -298,13 +321,13 @@ const notionRetrieveHandler: Handler = async (event, _context) => {
     if (!palettes || !setup || !cards || !relationships) {
       return {
         statusCode: 500,
-        body: "Missing one or more databases: Palettes, Setup, Cards, Relationships"
-      };  
+        body: "Missing one or more databases: Palettes, Setup, Cards, Relationships",
+      };
     } else {
       return {
         statusCode: 200,
-        body: JSON.stringify({palettes, setup, cards, relationships}),
-      };  
+        body: JSON.stringify({ palettes, setup, cards, relationships }),
+      };
     }
   } catch (e: any) {
     return {

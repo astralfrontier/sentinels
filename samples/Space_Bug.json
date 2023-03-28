@@ -60,15 +60,13 @@
   ],
   "setup": [
     {
+      "id": "blue42",
       "name": "Halloween Space Bug",
       "palette": "86ac5fd1-b3a3-4794-aaf5-9e32c67fb4ab",
       "expansion": "Menagerie",
       "rating": null,
       "hp": 26,
-      "tags": [
-        "Hero",
-        "Hero Variant"
-      ],
+      "tags": ["Hero", "Hero Variant"],
       "icons": [],
       "hero_power_name": "BRZZZZK",
       "hero_power": [
@@ -122,14 +120,13 @@
       "challenge": []
     },
     {
+      "id": "orange-julius",
       "name": "Space Bug",
       "palette": "372af673-203b-4948-b725-866664b0e54d",
       "expansion": "Menagerie",
       "rating": 1,
       "hp": 25,
-      "tags": [
-        "Hero"
-      ],
+      "tags": ["Hero"],
       "icons": [],
       "hero_power_name": "Scavenge Junk",
       "hero_power": [
@@ -213,15 +210,13 @@
       ]
     },
     {
+      "id": "metroglyph",
       "name": "Dawn Patrol Space Bug",
       "palette": "cc9af07c-609b-4027-ac2b-51d8db9f6a54",
       "expansion": "Menagerie",
       "rating": null,
       "hp": 23,
-      "tags": [
-        "Hero",
-        "Hero Variant"
-      ],
+      "tags": ["Hero", "Hero Variant"],
       "icons": [],
       "hero_power_name": "Murder Spree",
       "hero_power": [
@@ -279,9 +274,7 @@
     {
       "name": "Option Two: More Murder!",
       "quantity": 1,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -301,9 +294,7 @@
     {
       "name": "Multi-blasters",
       "quantity": 3,
-      "keywords": [
-        "Equipment"
-      ],
+      "keywords": ["Equipment"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -323,10 +314,7 @@
     {
       "name": "Twitchy Little Bug",
       "quantity": 2,
-      "keywords": [
-        "Ongoing",
-        "Limited"
-      ],
+      "keywords": ["Ongoing", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -346,9 +334,7 @@
     {
       "name": "Stolen Grenades",
       "quantity": 2,
-      "keywords": [
-        "Equipment"
-      ],
+      "keywords": ["Equipment"],
       "icons": [],
       "hp": null,
       "effects": [],
@@ -368,9 +354,7 @@
     {
       "name": "Sensor Scope",
       "quantity": 3,
-      "keywords": [
-        "Equipment"
-      ],
+      "keywords": ["Equipment"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -390,10 +374,7 @@
     {
       "name": "The Void Beetle",
       "quantity": 2,
-      "keywords": [
-        "Equipment",
-        "Limited"
-      ],
+      "keywords": ["Equipment", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -413,9 +394,7 @@
     {
       "name": "Lightform Bracer",
       "quantity": 3,
-      "keywords": [
-        "Equipment"
-      ],
+      "keywords": ["Equipment"],
       "icons": [],
       "hp": null,
       "effects": [],
@@ -435,9 +414,7 @@
     {
       "name": "Option One: Murder!",
       "quantity": 1,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -457,10 +434,7 @@
     {
       "name": "Rail Cannon",
       "quantity": 2,
-      "keywords": [
-        "Equipment",
-        "Limited"
-      ],
+      "keywords": ["Equipment", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [],
@@ -480,9 +454,7 @@
     {
       "name": "Break and Rebuild",
       "quantity": 4,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -512,9 +484,7 @@
     {
       "name": "Energy Cells to 11",
       "quantity": 3,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -544,9 +514,7 @@
     {
       "name": "Forced Assistance",
       "quantity": 3,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -576,10 +544,7 @@
     {
       "name": "Gravity Belt",
       "quantity": 2,
-      "keywords": [
-        "Equipment",
-        "Limited"
-      ],
+      "keywords": ["Equipment", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -610,10 +575,7 @@
       "name": "Alternative Ammo",
       "palette": "372af673-203b-4948-b725-866664b0e54d",
       "quantity": 3,
-      "keywords": [
-        "Ongoing",
-        "Limited"
-      ],
+      "keywords": ["Ongoing", "Limited"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -643,9 +605,7 @@
     {
       "name": "Backup Power Source",
       "quantity": 4,
-      "keywords": [
-        "Equipment"
-      ],
+      "keywords": ["Equipment"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -686,9 +646,7 @@
       "name": "Annoying Gremlin",
       "palette": "372af673-203b-4948-b725-866664b0e54d",
       "quantity": 2,
-      "keywords": [
-        "One-Shot"
-      ],
+      "keywords": ["One-Shot"],
       "icons": [],
       "hp": null,
       "effects": [
@@ -709,7 +667,6 @@
   "relationships": [
     {
       "name": "default",
-      "nemesis": false,
       "opening_line": [
         {
           "text": "Tremble and Obey!",
