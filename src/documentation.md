@@ -41,6 +41,14 @@ The Notion page should be the source of truth for your deck. You should be able 
 
 Use Notion's bold, italics, and underline system where appropriate. The tool will automatically handle the marked-up text, including newlines, bold, italicized, and underlined text. It does not support Notion text colors.
 
+# Nemesis and Opening Lines
+
+The "Relationships" table covers Nemesis identifiers and opening lines.
+
+To add a Nemesis to a hero, villain, or individual card, add a row in Relationships. The name should be `Expansion.IdentifierCharacter` (the "Character" part at the end will be automatically removed). Then, go to the hero/villain/card entry, and click on Nemesis to add a relation.
+
+To add an opening line, add a row in Relationships. The name should be `Expansion.IdentifierCharacter`, or `default` for a default opening line. "Spoken By" can be left blank (in which case all hero variants will say the line), or you can pick specific cards that'll speak the line.
+
 # Special Cases
 
 ## Flavor Text
