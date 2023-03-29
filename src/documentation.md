@@ -1,4 +1,14 @@
+<div class="columns">
+<div class="column is-one-quarter">
+
+<div id="documentation-toc">
+
 [[toc]]
+
+</div>
+
+</div>
+<div class="column is-three-quarters">
 
 # Authorize
 
@@ -86,3 +96,5 @@ Character quotations must include the quotation mark after the colon. Use only o
 Some cards have a dynamic hit point total, often shown as "*". However, the Digital tool requires a valid HP value so these cards can be targeted.
 
 In this case, give your card in Notion a *negative HP value*. This will display HP as "*", and use the positive value as the card's default HP total.
+
+</div>
