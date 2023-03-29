@@ -3,9 +3,12 @@ import {
   difference,
   filter,
   find,
+  includes,
   isEmpty,
+  isNil,
   join,
   map,
+  or,
   partition,
   pluck,
   prop,
@@ -56,15 +59,19 @@ function richtext(input: RichText): string[] {
   return split("\n", richtextOneline(input));
 }
 
-function deckOpeningLines(deckData: DeckData) {
+function deckOpeningLines(deckData: DeckData, speaker: Setup) {
   const [defaultQuote, everythingElse] = partition(
     propEq("name", "default"),
     deckData.relationships
   );
-  const sortedRelationships = [
-    ...defaultQuote,
-    ...sortBy(prop("name"), everythingElse),
-  ];
+
+  const sortedRelationships = filter(
+    (relationship: Relationship): boolean =>
+      isNil(relationship.spoken_by) || isEmpty(relationship.spoken_by)
+        ? true
+        : includes(speaker.id)(relationship.spoken_by),
+    [...defaultQuote, ...sortBy(prop("name"), everythingElse)]
+  );
 
   const openingLines = reject(
     isEmpty,
@@ -85,7 +92,7 @@ function heroCardToJson(
   variantTemplate?: Setup
 ) {
   if (hero) {
-    const openingLines = deckOpeningLines(deckData);
+    const openingLines = deckOpeningLines(deckData, hero);
     const nemesisIdentifiers = idToNemesis(deckData, hero.nemesis);
 
     const palette = idToPalette(deckData, hero.palette);
@@ -129,7 +136,7 @@ function villainCardToJson(deckData: DeckData) {
   const B = find((card) => card.tags.includes("B"), deckData.setup);
 
   if (A && B) {
-    const openingLines = deckOpeningLines(deckData);
+    const openingLines = deckOpeningLines(deckData, A);
     const nemesisIdentifiers = idToNemesis(deckData, A.nemesis);
 
     const A_palette = idToPalette(deckData, A.palette);

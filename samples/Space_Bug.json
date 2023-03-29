@@ -701,7 +701,7 @@
     {
       "id": "429999b0-7704-4cb1-b6a1-4ea7e79cc813",
       "name": "default",
-      "spoken_by": "93470a6a-bd95-41fc-a451-f7f1d9806916",
+      "spoken_by": ["93470a6a-bd95-41fc-a451-f7f1d9806916"],
       "opening_line": [
         {
           "text": "Shoot!",
@@ -717,7 +717,7 @@
     {
       "id": "65059e76-c3d9-4312-ba52-f6ce87c92e7b",
       "name": "default",
-      "spoken_by": "e0f1d477-883e-43a7-a9c2-6f40861d856f",
+      "spoken_by": ["e0f1d477-883e-43a7-a9c2-6f40861d856f"],
       "opening_line": [
         {
           "text": "Maim!",
@@ -753,7 +753,7 @@
     {
       "id": "37ac968a-dd4b-46df-b5aa-9ab5d24fc1d7",
       "name": "Menagerie.Unmute",
-      "spoken_by": "93470a6a-bd95-41fc-a451-f7f1d9806916",
+      "spoken_by": ["93470a6a-bd95-41fc-a451-f7f1d9806916"],
       "opening_line": [
         {
           "text": "Bye, Becky!",
@@ -769,7 +769,7 @@
     {
       "id": "4d2f599f-e849-461e-9032-071a6e37c702",
       "name": "default",
-      "spoken_by": "aaaec2d9-e46b-497c-b4db-342027d44576",
+      "spoken_by": ["aaaec2d9-e46b-497c-b4db-342027d44576"],
       "opening_line": [
         {
           "text": "Shoot them into space!",

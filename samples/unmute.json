@@ -361,7 +361,7 @@
     {
       "id": "185bcd9a-842d-464d-b1cb-36105243969e",
       "name": "CaseFiles.CharlieCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Oh cool, a real alien. My views are going to go through the roof during this fight!",
@@ -377,7 +377,7 @@
     {
       "id": "3b03a8bb-5d61-426a-9e93-541ca61b045a",
       "name": "RooksGambitCharlieCharacter",
-      "spoken_by": "f8d7a038-0528-4ea6-a96a-1d6a38eaf352",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Oh cool, a real alien. My views are going to go through the roof during this fight!",
@@ -393,7 +393,7 @@
     {
       "id": "5a7547d3-56b8-4e8c-b2d9-b745a1a4b9bf",
       "name": "GunClubSpeedrunnerCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Ugh, gamers. You people are the worst part of social media.",
@@ -409,7 +409,7 @@
     {
       "id": "5fad107c-f5ec-4341-a738-4185878deebc",
       "name": "BartKFSentinels.TheGoalieCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "The soccer park is down the road, little girl. Get lost.",
@@ -430,7 +430,7 @@
     {
       "id": "94af1a45-d482-4843-861b-38f889497133",
       "name": "JpJw.DinoFancie.BonnieCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "dAww, I freaking love dinosaurs.",
@@ -446,7 +446,7 @@
     {
       "id": "b0dcf519-b74f-48fe-ac71-a158cc7a4ef4",
       "name": "SilhouetteInkblotCharacter",
-      "spoken_by": "f8d7a038-0528-4ea6-a96a-1d6a38eaf352",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Internet video is going to kill this cartoon star.",
@@ -462,7 +462,7 @@
     {
       "id": "cd822314-0b32-4a43-aa08-8606dfbaef34",
       "name": "Angille.SpeedrunnerCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Ugh, gamers. You people are the worst part of social media.",
@@ -478,7 +478,7 @@
     {
       "id": "17290abf-44b7-4f7f-bc52-9d7bb606284c",
       "name": "TheGoalieOnIceCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Cute hockey pads, little girl.",
@@ -494,7 +494,7 @@
     {
       "id": "2d0ed715-50fd-4ff0-b001-8c74766b173e",
       "name": "Menagerie.Mercury",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Well if it isn't Halcyon's Silver Son, here to show off for the media again.",
@@ -510,7 +510,7 @@
     {
       "id": "468bf883-7bdb-40ad-a83b-5e2dcf75724d",
       "name": "GoldDragonInkblotHumanCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Internet video is going to kill this cartoon star.",
@@ -526,7 +526,7 @@
     {
       "id": "55695e14-0b6a-4b0b-a946-88c5871d0453",
       "name": "TsukikoInkblotCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Internet video is going to kill this cartoon star.",
@@ -542,7 +542,7 @@
     {
       "id": "66ded547-e9bf-4b20-8646-bfd9662d4c80",
       "name": "default",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "What do we have here? A new batch of so-called heroes ready to be exposed as frauds?",
@@ -558,7 +558,7 @@
     {
       "id": "795e5cd9-026e-4757-b736-e342d1c1d572",
       "name": "ChristmasBonnieCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "dAww, I freaking love dinosaurs.",
@@ -574,7 +574,7 @@
     {
       "id": "bd054d2c-0e9a-40f8-9592-10b6c7f52a9e",
       "name": "MoondancerCharlieCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Oh cool, a real alien. My views are going to go through the roof during this fight!",
@@ -590,7 +590,7 @@
     {
       "id": "e0dd6264-42ab-4370-8ccb-52a4f76e697a",
       "name": "SpookyGhostwriter.SilhouetteCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Round two, vampire queen!",
@@ -606,7 +606,7 @@
     {
       "id": "e3caa745-5ded-4204-a29e-c5c5f56bbbeb",
       "name": "SpookyGhostwriter.GoldDragonHumanCharacter",
-      "spoken_by": "24574071-7d1b-4b69-8e0f-090cd3678242",
+      "spoken_by": ["f8d7a038-0528-4ea6-a96a-1d6a38eaf352"],
       "opening_line": [
         {
           "text": "Oh look, it's the big gold buffoon. Don't you have a book signing or something to be at?",

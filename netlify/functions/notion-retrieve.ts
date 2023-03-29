@@ -87,7 +87,7 @@ export interface Card {
 export interface Relationship {
   id: ReferenceId<Relationship>;
   name: string;
-  spoken_by?: ReferenceId<Setup> | undefined;
+  spoken_by?: ReferenceId<Setup>[] | undefined;
   opening_line: RichText;
 }
 
@@ -220,7 +220,7 @@ function parseRelationships(data: any): Relationship[] {
     (row) => ({
       id: row.id,
       name: plaintext(prop(row, "Name")),
-      spoken_by: id<Setup>(prop(row, "Spoken By")),
+      spoken_by: ids<Setup>(prop(row, "Spoken By")),
       opening_line: richtext(prop(row, "Opening Line")),
     }),
     data
