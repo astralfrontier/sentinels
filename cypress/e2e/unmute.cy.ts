@@ -23,6 +23,14 @@ describe("Unmute data", () => {
       cy.visit("/test/unmute/digital");
     });
 
+    it("does not include any Hero cards", () => {
+      digitalJson(cy, (deck) => {
+        for (let card of deck.cards) {
+          expect(card).not.to.have.property("powers");
+        }
+      });
+    });
+
     it("has 16 opening lines", () => {
       digitalJson(cy, (deck) => {
         const openingLines = cardNamed(deck.cards, "Unmute").openingLines;
