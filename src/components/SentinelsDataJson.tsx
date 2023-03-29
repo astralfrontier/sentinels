@@ -107,6 +107,11 @@ function villainCardToJson(deckData: DeckData) {
   if (A && B) {
     const openingLines = deckOpeningLines(deckData, A);
     const nemesisIdentifiers = idToNemesis(deckData, A.nemesis);
+    const flippedNemesisIdentifiers = idToNemesis(
+      deckData,
+      B.nemesis,
+      "flippedNemesisIdentifiers"
+    );
 
     const A_palette = idToPalette(deckData, A.palette);
 
@@ -131,6 +136,7 @@ function villainCardToJson(deckData: DeckData) {
         flippedGameplay: richtext(B.villain_effects),
         flippedAdvanced: richtextOneline(B.advanced),
         flippedIcons: B.icons,
+        ...flippedNemesisIdentifiers,
         difficulty: A.rating,
         challengeTitle: richtextOneline(A.challenge_name),
         challengeText: richtextOneline(A.challenge),

@@ -36,7 +36,8 @@ export function idToPalette(
 
 export function idToNemesis(
   deckData: DeckData,
-  ids: ReferenceId<Relationship>[]
+  ids: ReferenceId<Relationship>[],
+  keyName: string = "nemesisIdentifiers"
 ): any {
   const nemesisNames = pluck("name")(
     reject(
@@ -44,6 +45,13 @@ export function idToNemesis(
       map((id) => find(propEq("id", id), deckData.relationships), ids)
     )
   );
-  const nemesisIdentifiers = map((name) => name.replace(/Character$/, ""), nemesisNames);
-  return nemesisIdentifiers.length ? { nemesisIdentifiers } : {}
+  const nemesisIdentifiers = map(
+    (name) => name.replace(/Character$/, ""),
+    nemesisNames
+  );
+  const O: any = {}
+  if (nemesisIdentifiers.length) {
+    O[keyName] = nemesisIdentifiers
+  }
+  return O
 }
