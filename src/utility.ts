@@ -1,7 +1,13 @@
 import pascalcase from "pascalcase";
-import { head, reject } from "ramda";
+import { find, head, isNil, map, pluck, propEq, reject } from "ramda";
 
-import { Setup } from "../netlify/functions/notion-retrieve";
+import {
+  DeckData,
+  Palette,
+  ReferenceId,
+  Relationship,
+  Setup,
+} from "../netlify/functions/notion-retrieve";
 
 /**
  * Turn a card name, e.g. "Foo Bar" into a pascal-cased slug, e.g. "FooBar"
@@ -20,8 +26,29 @@ export function identifier(input: string): string {
  */
 export function findPrimarySetupCard(setup: Setup[]): Setup {
   const primaryCards = reject(
-    (card: Setup) => card.tags.includes("Hero Variant") || card.tags.includes("B"),
+    (card: Setup) =>
+      card.tags.includes("Hero Variant") || card.tags.includes("B"),
     setup
-  )
-  return head(primaryCards) || setup[0]
+  );
+  return head(primaryCards) || setup[0];
+}
+
+export function idToPalette(
+  deckData: DeckData,
+  id: ReferenceId<Palette> | undefined
+): Palette | undefined {
+  return find(propEq("id", id), deckData.palettes);
+}
+
+export function idToNemesis(
+  deckData: DeckData,
+  ids: ReferenceId<Relationship>[]
+): string[] {
+  const nemesisNames = pluck("name")(
+    reject(
+      isNil,
+      map((id) => find(propEq("id", id), deckData.relationships), ids)
+    )
+  );
+  return map((name) => name.replace(/Character$/, ""), nemesisNames);
 }

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-import NewmanGarageLogo from "../assets/NewmanGarageLogo.png"
+import NewmanGarageLogo from "../assets/NewmanGarageLogo.png";
 import AuthorizationButton from "./AuthorizationButton";
 
-const activeNavbarItem = ({ isActive }: {isActive: boolean}) =>
+const activeNavbarItem = ({ isActive }: { isActive: boolean }) =>
   isActive ? "navbar-item has-background-white" : "navbar-item";
 
 function AppNavbar() {
@@ -35,30 +35,62 @@ function AppNavbar() {
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div className={isActive ? "navbar-menu is-active" : "navbar-menu"} id="appNavbarItems">
+      <div
+        className={isActive ? "navbar-menu is-active" : "navbar-menu"}
+        id="appNavbarItems"
+      >
         <div className="navbar-start">
-          <NavLink className={activeNavbarItem} to={"/search/notion"} onClick={() => setIsActive(false)}>
+          <NavLink
+            className={activeNavbarItem}
+            to={"/search/notion"}
+            onClick={() => setIsActive(false)}
+          >
             Search
           </NavLink>
-          <NavLink className={activeNavbarItem} to={"/docs"} onClick={() => setIsActive(false)}>
+          <NavLink
+            className={activeNavbarItem}
+            to={"/docs"}
+            onClick={() => setIsActive(false)}
+          >
             Documentation
           </NavLink>
           <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link">
-              Test Data
-            </a>
+            <a className="navbar-link">Test Data</a>
             <div className="navbar-dropdown">
-              <NavLink className={"navbar-item"} to={"/test/mercury/home"} onClick={() => setIsActive(false)}>
+              <NavLink
+                className={"navbar-item"}
+                to={"/test/mercury/home"}
+                onClick={() => setIsActive(false)}
+              >
                 Mercury
               </NavLink>
-              <NavLink className={"navbar-item"} to={"/test/netherwarden/home"} onClick={() => setIsActive(false)}>
+              <NavLink
+                className={"navbar-item"}
+                to={"/test/netherwarden/home"}
+                onClick={() => setIsActive(false)}
+              >
                 Netherwarden
               </NavLink>
-              <NavLink className={"navbar-item"} to={"/test/challengerpark/home"} onClick={() => setIsActive(false)}>
+              <NavLink
+                className={"navbar-item"}
+                to={"/test/challengerpark/home"}
+                onClick={() => setIsActive(false)}
+              >
                 Challenger Park
               </NavLink>
-              <NavLink className={"navbar-item"} to={"/test/spacebug/home"} onClick={() => setIsActive(false)}>
+              <NavLink
+                className={"navbar-item"}
+                to={"/test/spacebug/home"}
+                onClick={() => setIsActive(false)}
+              >
                 Space Bug
+              </NavLink>
+              <NavLink
+                className={"navbar-item"}
+                to={"/test/unmute/home"}
+                onClick={() => setIsActive(false)}
+              >
+                Unmute
               </NavLink>
             </div>
           </div>

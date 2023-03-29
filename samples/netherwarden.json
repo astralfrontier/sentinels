@@ -955,7 +955,8 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
       "id": "blue42",
@@ -1008,7 +1009,8 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
       "id": "blue42",
@@ -1075,7 +1077,8 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
       "id": "blue42",
@@ -1142,7 +1145,8 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
       "id": "blue42",
@@ -1250,7 +1254,8 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     },
     {
       "id": "blue42",
@@ -1304,7 +1309,8 @@
           "code": false,
           "color": "default"
         }
-      ]
+      ],
+      "nemesis": []
     }
   ],
   "relationships": [

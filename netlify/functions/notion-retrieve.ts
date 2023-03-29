@@ -67,7 +67,7 @@ export interface Setup {
   advanced: RichText;
   challenge_name: RichText;
   challenge: RichText;
-  nemesis: any;
+  nemesis: ReferenceId<Relationship>[];
 }
 
 export interface Card {
@@ -81,6 +81,7 @@ export interface Card {
   effects: RichText;
   powers: RichText;
   quote_text: RichText;
+  nemesis: ReferenceId<Relationship>[];
 }
 
 export interface Relationship {
