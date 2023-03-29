@@ -119,7 +119,7 @@ function heroCardToJson(
         powers: richtext(hero.hero_power),
         icons: hero.icons,
         hitpoints: hero.hp,
-        nemesisIdentifiers,
+        ...nemesisIdentifiers,
         incapacitatedAbilities: richtext(hero.hero_incap),
         flippedIcons: hero.hero_incap_icons,
         openingLines,
@@ -152,7 +152,7 @@ function villainCardToJson(deckData: DeckData) {
         foilBackgroundColor: A_palette?.box_color || "ffffff",
         character: true,
         hitpoints: A.hp,
-        nemesisIdentifiers,
+        ...nemesisIdentifiers,
         setup: richtext(A.villain_setup),
         gameplay: richtext(A.villain_effects),
         advanced: richtextOneline(A.advanced),
@@ -275,7 +275,7 @@ function cardsToJson(
       ...bodyAndPowers,
       ...cardFlavor,
       ...cardHp(card.hp),
-      nemesisIdentifiers,
+      ...nemesisIdentifiers,
     };
   }, deckData.cards);
 }

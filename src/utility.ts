@@ -1,13 +1,7 @@
 import pascalcase from "pascalcase";
 import { find, head, isNil, map, pluck, propEq, reject } from "ramda";
 
-import {
-  DeckData,
-  Palette,
-  ReferenceId,
-  Relationship,
-  Setup,
-} from "../netlify/functions/notion-retrieve";
+import { DeckData, Palette, ReferenceId, Relationship, Setup } from "../netlify/functions/notion-retrieve";
 
 /**
  * Turn a card name, e.g. "Foo Bar" into a pascal-cased slug, e.g. "FooBar"
@@ -43,12 +37,13 @@ export function idToPalette(
 export function idToNemesis(
   deckData: DeckData,
   ids: ReferenceId<Relationship>[]
-): string[] {
+): any {
   const nemesisNames = pluck("name")(
     reject(
       isNil,
       map((id) => find(propEq("id", id), deckData.relationships), ids)
     )
   );
-  return map((name) => name.replace(/Character$/, ""), nemesisNames);
+  const nemesisIdentifiers = map((name) => name.replace(/Character$/, ""), nemesisNames);
+  return nemesisIdentifiers.length ? { nemesisIdentifiers } : {}
 }

@@ -70,11 +70,8 @@ describe("Unmute data", () => {
 
     it("has Rabid Fans with no nemesis", () => {
       digitalJson(cy, (deck) => {
-        const nemesisIdentifiers = cardNamed(
-          deck.cards,
-          "Rabid Fans"
-        ).nemesisIdentifiers;
-        expect(nemesisIdentifiers).to.be.empty;
+        const card = cardNamed(deck.cards, "Rabid Fans");
+        expect(card).not.to.have.property("nemesisIdentifiers");
       });
     });
   });
