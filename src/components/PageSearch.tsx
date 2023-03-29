@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { SearchResult } from "../../netlify/functions/notion-search";
 import { notionErrorText, notionSearch } from "../notion";
 import InputWrapper from "./InputWrapper";
-
 import classes from "./PageSearch.module.sass"
 
 interface PageSearchProps {
@@ -119,6 +118,12 @@ function PageSearch(_props: PageSearchProps) {
               type="text"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.keyCode == 13 || event.key == 'Enter') {
+                  event.preventDefault()
+                  onClickSearch()
+                }
+              }}
             />
           </InputWrapper>
         </div>
