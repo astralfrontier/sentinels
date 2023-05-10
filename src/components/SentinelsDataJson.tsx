@@ -1,8 +1,40 @@
-import { assoc, difference, filter, find, includes, isEmpty, isNil, join, map, or, partition, pluck, prop, propEq, reduce, reject, sortBy, split, startsWith, trim } from "ramda";
+import {
+  assoc,
+  difference,
+  filter,
+  find,
+  flatten,
+  includes,
+  isEmpty,
+  isNil,
+  join,
+  map,
+  or,
+  partition,
+  pluck,
+  prop,
+  propEq,
+  reduce,
+  reject,
+  sortBy,
+  split,
+  startsWith,
+  trim,
+} from "ramda";
 import { useMemo } from "react";
 
-import { DeckData, Relationship, RichText, Setup } from "../../netlify/functions/notion-retrieve";
-import { findPrimarySetupCard, identifier, idToNemesis, idToPalette } from "../utility";
+import {
+  DeckData,
+  Relationship,
+  RichText,
+  Setup,
+} from "../../netlify/functions/notion-retrieve";
+import {
+  findPrimarySetupCard,
+  identifier,
+  idToNemesis,
+  idToPalette,
+} from "../utility";
 import CopyableText from "./CopyableText";
 import { SentinelsDataDisplayProps } from "./SentinelsData";
 
@@ -278,9 +310,14 @@ function deckDataToJson(deckData: DeckData): any {
         }
       : {
           initialCardIdentifiers: [cardName],
-          promoCards: map(
-            (card: Setup) => heroCardToJson(deckData, card, primarySetupCard),
-            filter((card) => card.tags.includes("Hero Variant"), deckData.setup)
+          promoCards: flatten(
+            map(
+              (card: Setup) => heroCardToJson(deckData, card, primarySetupCard),
+              filter(
+                (card) => card.tags.includes("Hero Variant"),
+                deckData.setup
+              )
+            )
           ),
         };
 
