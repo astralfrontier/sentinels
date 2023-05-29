@@ -40,6 +40,6 @@
     "markdown-it-table-of-contents": "^0.6.0",
     "netlify-cli": "^15.2.0",
     "typescript": "^5.0.4",
-    "vite": "^4.3.8"
+    "vite": "^4.3.9"
   }
 }
