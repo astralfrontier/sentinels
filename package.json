@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@netlify/functions": "^1.6.0",
-    "@notionhq/client": "^2.2.9",
+    "@notionhq/client": "^2.2.10",
     "axios": "^1.4.0",
     "bulma": "^0.9.4",
     "pascalcase": "^2.0.0",
