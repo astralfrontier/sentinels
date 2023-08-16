@@ -277,7 +277,7 @@ function cardsToJson(
       identifier: identifier(card.name),
       count: card.quantity,
       title: card.name,
-      keywords: card.keywords,
+      keywords: map((s) => s.toLowerCase(), card.keywords),
       icons: card.icons,
       ...bodyAndPowers,
       ...cardFlavor,
