@@ -23,7 +23,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.15.0",
-    "sass": "^1.65.1"
+    "sass": "^1.66.1"
   },
   "devDependencies": {
     "@pity/vite-plugin-react-markdown": "^0.1.1",
