@@ -31,7 +31,7 @@
     "@types/node": "^20.5.0",
     "@types/pascalcase": "^1.0.1",
     "@types/ramda": "0.28.23",
-    "@types/react": "^18.2.18",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/react-helmet": "^6.1.6",
     "@vitejs/plugin-react-swc": "^3.3.2",
