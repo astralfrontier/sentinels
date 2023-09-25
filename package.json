@@ -34,7 +34,7 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/react-helmet": "^6.1.6",
-    "@vitejs/plugin-react-swc": "^3.3.2",
+    "@vitejs/plugin-react-swc": "^3.4.0",
     "cypress": "^13.2.0",
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-table-of-contents": "^0.6.0",
