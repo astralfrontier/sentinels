@@ -32,7 +32,7 @@
     "@types/pascalcase": "^1.0.1",
     "@types/ramda": "0.28.23",
     "@types/react": "^18.2.25",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom": "^18.2.13",
     "@types/react-helmet": "^6.1.6",
     "@vitejs/plugin-react-swc": "^3.4.0",
     "cypress": "^13.2.0",
