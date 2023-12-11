@@ -33,7 +33,7 @@
     "@types/ramda": "0.28.23",
     "@types/react": "^18.2.41",
     "@types/react-dom": "^18.2.17",
-    "@types/react-helmet": "^6.1.9",
+    "@types/react-helmet": "^6.1.11",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "cypress": "^13.6.0",
     "markdown-it-anchor": "^8.6.7",
