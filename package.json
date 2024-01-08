@@ -14,7 +14,7 @@
   "dependencies": {
     "@netlify/functions": "^2.4.1",
     "@notionhq/client": "^2.2.14",
-    "axios": "^1.6.3",
+    "axios": "^1.6.5",
     "bulma": "^0.9.4",
     "pascalcase": "^2.0.0",
     "ramda": "0.28.0",
