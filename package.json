@@ -15,7 +15,7 @@
     "@netlify/functions": "^2.6.0",
     "@notionhq/client": "^2.2.15",
     "axios": "^1.6.8",
-    "bulma": "^0.9.4",
+    "bulma": "^1.0.0",
     "pascalcase": "^2.0.0",
     "ramda": "0.28.0",
     "react": "^18.3.1",
