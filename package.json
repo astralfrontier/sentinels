@@ -12,7 +12,7 @@
     "cypress:run": "cypress run --e2e"
   },
   "dependencies": {
-    "@netlify/functions": "^2.6.0",
+    "@netlify/functions": "^2.7.0",
     "@notionhq/client": "^2.2.15",
     "axios": "^1.6.8",
     "bulma": "^1.0.0",
